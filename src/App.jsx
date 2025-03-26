@@ -3,7 +3,7 @@ import { Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 import Homepages from "./page/home/Homepages";
 import Aboutpages from "./page/aboutpages/Aboutpages";
 import Groompages from "./page/groompages/Groompages";
-import ProfileComponent from "./Components/bride/profilecomponents/Profilecomponent";
+import ProfileComponent from "./components/bride/profilecomponent/Profilecomponent";
 // import Groombiodata from "./Components/groom/groombiodata/Groombiodata";
 import Contactpages from "./page/contactpages/Contactpages";
 import Footer from "./Components/footers/footermain/Footer";
