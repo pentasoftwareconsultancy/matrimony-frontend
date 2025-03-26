@@ -12,7 +12,7 @@ import Blogpages from "./page/blogpages/Blogpages";
 import Blogmaincard from "./components/blog/blogmaincards/Blogmaincard";
 import Scrolltotop from "./Components/scrolltotop/Scrolltotop"; // Corrected path
 import Newspages from "./page/newspages/Newspages";
-import Step from "./Components/logins/register/steps/Step";
+import Step from "./components/logins/register/step/Step";
 import Navbar from "./Components/navbars/Navbar";
 // import Newcardpage from "./Components/newscard/nescardpages/Nescardpage";
 import Eventspages from "./page/eventspage/Eventspages";
