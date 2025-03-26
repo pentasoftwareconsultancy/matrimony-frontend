@@ -30,8 +30,9 @@ import Logout from "./components/logins/logouts/Logout";
 import PricingPlans from "./components/pricings/pricingmain/Pricingmain";
 import PaymentMethods from "./components/pricings/paymentmethods/Paymentmethod";
 // import Scrolltotops from "./components/scrolltotops/Scrolltotop";
-import MemberDetail from "./Components/member/memberdetail/Memberdetail";
+
 import Scrolltotop from "./components/scrolltotops/Scrolltotop";
+import MemberDetail from "./Components/member/memberdetails/Memberdetail";
 
 
 function AppContent() {

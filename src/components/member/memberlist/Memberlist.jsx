@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MemberCard from '../membercard/Membercard';
-import MemberDetail from '../memberdetail/Memberdetail';
+import MemberDetail from '../memberdetails/Memberdetail';
 import styles from './MemberList.module.css';
 
 const MemberList = () => {
