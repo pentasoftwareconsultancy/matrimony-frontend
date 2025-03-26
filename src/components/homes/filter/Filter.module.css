@@ -1,0 +1,103 @@
+/* FilterForm.module.css */
+.filters {
+  
+  padding-top: 50px;
+  /* padding-bottom: 50px; */
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 16px; /* Space between grid items */
+}
+.main {
+  
+  margin: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+  align-items: center; /* Center the form */
+  
+  padding-bottom: 20px;
+  border: 1px solid #1b1b1c; /* Border around the form */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+}
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column; /* Ensure label text is above the dropdown */
+  margin-bottom: 4px;
+}
+
+
+.select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+.buttonContainer {
+  /* margin-left: 30px; */
+  display: flex;
+  justify-content: center; /* Center the button */
+  margin-top: 20px; /* Optional: Add margin for spacing */
+}
+
+.apply {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff5069;
+  color: white;
+  border: none;
+  border-radius: 15px 0 15px 15px;
+  cursor: pointer;
+}
+
+.apply:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+@media (max-width: 768px) {
+  /* Adjust the .filters grid layout */
+  .filters {
+    grid-template-columns: 1fr; /* Stack items vertically */
+    gap: 12px; /* Reduce gap for mobile */
+    padding: 20px; /* Reduce padding */
+    margin: 0; /* Remove horizontal margins */
+  }
+
+  /* Adjust .main container for mobile */
+  .main {
+    margin: 20px; /* Smaller margin for mobile */
+    padding: 20px; /* Adjust padding */
+  }
+
+  /* Adjust labels for smaller screens */
+  .label {
+    font-size: 14px; /* Smaller font size for labels */
+    margin-bottom: 8px; /* Add space below labels */
+  }
+
+  /* Adjust dropdowns for touch input */
+  .select {
+    padding: 12px; /* Increase padding for touch input */
+    font-size: 16px; /* Larger font size for readability */
+  }
+
+  /* Center and resize the button */
+  .buttonContainer {
+    margin-top: 16px; /* Reduce margin on top */
+  }
+
+  .apply {
+    width: 100%; /* Full width button */
+    padding: 12px; /* Increase padding */
+    font-size: 16px; /* Slightly larger text */
+  }
+}

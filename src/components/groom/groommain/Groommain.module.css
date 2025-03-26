@@ -1,0 +1,82 @@
+.Groommain{
+   display: flex;
+    margin-top: 70px;
+    margin-left: 150px;
+    margin-right: 100px;
+}
+.sidebar {
+  width: 30%;
+  position: sticky;
+  top: 0;
+  height: 200vh; /* Adjust height */
+  overflow: hidden; /* Prevents scrollbar */
+  padding: 1em;
+}
+
+.mainContent{
+    width: 80%;
+    /* margin-left: 0px; */
+}
+.searchInput{
+  margin-left: 20px;
+justify-content: end;
+}
+
+/* Assuming you are using a CSS module or global styles */
+.searchWrapper {
+  margin-left: 430px;
+  position: relative; /* Needed to position the icon inside the input */
+  width: 100%;
+  border-radius: 50px;
+  max-width: 400px; /* Adjust based on your design */
+}
+
+.searchInput {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 30px 12px 12px; /* Adjust padding for better look */
+  /* border-radius:200px;  */
+  border: 100px solid #4173b9;
+  background-color: rgb(255, 253, 253);
+  font-size: 16px; /* Adjust font size if needed */
+  box-sizing: border-box; /* Ensure padding + border is included in the width */
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+margin-top: 10px;
+  border-radius: 30px;
+  right: 10px; /* Adjust right position */
+  transform: translateY(-50%); /* Center the icon vertically */
+  color: #888; /* Icon color */
+  cursor: pointer;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .Bridemain {
+      flex-direction: row; /* Stack elements vertically */
+      align-items: center; /* Center items horizontally */
+      margin-top: 20px; /* Reduce margin for smaller screens */
+    }
+  
+    .main,
+    .containmain {
+      width: 50%; /* Take up most of the screen width */
+      margin-bottom: 20px; /* Add spacing between stacked elements */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Bridemain {
+      margin-top: 10px; /* Further reduce top margin for very small screens */
+    }
+  
+    .main,
+    .containmain {
+      width: 100%; /* Full width for narrow devices */
+      margin-bottom: 15px; /* Adjust spacing between elements */
+    }
+  }

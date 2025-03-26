@@ -1,0 +1,25 @@
+.list {
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+    margin: 16px;
+   
+  }
+  .previous{
+    width: 100px;
+    margin-right: 10px;
+    background-color:#ff5069;
+  }
+  .next{
+    width: 100px;
+    margin-left: 10px;
+    background-color: #ff5069;
+  }
+  
+  .paginationButtons{
+    justify-content: center;
+    margin-left: 300px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }

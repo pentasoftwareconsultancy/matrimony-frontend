@@ -1,0 +1,743 @@
+.container {
+    margin-top: -100px;
+    padding: 40px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color:#EBEDF9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .heading {
+    margin-top: 30px;
+    font-size: 40px;
+    text-align: center;
+    color: #2a2a2a;
+    margin-bottom: 40px;
+  }
+  .text {
+    font-size: 18px;
+   
+    color: #4a4a4a; /* Neutral color for readability */
+   
+    margin: 10px auto; /* Adds spacing for better flow */
+    
+   text-align: justify;
+   margin-top: -20px;
+    padding: 10px; /* Adds padding for a clean, card-like effect */
+   
+  }
+  .profile{
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .leftSection{
+   width: 50%;
+   /* height: 50vh; */
+  }
+  .rightSection {
+    flex: 1;
+    width: 50%;
+
+    
+  }
+  
+  .card {
+    display: flex;
+    gap: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+   
+  }
+  .cardmain{
+    display: flex;
+    gap: 10px;
+  }
+  .textmain{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 30px;
+    color: rgb(65, 19, 65);
+  }
+  .cards{
+    display: flex;
+    background-color: #fff;
+    border-radius: 45px;
+    height: 65vh;
+    padding: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    /* width: 50%; */
+  }
+  .card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .imageContainer {
+    margin: 15px 0;
+    /* margin-top: 100px; */
+    /* padding-top: 100px; */
+    overflow: hidden; /* Ensures no overflow issues */
+    text-align: center;
+  }
+  .maintext{
+    width: 50%;
+   
+  }
+  .textmains{
+font-size: 15px;
+  }
+  .containermain{
+    /* padding-top: 100px; */
+    width: 50%;
+  }
+  .image {
+    width: 100%;
+    height: 50vh;
+    /* margin-top: 50px; */
+    /* padding-top: 100px; */
+    /* height: auto; */
+    object-fit: cover; /* Ensures the image covers the container nicely */
+    border-radius: 60px;
+  }
+  
+  .navigation {
+   
+    display: flex;
+    margin-top: 35px;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* .navButton {
+    background-color: #eaeaea;
+    border: none;
+    border-radius: 50%;
+    padding-top: -10px;
+    width: 30px;
+
+    height: 30px;
+    font-size: 25px;
+    color: #333;
+    cursor: pointer;
+  }
+   */
+   .navButton{
+    border-radius: 50px;
+    background-color: #ff5069;
+  
+   }
+ 
+  .rightSection{
+    width: 50%;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 15px;
+    /* margin-left: 100px; */
+    margin-top: 40px;
+  }
+  
+  .primaryButton {
+    background-color:#ff5069;
+    justify-content: center;
+    
+    margin-left: 200px;
+    color: #fff;
+    border: none;
+    /* border-radius: 5px; */
+    border-radius: 15px 0 15px 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .primaryButton:hover {
+    background-color:#ff5069;
+  }
+  
+  
+  
+  .secondaryButton:hover {
+    background-color: #f5f5f5;
+  }
+  .dolor{
+ font-size: 17px;
+ margin-top: 20px;
+ text-align: justify;
+ margin-bottom: 20px;
+ font-weight: 600;
+ color: rgb(70, 19, 70);
+  }
+
+
+  /* Responsive Design for max-width: 700px */
+@media (max-width: 700px) {
+  .container {
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .text {
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .leftSection, .rightSection {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .cards {
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .textmain {
+    font-size: 30px;
+  }
+
+  .dolor {
+    font-size: 20px;
+  }
+
+  .image {
+    height: 30vh;
+    border-radius: 30px;
+  }
+
+  .primaryButton, .secondaryButton {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+/* Responsive Design for max-width: 600px */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .heading {
+    font-size: 26px;
+  }
+
+  .text {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .textmain {
+    font-size: 24px;
+  }
+
+  .dolor {
+    font-size: 18px;
+  }
+
+  .cards {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .image {
+    height: 25vh;
+    border-radius: 20px;
+  }
+
+  .primaryButton, .secondaryButton {
+    width: 100%;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+}
+/* Styles for 1025px to 1200px screen widths */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .container {
+    max-width: 1150px; /* Slightly smaller container to fit 1200px screens */
+    margin: 0 auto; /* Center container */
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+  .heading {
+    font-size: 34px; /* Slightly smaller font for medium screens */
+    margin-bottom: 40px; /* Maintain good spacing */
+    color: #2a2a2a;
+  }
+
+  .content {
+    display: flex;
+    gap: 30px; /* Reduced gap for slightly smaller screens */
+    justify-content: space-between;
+  }
+
+  .leftSection,
+  .rightSection {
+    flex: 1 1 49%; /* Almost equal width sections */
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row; /* Cards in a horizontal layout */
+    gap: 40px; /* Spacing between cards */
+    padding: 0 40px; /* Reduce padding for medium screen sizes */
+  }
+
+  .cards {
+    background-color: #fff;
+    border-radius: 25px; /* Rounded corners for aesthetics */
+    height: 50vh; /* Maintain a good height-to-width ratio */
+    padding: 30px; /* Adjust padding for smaller screens */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .textmain {
+    font-size: 28px; /* Slightly smaller text size for medium screens */
+    padding-bottom: 20px;
+    color: rgb(65, 19, 65);
+  }
+
+  .card h3 {
+    font-size: 22px; /* Medium-sized headers */
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 16px; /* Maintain good readability */
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .imageContainer {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .image {
+    width: 100%; /* Responsive width */
+    height: 45vh; /* Maintain a good height */
+    object-fit: cover; /* Keep image aspect ratio */
+    border-radius: 25px;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adjust spacing for smaller buttons */
+    margin-top: 40px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 15px; /* Reduced gap for buttons */
+    justify-content: center;
+  }
+
+  .primaryButton {
+    font-size: 16px; /* Slightly smaller buttons */
+    padding: 12px 25px;
+    border-radius: 12px;
+    background-color: #d32f2f;
+    color: #fff;
+  }
+
+  .primaryButton:hover {
+    background-color: #b52a2a;
+  }
+
+  .secondaryButton {
+    font-size: 16px;
+    padding: 12px 25px;
+    border-radius: 12px;
+    background-color: #fff;
+    color: #302b2b;
+    border: 1px solid #302b2b;
+  }
+
+  .secondaryButton:hover {
+    background-color: #f5f5f5;
+  }
+
+  .dolor {
+    font-size: 32px; /* Slightly smaller font size */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: rgb(70, 19, 70);
+  }
+}
+
+@media (max-width: 900px) and (min-width: 800px) {
+  .container {
+    margin-top: -50px; /* Adjust margin */
+    padding: 20px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .heading {
+    font-size: 32px; /* Reduce font size */
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .text {
+    font-size: 16px; /* Smaller text for better readability */
+    margin-top: -10px;
+    padding: 8px;
+  }
+
+  .profile {
+    font-size: 18px;
+  }
+
+  .content {
+    gap: 15px; /* Reduce gap for smaller space */
+  }
+
+  .leftSection,
+  .rightSection {
+    width: 100%; /* Stack sections vertically */
+  }
+
+  .card {
+    flex-direction: column; /* Stack content vertically */
+    gap: 30px; /* Reduce gap */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .cards {
+    height: auto; /* Adjust height */
+    padding: 30px; /* Adjust padding */
+    border-radius: 30px; /* Smaller corners */
+  }
+
+  .textmain {
+    font-size: 30px; /* Adjust main heading size */
+  }
+
+  .image {
+    height: 40vh; /* Adjust image height */
+    border-radius: 30px;
+  }
+
+  .navigation {
+    margin-top: 30px; /* Adjust spacing */
+  }
+
+  .buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+  }
+
+  .primaryButton {
+    margin-left: 0; /* Center-align button */
+    padding: 8px 15px;
+  }
+
+  .secondaryButton {
+    padding: 8px 15px;
+  }
+
+  .dolor {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Styles for 900px to 1000px screen widths */
+@media (min-width: 900px) and (max-width: 1000px) {
+  .container {
+    max-width: 900px; /* Restrict container width to fit medium screens */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Adjust padding for medium screen sizes */
+  }
+
+  .heading {
+    font-size: 28px; /* Slightly smaller font size for medium screens */
+    margin-bottom: 30px;
+    color: #2a2a2a;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap; /* Allow content to wrap if needed */
+    gap: 20px; /* Adjust spacing between sections */
+    justify-content: space-between;
+  }
+
+  .leftSection,
+  .rightSection {
+    flex: 1 1 48%; /* Allow each section to occupy 48% width */
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    gap: 30px; /* Reduced gap between cards */
+    padding: 0 30px; /* Padding for horizontal spacing */
+  }
+
+  .cards {
+    background-color: #fff;
+    border-radius: 20px; /* Smaller border radius */
+    height: 45vh; /* Adjust height for better fit */
+    padding: 20px; /* Reduced padding */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .textmain {
+    font-size: 26px; /* Adjust font size for medium screens */
+    padding-bottom: 20px;
+    color: rgb(65, 19, 65);
+  }
+
+  .card h3 {
+    font-size: 20px; /* Smaller font size for titles */
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 15px; /* Adjust font size for readability */
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .imageContainer {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .image {
+    width: 100%;
+    height: 40vh; /* Adjust image height */
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* Adjust spacing between navigation buttons */
+    margin-top: 30px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 12px; /* Reduced gap between buttons */
+    justify-content: center;
+  }
+
+  .primaryButton {
+    font-size: 14px; /* Smaller font size for buttons */
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #d32f2f;
+    color: #fff;
+  }
+
+  .primaryButton:hover {
+    background-color: #b52a2a;
+  }
+
+  .secondaryButton {
+    font-size: 14px; /* Smaller font size for secondary button */
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #302b2b;
+    border: 1px solid #302b2b;
+  }
+
+  .secondaryButton:hover {
+    background-color: #f5f5f5;
+  }
+
+  .dolor {
+    font-size: 28px; /* Adjust font size for medium screens */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: rgb(70, 19, 70);
+  }
+}
+
+  /* Mobile Responsiveness */
+
+/* Mobile and Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Adjust container and sections */
+    .container {
+        padding: 20px;
+    }
+
+    .heading {
+        font-size: 28px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .leftSection,
+    .rightSection {
+        width: 100%;
+    }
+
+    .card {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .cards {
+        height: auto;
+        padding: 20px;
+    }
+
+    .image {
+        height: 40vh;
+    }
+
+    .textmain {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .dolor {
+        font-size: 28px;
+    }
+}
+
+/* Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Adjust container and sections */
+    .container {
+        padding: 10px;
+    }
+
+    .heading {
+        font-size: 24px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .leftSection,
+    .rightSection {
+        width: 100%;
+    }
+
+    .card {
+        flex-direction: column;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .cards {
+        height: auto;
+        padding: 15px;
+    }
+
+    .image {
+        height: 35vh;
+    }
+
+    .textmain {
+        font-size: 20px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .card p {
+        font-size: 12px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 50%;
+        margin-bottom: 10px;
+        margin-left: -20px;
+    }
+
+    .dolor {
+        font-size: 22px;
+    }
+}

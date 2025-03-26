@@ -1,0 +1,98 @@
+.heroSection {
+  position: relative;
+  height: 100vh;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Prevents content overflow on smaller screens */
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  height: 100vh;
+  width: 100%;
+  border-radius: 40px;
+  color: rgb(255, 252, 252);
+  box-sizing: border-box; /* Ensures padding doesn't increase width beyond 100% */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: white;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Tablet and Mobile Responsiveness */
+@media (max-width: 768px) {
+  .title {
+      font-size: 2rem; /* Smaller title for tablets */
+  }
+
+  .subtitle {
+      font-size: 1.2rem; /* Smaller subtitle */
+  }
+
+  .overlay {
+      padding: 15px; /* Reduced padding */
+  }
+
+  .heroSection {
+      border-radius: 20px; /* Slightly smaller radius */
+  }
+
+  .backgroundImage {
+      border-radius: 20px;
+      /* height: 50vh; */
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .title {
+      font-size: 1.5rem; /* Even smaller title for mobile */
+      margin-bottom: 15px;
+  }
+
+  .subtitle {
+      font-size: 1rem; /* Smaller subtitle */
+  }
+
+  .overlay {
+      padding: 10px; /* Minimal padding for small screens */
+  }
+
+  .heroSection {
+      border-radius: 10px; /* Minimal radius for very small screens */
+      height: 60vh;
+  }
+
+  .backgroundImage {
+      border-radius: 10px;
+      height: 10vh;
+  }
+}

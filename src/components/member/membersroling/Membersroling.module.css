@@ -1,0 +1,142 @@
+.appContainer {
+    width: 250vw;        /* Width set to 150% of the viewport width */
+    height: 50vh;        /* Height set to 50% of the viewport height */
+    color: #000000;      /* Text color */
+    position: relative;  /* Positioned relative to its normal position */
+    margin-right: 50px;  /* Adjusted right margin */
+    display: flex;       /* Flexbox layout */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    margin-bottom: 100px;
+  }
+  
+  .wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .wrapper h1 {
+    margin: 20px 0; /* Reduce the margin above and below the heading */
+  }
+  
+  .marquee {
+    display: flex;
+    width: 100%; /* Adjust width to fit screen */
+    overflow: hidden;
+    user-select: none;
+    mask-image: linear-gradient(
+      to right,
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 1) 10%,
+      hsl(0 0% 0% / 1) 90%,
+      hsl(0 0% 0% / 0)
+    );
+  }
+  
+  .marquee:hover .common {
+    animation-play-state: paused; /* Pause animation on hover */
+  }
+  
+  @keyframes scrollX {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .common {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    white-space: nowrap;
+    width: 100%;
+    animation: scrollX 30s linear infinite;
+    animation-play-state: running; /* Ensure animation runs by default */
+  }
+  
+  .marqueeGroup {
+    composes: common;
+  }
+  
+  .marqueeGroup2 {
+    /* composes: common; */
+
+flex-direction: column;
+    animation-direction: reverse;
+    animation-delay: -3s;
+  }
+  
+  .imageGroup {
+    display: grid;
+    width: 200%;
+    border-radius: 10px;
+    place-items: center;
+    /* width: clamp(50rem, 15rem + 60vmin, 80rem);  */
+    padding: calc(clamp(2rem, 1rem + 10vmin, 100rem) / 10); 
+  }
+  
+  .image {
+    object-fit: contain;
+    width: 100%; 
+    height: 50vh; /* Keep aspect ratio */
+    border-radius: 0.5rem;
+    /* aspect-ratio: 30/30; */
+    /* padding: 10px 20px; */
+    border-radius: 40px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1200px) {
+    .marquee {
+      width: 100%; /* Ensure full width on smaller screens */
+    }
+    .imageGroup {
+      width: clamp(6rem, 2rem + 20vmin, 15rem); /* Adjust size for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .appContainer {
+      height: auto; /* Allow height to be flexible */
+      padding: 10px 0; /* Reduce padding for smaller devices */
+    }
+  
+    .wrapper h1 {
+      margin: 15px 0; /* Reduce margin for heading */
+    }
+  
+    .imageGroup {
+      width: clamp(4rem, 2rem + 15vmin, 12rem); /* Smaller size for tablets */
+      padding: calc(clamp(4rem, 2rem + 15vmin, 12rem) / 10);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .appContainer {
+      height: auto; /* Keep it flexible for mobile devices */
+      padding: 5px 0; /* Further reduce padding for mobile */
+    }
+  
+    .wrapper h1 {
+      margin: 10px 0; /* Even smaller margin for mobile */
+    }
+  
+    .imageGroup {
+      width: clamp(3rem, 2rem + 10vmin, 10rem); /* Even smaller size for mobile */
+      padding: calc(clamp(3rem, 2rem + 10vmin, 10rem) / 10);
+    }
+  
+    .image {
+      width: 90%; /* Adjust image width for mobile */
+      padding: 5px 10px; /* Adjust padding for mobile */
+    }
+  }
+  

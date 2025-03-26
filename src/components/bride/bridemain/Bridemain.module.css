@@ -1,0 +1,160 @@
+.Bridemain{
+    display: flex;
+    margin-top: 70px;
+    margin-left: 150px;
+    margin-right: 100px;
+}
+.sidebar {
+  width: 30%;
+  position: sticky;
+  top: 0;
+  height: 150vh; /* Adjust height */
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding: 1em;
+  -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+}
+
+.mainContent{
+    width: 80%;
+}
+/* Assuming you are using a CSS module or global styles */
+.searchWrapper {
+  margin-left: 430px;
+  position: relative; /* Needed to position the icon inside the input */
+  width: 100%;
+  border-radius: 50px;
+  max-width: 400px; /* Adjust based on your design */
+}
+
+.searchInput {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 30px 12px 12px; /* Adjust padding for better look */
+  /* border-radius:200px;  */
+  border: 100px solid #4173b9;
+  background-color: rgb(255, 253, 253);
+  font-size: 16px; /* Adjust font size if needed */
+  box-sizing: border-box; /* Ensure padding + border is included in the width */
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+margin-top: 10px;
+  border-radius: 30px;
+  right: 10px; /* Adjust right position */
+  transform: translateY(-50%); /* Center the icon vertically */
+  color: #888; /* Icon color */
+  cursor: pointer;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .Bridemain {
+      flex-direction: row; /* Stack elements vertically */
+      align-items: center; /* Center items horizontally */
+      margin-top: 20px; /* Reduce margin for smaller screens */
+    }
+  
+    .main,
+    .containmain {
+      width: 50%; /* Take up most of the screen width */
+      margin-bottom: 20px; /* Add spacing between stacked elements */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Bridemain {
+      margin-top: 10px; /* Further reduce top margin for very small screens */
+    }
+  
+    .main,
+    .containmain {
+      width: 100%; /* Full width for narrow devices */
+      margin-bottom: 15px; /* Adjust spacing between elements */
+    }
+  }
+
+
+
+
+/* ================= RESPONSIVE STYLES ================= */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .Bridemain {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .sidebar {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Allow content to dictate height */
+    position: relative; /* Remove sticky effect */
+    padding-bottom: 20px; /* Adds some spacing */
+  }
+
+  .mainContent {
+    width: 100%; /* Full width */
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .Bridemain {
+    margin-top: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
+
+  .searchWrapper {
+    max-width: 300px; /* Reduce width for smaller screens */
+  }
+
+  .searchInput {
+    font-size: 14px;
+    padding: 10px 35px 10px 10px;
+  }
+}
+
+/* Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .Bridemain {
+    margin-top: 10px;
+    padding: 0 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
+
+  .searchWrapper {
+    max-width: 100%; /* Full width on small screens */
+  }
+
+  .searchInput {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

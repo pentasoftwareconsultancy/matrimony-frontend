@@ -1,0 +1,344 @@
+/* General Layout */
+.profileContainer {
+  margin-top: 70px;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../images/background1.jpg);
+  background-color: #fafafa;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center; /* Center on mobile */
+  margin-left: 0; /* Remove fixed margin */
+}
+
+.profileContent {
+  margin-top: 60px;
+}
+
+.main {
+  display: flex;
+  gap: 20px; /* Reduced gap for mobile */
+  flex-direction: column; /* Stack vertically by default */
+}
+
+.downloadButton {
+  justify-content: center;
+  margin-left: 0; /* Center on mobile */
+  text-align: center;
+}
+
+.actions {
+  justify-content: center;
+  margin-left: 0; /* Center on mobile */
+  text-align: center;
+}
+
+.manicard {
+  width: 100%; /* Full width on mobile */
+}
+
+.maintext {
+  margin-top: 0; /* Adjusted for mobile */
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  gap: 20px;
+  text-align: center; /* Center text on mobile */
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.text {
+  margin-left: 0; /* Remove fixed margin */
+  font-size: 40px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.partner {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+/* Image Section */
+.imageSection {
+  position: relative; /* Changed from fixed for mobile */
+  width: 100%; /* Full width on mobile */
+  padding-top: 10px;
+}
+
+.profileImage {
+  margin-top: 20px; /* Reduced margin */
+  width: 100%; /* Full width on mobile */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10%;
+  border: 5px solid #ddd;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profileImage:hover {
+  transform: scale(1.05);
+}
+
+/* Profile Section */
+.detailsSection,
+.educationSection,
+.familySection,
+.patrikaSection,
+.partnerSection {
+  background-color: #ffffff;
+  padding: 20px; /* Reduced padding for mobile */
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.detailsSection h2,
+.educationSection h2,
+.familySection h2,
+.patrikaSection h2,
+.partnerSection h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.detailsSection p,
+.educationSection p,
+.familySection p,
+.patrikaSection p,
+.partnerSection p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.detailsSection p strong,
+.educationSection p strong,
+.familySection p strong,
+.patrikaSection p strong,
+.partnerSection p strong {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Hover Effect for Sections */
+.detailsSection:hover,
+.educationSection:hover,
+.familySection:hover,
+.patrikaSection:hover,
+.partnerSection:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Partner Section Styles */
+.partnerSection p {
+  margin-left: 0; /* Adjusted for mobile */
+}
+
+/* Media Queries for Desktop Responsiveness */
+@media (min-width: 1024px) {
+  /* Smaller desktop screens */
+  .profileContainer {
+    margin-left: 80px;
+  }
+
+  .name {
+    margin-right: 0;
+    text-align: right;
+  }
+
+  .text {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* Medium desktop screens */
+  .imageSection {
+    width: 55%;
+  }
+
+  .profileImage {
+    width: 60%;
+  }
+
+  .manicard {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1920px) {
+  /* Large desktop screens (e.g., 4K) */
+  .profileContainer {
+    max-width: 85%; /* Slightly reduce max-width for very large screens */
+  }
+
+  .imageSection {
+    width: 50%; /* Slightly smaller image section */
+  }
+
+  .profileImage {
+    width: 55%; /* Adjust image size */
+  }
+
+  .name {
+    font-size: 48px; /* Larger font for readability */
+  }
+
+  .text {
+    font-size: 48px;
+  }
+
+  .header h1 {
+    font-size: 42px;
+  }
+
+  .detailsSection,
+  .educationSection,
+  .familySection,
+  .patrikaSection,
+  .partnerSection {
+    padding: 40px; /* More padding for larger screens */
+  }
+}
+
+@media (max-width: 1023px) {
+  /* Transition to tablet or smaller desktop */
+  .main {
+    flex-direction: column; /* Stack for smaller desktops */
+  }
+
+  .imageSection {
+    position: relative; /* Avoid overlap */
+    width: 100%;
+  }
+
+  .profileImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .manicard {
+    width: 100%;
+  }
+
+  .downloadButton,
+  .actions {
+    margin-left: 0;
+  }
+}
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  /* Tablet and Desktop */
+  .profileContainer {
+    margin-left: 80px;
+  }
+
+  .name {
+    margin-left: 850px;
+    text-align: left;
+  }
+
+  .main {
+    flex-direction: row; /* Side-by-side layout */
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .downloadButton {
+    margin-left: 155px;
+  }
+
+  .actions {
+    margin-left: 209px;
+  }
+
+  .manicard {
+    width: 60%;
+  }
+
+  .maintext {
+    margin-top: -70px;
+  }
+
+  .text {
+    margin-left: 750px;
+  }
+
+  .partner {
+    grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+  }
+
+  .imageSection {
+    position: fixed; /* Fixed positioning for larger screens */
+    top: 0;
+    width: 55%;
+  }
+
+  .profileImage {
+    margin-top: 68px;
+    width: 60%;
+    height: 88vh;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small Mobile Devices */
+  .name {
+    font-size: 28px; /* Smaller font */
+  }
+
+  .text {
+    font-size: 28px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .detailsSection h2,
+  .educationSection h2,
+  .familySection h2,
+  .patrikaSection h2,
+  .partnerSection h2 {
+    font-size: 20px; /* Smaller headings */
+  }
+
+  .detailsSection p,
+  .educationSection p,
+  .familySection p,
+  .patrikaSection p,
+  .partnerSection p {
+    font-size: 14px; /* Smaller text */
+  }
+
+  .profileContainer {
+    padding: 10px; /* Reduced padding */
+  }
+}

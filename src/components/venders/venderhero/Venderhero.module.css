@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+.pageContainer {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Barlow', sans-serif;
+  width: 88%;
+  height: 80vh;
+  border-radius: 30px;
+  margin-top: 80px;
+  margin-left: 100px;
+  margin-right: 100px;
+  position: relative;
+}
+
+.spContainer {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-radius: 30px;
+  width: 100%; /* Changed to 100% to fit within pageContainer */
+  height: 80vh;
+  background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+}
+
+.spContent {
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  padding-left: 50px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.big {
+  font-size: 80px;
+  color: transparent;
+  text-shadow: 0px 0px 1px #fff;
+  animation: blurFadeIn 1s ease-in 1s backwards;
+}
+
+.success {
+  font-size: 30px;
+  color: transparent;
+  text-shadow: 0px 0px 1px #fff;
+  animation: blurFadeIn 1s ease-in 1s backwards;
+}
+
+.sell {
+  font-size: 40px;
+  color: transparent;
+  text-shadow: 0px 0px 1px #fff;
+  animation: blurFadeIn 1s ease-in 1s backwards;
+}
+
+@keyframes blurFadeIn {
+  0% {
+    opacity: 1;
+    text-shadow: 0px 0px 40px #fff;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    text-shadow: 0px 0px 10px #fff;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0px 0px 1px #fff;
+    transform: scale(1);
+  }
+}
+
+.sp-circle-link {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  margin-left: -50px;
+  text-align: center;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  color: #3f1616;
+  font-size: 25px;
+  border-radius: 50%;
+  animation: fadeInRotate 1s linear 1s backwards;
+}
+
+.sp-circle-link:hover {
+  background: #85373b;
+  color: #fff;
+}
+
+@keyframes fadeInRotate {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pageContainer {
+    width: 90%;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 60px;
+    height: 70vh;
+    border-radius: 25px;
+  }
+
+  .spContainer {
+    height: 70vh;
+    border-radius: 25px;
+  }
+
+  .spContent {
+    padding-top: 150px;
+    padding-left: 30px;
+  }
+
+  .big {
+    font-size: 60px;
+  }
+
+  .success {
+    font-size: 25px;
+  }
+
+  .sell {
+    font-size: 35px;
+  }
+
+  .sp-circle-link {
+    bottom: 80px;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    margin-left: -45px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    width: 92%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+    height: 65vh;
+    border-radius: 20px;
+  }
+
+  .spContainer {
+    height: 65vh;
+    border-radius: 20px;
+  }
+
+  .spContent {
+    padding-top: 120px;
+    padding-left: 20px;
+  }
+
+  .big {
+    font-size: 50px;
+  }
+
+  .success {
+    font-size: 22px;
+  }
+
+  .sell {
+    font-size: 30px;
+  }
+
+  .sp-circle-link {
+    bottom: 60px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin-left: -40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageContainer {
+    width: 95%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    height: 60vh;
+    border-radius: 15px;
+  }
+
+  .spContainer {
+    height: 60vh;
+    border-radius: 15px;
+  }
+
+  .spContent {
+    padding-top: 80px;
+    padding-left: 15px;
+  }
+
+  .big {
+    font-size: 40px;
+  }
+
+  .success {
+    font-size: 18px;
+  }
+
+  .sell {
+    font-size: 24px;
+  }
+
+  .sp-circle-link {
+    bottom: 40px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    margin-left: -35px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .pageContainer {
+    width: 98%;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 55vh;
+    border-radius: 10px;
+  }
+
+  .spContainer {
+    height: 55vh;
+    border-radius: 10px;
+  }
+
+  .spContent {
+    padding-top: 60px;
+    padding-left: 10px;
+  }
+
+  .big {
+    font-size: 32px;
+  }
+
+  .success {
+    font-size: 16px;
+  }
+
+  .sell {
+    font-size: 20px;
+  }
+
+  .sp-circle-link {
+    bottom: 30px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -30px;
+    font-size: 16px;
+  }
+}
+
+/* Disable hover effects on mobile */
+@media (max-width: 768px) {
+  .sp-circle-link:hover {
+    background: #fff;
+    color: #3f1616;
+  }
+}

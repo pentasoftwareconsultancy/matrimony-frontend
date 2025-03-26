@@ -1,0 +1,370 @@
+
+
+  .contactInfo{
+    padding-top: 50px;
+    width: 100%;
+    padding-bottom: 50px;
+    margin-left: 10px;
+    padding-left: 50px;
+    margin-top: 25px;
+    padding-right: 70px;
+    box-shadow: 0 4px 8px 0 rgb(107, 106, 106);
+    background-color: white;
+    text-align: center;
+
+  }
+  .contact{
+    font-size: 30px;
+  }
+  .add{
+    margin-top: 10px;
+  }
+ .emain{
+   margin-top: 10px;
+  }
+  .mobile{
+margin-top: 10px;
+  }
+  .time{
+margin-top: 10px;
+  }
+  .sunday{
+    margin-top: 10px;
+  }
+  .contactForm h2 {
+    text-align: center;
+    color:black;
+    margin-bottom: 20px;
+    font-size: 35px;
+  }
+  
+  .contactForm label {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 8px;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .contactForm input,
+  .contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .contactForm textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .recaptcha {
+    display: flex;
+    /* padding-left: 200px;
+    padding-right: 100px; */
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .recaptcha input {
+ padding-left: 300px;
+  }
+  .robot{
+  width: 20vh;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Contact.module.css */
+
+/* Section Styles */
+.contactform {
+  background-color: #f5f5f5;
+  padding: 60px 0;
+  /* margin-top: -100px; */
+  /* margin: 90px; */
+  /* width: 80%; */
+margin-top: 80px;
+margin-left: 200px;
+margin-right: 200px;
+  /* display: flex; */
+  justify-content: center;
+  border-radius: 30px;
+  background-image: url(../video/frower1.webp);
+  align-items: center;
+}
+/* Style for the background video */
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Keeps the video behind the form */
+}
+
+.backgroundVideo video {
+  object-fit: cover; /* Ensures the video covers the entire container */
+  width: 100%;
+  height: 100%;
+}
+
+.maincontact{
+  display: grid;
+  /* background-color: #ddd; */
+  box-shadow: #999;
+  width: 90%;
+  padding: 40px;
+  grid-template-columns: 1fr 1fr;
+}
+.heading {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.heading span {
+  color: #ff5722;
+}
+
+/* Form Box */
+.contactformbox {
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  height: 95vh;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Form Fields */
+.contactformfield {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.contactformfield input,
+.messageboxfield textarea {
+  width: 90%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  /* height: 10%; */
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.messageboxfield{
+  width: 99%;
+  height: 5vh;
+}
+.contactformfield input:focus,
+.messageboxfield textarea:focus {
+  border-color: #ff5722;
+}
+
+.contactformfield input::placeholder,
+.messageboxfield textarea::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+.messageboxfield textarea {
+  resize: none;
+}
+.focus{
+  height: 10vh;
+}
+/* Focus Span (For Custom Input Animation) */
+/* .focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border: 2px solid #ff5722;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+} */
+
+.contactformfield input:focus + .focus,
+.messageboxfield textarea:focus + .focus {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Submit Button */
+.bottonbox {
+  text-align: center;
+  /* width: 50px; */
+  margin-top: 20px;
+}
+
+.bottonbox .btn {
+  background: rgb(200,138,242);
+background: linear-gradient(90deg, rgba(200,138,242,1) 7%, rgba(235,149,181,1) 46%, rgb(244, 70, 137) 98%);
+  color: white;
+  padding: 12px 30px;
+  width: 150px;
+  border: none;
+  border-radius: 15px 0 15px 15px;
+  margin-top: 30px;
+
+  cursor: pointer;
+  /* justify-content: center; */
+  margin-left: 500px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.bottonbox .btn:hover{
+  background: rgb(200,138,242);
+  background: linear-gradient(90deg, rgb(237, 124, 163) 7%, rgba(235,149,181,1) 46%, rgb(203, 118, 245) 98%);
+}
+.bottonbox .btn:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactformbox {
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .contactformfield input,
+  .messageboxfield textarea {
+    font-size: 14px;
+  }
+
+  .bottonbox .btn {
+    font-size: 14px;
+  }
+}
+
+
+
+/* General adjustments for mobile responsiveness */
+@media (max-width: 768px) {
+  .contactInfo {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-shadow: none; /* You can keep or remove shadow as needed */
+  }
+
+  .contact {
+    font-size: 24px; /* Adjusted for smaller screens */
+  }
+
+  .contactForm h2 {
+    font-size: 28px; /* Adjusted for smaller screens */
+  }
+
+  .contactForm label {
+    font-size: 16px; /* Adjusted for smaller screens */
+  }
+
+  .contactForm input,
+  .contactForm textarea {
+    font-size: 14px; /* Adjusted for smaller screens */
+    padding: 8px;
+  }
+
+  .contactForm textarea {
+    height: 80px; /* Adjusted for mobile devices */
+  }
+
+  .recaptcha {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .recaptcha input {
+    padding-left: 0;
+  }
+
+  .robot {
+    width: 10vh; /* Adjust size for mobile screens */
+  }
+
+  /* Mobile-friendly adjustments for contact form */
+  .contactform {
+    padding: 30px 20px;
+    margin-left: 0;
+    margin-right: 0;
+    background-image: none; /* Remove background video/image */
+  }
+
+  .backgroundVideo {
+    display: none; /* Hide the background video on mobile */
+  }
+
+  .maincontact {
+    display: block; /* Stacks the contact form fields */
+    width: 100%;
+    padding: 0;
+  }
+
+  .contactformbox {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: none; /* Optional: you can remove the shadow on smaller devices */
+    border-radius: 8px;
+  }
+
+  .contactformfield {
+    margin-bottom: 15px; /* Less space between form fields */
+  }
+
+  .contactformfield input,
+  .messageboxfield textarea {
+    width: 100%; /* Full width on mobile */
+    padding: 12px 16px; /* Slightly larger padding for better usability */
+    font-size: 16px;
+  }
+
+  .messageboxfield textarea {
+    height: 150px; /* Adjusted for mobile */
+    resize: none;
+  }
+
+  /* Mobile button adjustments */
+  .bottonbox .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; /* Slightly smaller font size */
+    margin-left: 0; /* Center button */
+    margin-top: 20px; /* Better spacing on mobile */
+  }
+}

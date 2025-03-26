@@ -1,0 +1,84 @@
+.container {
+    /* margin: 20px; */
+    margin-top: 20px;
+    padding: 5px;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    background-color: white;
+    width: 99%;
+    /* max-width: 410px; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .income {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 10px;
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  .toggleButton {
+    background: none;
+    border: none;
+    font-size: 16px;
+    /* margin-right: 0px; */
+ margin-left: 113px;
+    cursor: pointer;
+    padding: 20px;
+    color: #151617;
+    /* background-color: rgb(244, 64, 64); */
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .toggleButton:hover {
+    color: #0b0b0b;
+    background-color:white;
+  }
+  .title{
+     /* display: flex; */
+     justify-content: space-between;
+     /* align-items: center; */
+     font-size: 16px;
+     margin: 0;
+     /* display: flex; */
+     padding-bottom: 10px;
+     margin-top: 10px;
+     /* border-bottom: 1px solid #ddd; */
+  }
+  .dropdown {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  .dropdown label {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown label:hover {
+    background-color: #f1f1f1;
+  }
+  
+  input[type="radio"] {
+    cursor: pointer;
+    margin: 0;
+  }
+  
+  input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: #007bff;
+  }
+  

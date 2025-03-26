@@ -1,0 +1,118 @@
+.testimonialContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: rgb(200,138,242); */
+    background-image: linear-gradient(to top, #f4dcf1 0%, #d3eaf5 100%);
+    border-radius: 10px;
+    max-width: 80%;
+    margin-bottom: 50px;
+    margin-left: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: opacity 0.5s ease-in-out;
+    gap: 20px; /* Space between image and text */
+    overflow: hidden;
+    /* padding: 20px; */
+}
+  
+  .imageContainer {
+    width: 50%; 
+    height: 60vh; 
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .imageContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  .textContainer {
+    flex: 1; /* Takes the remaining space */
+    max-width: 70%;
+    text-align: justify;
+    padding: 20px;
+    padding-right: 50px;
+  }
+  
+  .text {
+    font-size: 18px;
+    color: white;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .button {
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #e0484d;
+  }
+  
+  /* Animations */
+  .fadeInLeft {
+    animation: fadeInLeft 0.5s ease-in-out;
+  }
+  
+  .fadeInRight {
+    animation: fadeInRight 0.5s ease-in-out;
+  }
+  
+  .fadeOut {
+    opacity: 0;
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .testimonialContainer {
+      flex-direction: column;
+      text-align: center;
+      margin-left: 0;
+    }
+  
+    .imageContainer {
+      width: 100%;
+      height: 40vh;
+    }
+  
+    .textContainer {
+      max-width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  

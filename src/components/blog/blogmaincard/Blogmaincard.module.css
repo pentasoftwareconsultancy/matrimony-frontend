@@ -1,0 +1,158 @@
+.blogPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: clamp(40px, 8vw, 80px); /* Responsive margin */
+  width: 100%;
+  margin-right: clamp(20px, 5vw, 100px); /* Responsive margin */
+  box-sizing: border-box;
+}
+
+.fullScreenImg {
+  width: clamp(70%, 90vw, 80%); /* Scales between 70% and 80% */
+  height: clamp(40vh, 50vw, 70vh); /* Responsive height */
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.contentWrapper {
+  display: flex;
+  margin-top: clamp(15px, 3vw, 30px);
+  width: clamp(80%, 95vw, 90%); /* Responsive width */
+  max-width: 100%;
+  align-items: flex-start;
+  gap: clamp(10px, 2vw, 20px); /* Responsive gap */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Left Side - Latest Blogs */
+.leftCard {
+  width: clamp(200px, 25vw, 20%); /* Responsive width */
+  position: sticky;
+  top: clamp(10px, 2vw, 20px);
+  background: #f8f9fa;
+  padding: clamp(10px, 2vw, 20px);
+  margin-bottom: clamp(20px, 4vw, 50px);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+.blog {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: bold;
+}
+
+.cantentmain {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: #333;
+}
+
+.react {
+  color: rgb(254, 254, 255);
+  background-color: #ff5069;
+  width: clamp(100px, 20vw, 150px); /* Responsive width */
+  margin-left: clamp(20px, 4vw, 40px);
+  padding: clamp(5px, 1vw, 10px);
+  border-radius: 15px 0 15px 15px;
+  cursor: pointer;
+  text-align: center; /* Added for better alignment */
+}
+
+/* Right Side - Blog Main Card */
+.mainCard {
+  flex: 2;
+  margin-left: clamp(20px, 5vw, 70px);
+  padding-left: clamp(20px, 5vw, 100px);
+  padding-right: clamp(20px, 5vw, 50px);
+  margin-right: clamp(20px, 5vw, 70px);
+  background: white;
+  padding: clamp(20px, 5vw, 60px);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensures it takes full width on smaller screens */
+  box-sizing: border-box;
+}
+
+.header {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: clamp(5px, 1vw, 10px);
+}
+
+.author,
+.category,
+.published,
+.timestamp {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: #555;
+}
+
+.content {
+  text-align: justify;
+  margin-top: clamp(5px, 1vw, 10px);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.timestamp {
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  color: gray;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .contentWrapper {
+      flex-direction: column; /* Stack vertically on tablets/mobile */
+      width: 95%; /* Slightly wider on smaller screens */
+  }
+
+  .leftCard {
+      position: static; /* Remove sticky positioning on mobile */
+      width: 100%; /* Full width on smaller screens */
+      margin-bottom: 20px;
+  }
+
+  .mainCard {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 20px; /* Consistent padding on all sides */
+  }
+
+  .fullScreenImg {
+      width: 100%; /* Full width on mobile */
+      height: 50vh; /* Adjust height */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blogPage {
+      margin-top: 20px;
+      margin-right: 10px;
+  }
+
+  .fullScreenImg {
+      height: 40vh; /* Smaller height for tiny screens */
+      border-radius: 10px; /* Slightly smaller radius */
+  }
+
+  .contentWrapper {
+      gap: 10px;
+  }
+
+  .leftCard {
+      padding: 15px;
+  }
+
+  .mainCard {
+      padding: 15px;
+  }
+
+  .react {
+      width: 100px;
+      margin-left: 0; /* Center on very small screens */
+      margin-right: auto;
+      margin-left: auto;
+      display: block; /* Ensures centering */
+  }
+}

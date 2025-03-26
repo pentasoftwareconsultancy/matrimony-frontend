@@ -1,0 +1,399 @@
+/* Card Detail Container */
+.cardDetail {
+  width: 80%;
+  margin: 80px auto;
+  padding: 20px;
+  background: radial-gradient(circle, rgba(251,63,212,1) 0%, rgba(94,61,244,0.9360994397759104) 27%, rgba(221,62,228,1) 61%, rgba(227,64,103,1) 76%, rgba(232,65,139,0.9697128851540616) 89%, rgba(134,70,252,1) 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.name {
+  font-size: 55px;
+  margin-top: 20px;
+  color: rgb(22, 22, 22);
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.eventContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.imagemain {
+  width: 55%;
+  height: 70vh;
+  border-radius: 8px;
+  margin-right: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imagemain:hover {
+  transform: scale(1.05);
+}
+
+.descriptionmain {
+  margin-left: 100px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-right: 150px;
+  text-align: justify;
+}
+
+.textContent {
+  width: 50%;
+  margin-left: 70px;
+}
+
+.description, .content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 19px;
+  margin-left: 50px;
+}
+
+.eventDetails {
+  font-size: 25px;
+  color: #706e6e;
+  margin-bottom: 10px;
+}
+
+.eventDetails strong {
+  color: #131212;
+}
+
+.participantTitle {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ff5069;
+  padding-bottom: 5px;
+}
+
+.participantsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.participant {
+  flex: 1 1 calc(50% - 20px);
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.participant:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  background-color: #fff5f5;
+}
+
+.participant h4 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.participant p {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.participant p strong {
+  color: #ff5069;
+}
+
+.attendees {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fffdfd;
+}
+
+.maincard {
+  display: grid;
+  padding-left: 80px;
+  list-style-type: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.attendeesList {
+  list-style: none;
+  padding: 0;
+}
+
+.attendeemain {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.attendee {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 15px;
+  width: 90%;
+  align-items: center;
+  height: 40vh;
+}
+
+.attendeeImage {
+  width: 100%;
+  height: 20vh;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.phone {
+  margin-left: 15px;
+}
+
+.attendeeDetails {
+  gap: 10px;
+}
+
+.attendeeDetails p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cardDetail {
+    width: 90%;
+    margin: 60px auto;
+    padding: 15px;
+  }
+
+  .name {
+    font-size: 45px;
+    margin-bottom: 25px;
+  }
+
+  .imagemain {
+    width: 50%;
+    height: 60vh;
+  }
+
+  .descriptionmain {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .textContent {
+    width: 60%;
+    margin-left: 30px;
+  }
+
+  .maincard {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardDetail {
+    width: 95%;
+    margin: 40px auto;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .name {
+    font-size: 35px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  .eventContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagemain {
+    width: 80%;
+    height: 50vh;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .descriptionmain {
+    margin: 20px 20px;
+  }
+
+  .textContent {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .eventDetails {
+    font-size: 20px;
+  }
+
+  .participantTitle {
+    font-size: 1.3rem;
+  }
+
+  .participantsGrid {
+    gap: 15px;
+  }
+
+  .participant {
+    flex: 1 1 100%;
+    padding: 15px;
+  }
+
+  .participant h4 {
+    font-size: 1.1rem;
+  }
+
+  .maincard {
+    grid-template-columns: 1fr;
+    padding-left: 20px;
+  }
+
+  .attendeemain {
+    font-size: 25px;
+  }
+
+  .attendee {
+    height: 35vh;
+  }
+
+  .attendeeImage {
+    height: 18vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardDetail {
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .name {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .imagemain {
+    width: 90%;
+    height: 40vh;
+  }
+
+  .descriptionmain {
+    margin: 15px 10px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .eventDetails {
+    font-size: 16px;
+  }
+
+  .participantTitle {
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+
+  .participant {
+    padding: 12px;
+  }
+
+  .participant h4 {
+    font-size: 1rem;
+  }
+
+  .participant p {
+    font-size: 0.9rem;
+  }
+
+  .attendees {
+    padding: 15px;
+  }
+
+  .attendeemain {
+    font-size: 20px;
+  }
+
+  .attendee {
+    height: 30vh;
+    padding: 10px;
+  }
+
+  .attendeeImage {
+    height: 15vh;
+  }
+}
+
+@media (max-width: 360px) {
+  .name {
+    font-size: 24px;
+  }
+
+  .imagemain {
+    height: 35vh;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .eventDetails {
+    font-size: 14px;
+  }
+
+  .participantTitle {
+    font-size: 1rem;
+  }
+
+  .participant p {
+    font-size: 0.85rem;
+  }
+
+  .attendeemain {
+    font-size: 18px;
+  }
+
+  .attendee {
+    height: 28vh;
+  }
+}
+
+/* Disable hover effects on mobile */
+@media (max-width: 768px) {
+  .imagemain:hover,
+  .participant:hover {
+    transform: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}

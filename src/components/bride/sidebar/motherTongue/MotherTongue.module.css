@@ -1,0 +1,45 @@
+.main{
+    background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 99%;
+      border-radius: 10px;
+}
+.mother{
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+}
+.language{
+background-color: white;
+margin-left: 110px;
+
+color: black;
+}
+.language:hover{
+    background-color: white;
+}
+.mainlanguage input{
+    /* margin-left: 10px; */
+    gap: 10px;
+}
+.radio{
+    margin-right: 10px;
+    /* margin-left: 10px; */
+    gap: 20px;
+    /* padding-right: 10px; */
+    
+}
+.dropdown{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+   
+}
+.mainradio {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 10px; /* Adds gap between the radio button and the label */
+    margin-bottom: 0.5em; /* Adds space between individual options */
+  }

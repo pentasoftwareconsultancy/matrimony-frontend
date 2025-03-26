@@ -1,0 +1,137 @@
+.card {
+  display: flex;
+  flex-direction: row; /* Default: horizontal layout */
+  align-items: center; /* Center items vertically */
+  text-decoration: none; /* Remove link underline */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 3px 0;
+  margin-left: 50px; /* Adjusted for desktop */
+  width: 100%;
+  max-width: 100%; /* Prevent overflow */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none; /* Prevent text selection */
+  overflow: hidden; /* Ensure content stays inside */
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.image {
+  width: 50%; /* Default width */
+  height: 29vh; /* Default height */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 10px;
+  margin-right: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: -5px;
+  border: 2px solid #ccc;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+}
+
+.maintext {
+  margin-top: 50px;
+  word-wrap: break-word; /* Ensure text wraps */
+}
+
+.cardmain {
+  width: 50%; /* Default width */
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.title {
+  font-size: 1rem;
+  color: #666;
+  margin: 4px 0 0;
+}
+
+.email {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #555;
+  word-break: break-word; /* Break long emails */
+}
+
+.maintext p {
+  margin: 0;
+  white-space: normal; /* Allow text wrapping */
+  line-height: 1.4; /* Readability */
+  max-height: calc(100% - 80px); /* Contain text */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Truncate overflow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablets and smaller */
+  .card {
+      flex-direction: column; /* Stack items vertically */
+      margin-left: 0; /* Remove left margin for smaller screens */
+     /* Add padding for better spacing */
+  }
+
+  .image {
+      width: 100%; /* Full width on mobile */
+      height: 20vh; /* Adjust height for mobile */
+      margin-right: 0; /* Remove right margin */
+      margin-bottom: 10px; /* Add spacing below image */
+  }
+
+  .cardmain {
+      width: 100%; /* Full width on mobile */
+  }
+.main{
+  display: block;
+}
+  .maintext {
+      margin-top: 1px; /* Reduce top margin */
+      margin-bottom: 10px;
+      text-align: center; /* Center text on mobile */
+  }
+}
+
+@media (max-width: 480px) { /* Small mobile devices */
+  .name {
+      font-size: 1rem; /* Reduce font size */
+  }
+
+  .title {
+      font-size: 0.9rem;
+  }
+
+  .email {
+      font-size: 12px;
+  }
+
+  .image {
+      height: 17vh; /* Further adjust height */
+      width: 100%;
+  }
+}
+
+/* Hide flex areas on desktop (if this is what you meant by "desple flext are hide") */
+@media (min-width: 769px) {
+  .cardmain {
+      display: flex; /* Keep visible on desktop */
+  }
+}
+
+/* Optionally hide .cardmain on mobile if that’s your intent */
+@media (max-width: 768px) {
+  .cardmain {
+      display: none; /* Hide on mobile if desired */
+  }
+}

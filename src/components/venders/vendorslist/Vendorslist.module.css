@@ -1,0 +1,27 @@
+.cardGrid {
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    margin-left: auto; /* Changed from fixed 150px */
+    margin-right: auto; /* Changed from fixed 400px */
+    max-width: 1200px; /* Optional: prevents grid from getting too wide */
+    width: 100%; /* Ensures it takes full available width */
+}
+
+/* Tablet and Mobile Adjustments */
+@media screen and (max-width: 1024px) {
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+        padding: 15px; /* Slightly reduced padding */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardGrid {
+        grid-template-columns: 1fr; /* One column for mobile */
+        padding: 10px; /* Further reduced padding */
+        margin-top: 30px; /* Reduced top margin for smaller screens */
+    }
+}

@@ -1,0 +1,215 @@
+/* Keyframes for the lift-up animation */
+@keyframes liftUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Start below the row */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End at the normal position */
+    }
+  }
+  
+  /* Initial state for feature items (hidden and down) */
+  .featuresDivWrap ul.featuresUl li {
+    opacity: 0;
+    transform: translateY(50px); /* Initially below and invisible */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  /* When the feature item becomes visible */
+  .featuresDivWrap ul.featuresUl li.visible {
+    animation: liftUp 0.5s ease-out forwards; /* Apply liftUp animation */
+  }
+  
+  .featuresDivWrap ul.featuresUl {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between rows */
+    align-items: flex-start; /* Start alignment */
+    margin-top: 10rem;
+    margin-top: 30px;
+  }
+  
+  .featuresDivWrap ul.featuresUl li {
+    background: red;
+    width: 50%; /* Set width for rows */
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    border-radius: 30px 0 30px 0; /* Optional: Rounded corners */
+    padding: 15px 20px; /* Padding inside each row */
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: auto; /* Allow dynamic height for content */
+    margin: 0; /* Remove margin since gap is used */
+    position: relative; /* Allows using positioning for offset */
+  }
+  
+  .featuresDivWrap ul.featuresUl li:nth-child(odd) {
+    align-self: flex-start; /* Align to the left */
+    margin-left: 40%;
+  }
+  
+  .featuresDivWrap ul.featuresUl li:nth-child(even) {
+    align-self: flex-end; /* Align to the right */
+    margin-right: 40%;
+  }
+  
+  .featuresDivWrap ul.featuresUl li .featuresImg {
+    background: #f31313;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 4px 5px #0d0d0d;
+    font-size: x-large;
+    margin-right: 15px; /* Space between icon and text */
+  }
+  
+  .featuresDivWrap ul.featuresUl li .featuresText {
+    font-size: 30px;
+    line-height: 1.5; /* Better line spacing for readability */
+    color: white;
+    text-align: left;
+    text-align: center;
+    font-size: 20px;
+    flex-grow: 1; /* Allow text to take remaining space */
+  }
+  
+  .featuresDivWrap ul.featuresUl li:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Alternating background colors */
+  .featuresDivWrap ul.featuresUl li:nth-child(1) { background:rgb(243, 75, 75); }
+  .featuresDivWrap ul.featuresUl li:nth-child(2) { background:rgb(248, 179, 51); }
+  .featuresDivWrap ul.featuresUl li:nth-child(3) { background:rgb(246, 246, 66); }
+  .featuresDivWrap ul.featuresUl li:nth-child(4) { background: rgb(51, 181, 51); }
+  .featuresDivWrap ul.featuresUl li:nth-child(5) { background:rgb(74, 74, 235); }
+  .featuresDivWrap ul.featuresUl li:nth-child(6) { background: rgb(139, 65, 191); }
+  .featuresDivWrap ul.featuresUl li:nth-child(7) { background: Violet; }
+  .featuresDivWrap ul.featuresUl li:nth-child(8) { background: rgb(84, 64, 84); }
+  
+  .featuresDivWrap ul.featuresUl li:nth-child(even) {
+    transform: translateX(30%); /* Shift even rows to the right */
+  }
+  
+  .container {
+    background-color: #fae9e9;
+    padding-left: 150px;
+    padding-bottom: 50px;
+    padding-right: 150px;
+    margin-top: 10px;
+    color: rgb(165, 25, 25);
+  }
+  
+  .sectionTitle {
+    padding-top: 40px;
+    text-align: center;
+    font-size: x-large;
+    color: black;
+    margin-top: -20px;
+  }
+  
+  
+
+
+  /* Mobile responsiveness */
+
+/* Base styling remains the same */
+
+/* Responsive Adjustments for Medium Devices (1024px and below) */
+@media (max-width: 1024px) {
+  .featuresDivWrap ul.featuresUl li {
+      width: 100%; /* Slightly narrower for medium screens */
+      margin-left: auto;
+      margin-right: auto; /* Center align for consistency */
+  }
+
+  .featuresDivWrap ul.featuresUl li .featuresText {
+      font-size: 19px; /* Adjust font size */
+      text-align: center;
+  }
+
+  .featuresDivWrap ul.featuresUl li .featuresImg {
+      height: 45px;
+      width: 45px;
+  }
+
+  .sectionTitle {
+      font-size: 1.8rem; /* Scale section title */
+  }
+}
+
+/* Responsive Adjustments for Small Devices (768px and below) */
+@media (max-width: 768px) {
+  .featuresDivWrap ul.featuresUl li {
+      width: 100%; /* Slightly more compact width */
+  }
+
+  .featuresDivWrap ul.featuresUl {
+      gap: 10px; /* Reduce gaps */
+  }
+
+  .featuresDivWrap ul.featuresUl li .featuresText {
+      font-size: 16px; /* Reduce font size for readability */
+  }
+
+  .featuresDivWrap ul.featuresUl li .featuresImg {
+      height: 40px;
+      width: 40px; /* Adjust size of the icon */
+  }
+
+  .sectionTitle {
+      font-size: 1.5rem;
+      margin-top: 20px;
+  }
+}
+
+/* Responsive Adjustments for Extra Small Devices (480px and below) */
+@media (max-width: 480px) {
+  .featuresDivWrap ul.featuresUl li {
+      width: 100%; /* Take most of the screen width */
+      margin: 10px auto; /* Center-align each item with space around */
+      align-self: center; /* Ensure items align properly */
+  }
+  .container{
+   margin-left: -100px;
+   padding-right: 150px;
+    /* margin-right: -50px; */
+  }
+
+  /* Adjust flex direction to center-align and stack items */
+  .featuresDivWrap ul.featuresUl {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center-align content */
+      gap: 15px; /* Add space between items */
+  }
+
+  .featuresDivWrap ul.featuresUl li .featuresText {
+      font-size: 14px; /* Reduce text size for readability */
+      line-height: 1.4; /* Improve spacing between lines */
+      text-align: center; /* Center-align text for better presentation */
+  }
+
+  .featuresDivWrap ul.featuresUl li .featuresImg {
+      height: 40px;
+      width: 40px; /* Adjust icon size for smaller devices */
+      margin: 0 auto 10px auto; /* Center the icon above the text */
+  }
+
+  /* Section title adjustments */
+  .sectionTitle {
+      font-size: 1.2rem; /* Adjust title size for smaller screens */
+      margin: 20px 0; /* Add spacing around the title */
+  }
+}
+
+/* Additional responsive fix for horizontal overflow */
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}

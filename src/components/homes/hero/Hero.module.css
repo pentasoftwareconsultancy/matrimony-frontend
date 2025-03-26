@@ -1,0 +1,114 @@
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Slides Wrapper */
+  .slides {
+    display: flex;
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth animation */
+    height: 100%;
+  }
+  
+  /* Individual Slide */
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Animation for Images */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Text Overlay */
+  .textOverlay {
+    /* margin-top: 30px; */
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    /* background: rgba(128, 128, 128, 0.7);  */
+    /* padding: 20px 30px; */
+    border-radius: 8px;
+    animation: slideIn 1.2s ease-in-out;
+  }
+  .textOverlay h1 {
+    font-size: 2.5rem; /* Larger, more impactful font size */
+  font-weight: 700; /* Bold for emphasis */
+  letter-spacing: 1px; /* Slight letter spacing for a modern feel */
+  line-height: 1.2;
+  color: white;
+  margin-top: 200px;
+  margin-bottom: 10px; /* Space between title and subtitle */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow to make text pop */
+  }
+  
+  .textOverlay p {
+    font-size: 1.2rem; /* Smaller than title but still readable */
+    font-weight: 400; /* Normal weight for the subtitle */
+    line-height: 1.6;
+    margin-top: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Light shadow for readability */
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for subtitle */
+  }
+  
+  /* Animation for Text */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 70%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  /* Dots Navigation */
+  .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .dot.active {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  

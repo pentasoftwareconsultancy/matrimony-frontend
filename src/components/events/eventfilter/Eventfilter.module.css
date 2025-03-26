@@ -1,0 +1,155 @@
+/* Eventfilter.module.css */
+
+.container {
+  position: relative;
+  margin-top: -100px;
+  max-width: 990px;
+  margin-left: 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+  padding-bottom: 50px;
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.title {
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: rgb(254, 254, 254);
+}
+
+.searchBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.dropdown {
+  padding: 10px;
+  font-size: 1rem;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff5069;
+  color: white;
+  border: none;
+  border-radius: 15px 0 15px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+}
+
+/* Tablet and Mobile Responsiveness */
+@media (max-width: 990px) {
+  .container {
+      margin-left: 20px;
+      margin-right: 20px;
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      margin-top: -60px;
+      padding: 15px;
+      padding-bottom: 30px;
+      border-radius: 8px;
+  }
+
+  .title {
+      font-size: 28px;
+      margin-bottom: 15px;
+  }
+
+  .searchBox {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .input,
+  .dropdown,
+  .button {
+      width: 100%;
+      max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      margin-top: -40px;
+      padding: 10px;
+      padding-bottom: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .title {
+      font-size: 22px;
+      margin-bottom: 10px;
+  }
+
+  .searchBox {
+      gap: 10px;
+  }
+
+  .input,
+  .dropdown {
+      padding: 8px;
+      font-size: 0.9rem;
+  }
+
+  .button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+      border-radius: 10px 0 10px 10px;
+  }
+
+  .footer {
+      font-size: 0.85rem;
+      margin-top: 15px;
+  }
+}
+
+/* Disable hover effects on mobile */
+@media (max-width: 768px) {
+  .button:hover {
+      background-color: #ff5069; /* Maintain original color on mobile */
+  }
+}

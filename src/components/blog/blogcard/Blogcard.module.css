@@ -1,0 +1,90 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-top: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+.main {
+  display: flex;
+  justify-content: center; /* Centers image horizontally */
+  align-items: center; /* Centers image vertically */
+  width: 100%; /* Ensures full container width */
+  height: auto; /* Adjusts based on content */
+  
+}
+
+.imgmain {
+  width: 100%; 
+  max-width: 250%; /* Prevents overflow */
+  height: 200px; /* Fixed height */
+  align-items: center; /* Centers image vertically */
+  /* display: block; Removes unwanted spacing */
+  justify-content: center; /* Centers image horizontally */
+  /* object-fit: contain;  */
+  /* object-fit: cover; */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+  
+ 
+}
+
+
+.card:hover .img {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+.details {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.author {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+.content {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.readMore {
+  margin-top: 8px;
+  text-decoration: none;
+  background-color: #ff5069;
+  padding: 10px;
+  border-radius: 15px 0 15px 15px;
+  color: #f9fbfd;
+  font-size: 0.9rem;
+  font-weight: bold;
+  /* justify-content: center; */
+  margin-left: 200px;
+  align-self: flex-start;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}

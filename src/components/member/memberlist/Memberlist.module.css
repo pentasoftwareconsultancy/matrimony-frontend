@@ -1,0 +1,127 @@
+/* Container for the entire MemberList */
+.container {
+  padding: clamp(10px, 2vw, 20px); /* Responsive padding */
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Grid container for the cards */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
+  gap: clamp(10px, 2vw, 20px); /* Responsive gap */
+  padding: clamp(5px, 1.5vw, 10px); /* Responsive padding */
+  width: 100%;
+}
+
+/* Overlay for the MemberDetail modal */
+.detailOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container for MemberDetail */
+.detailModal {
+  background: white;
+  padding: clamp(10px, 3vw, 20px); /* Responsive padding */
+  border-radius: clamp(5px, 1vw, 10px); /* Responsive radius */
+  max-width: clamp(300px, 80vw, 500px); /* Responsive max-width */
+  width: clamp(80%, 90vw, 90%); /* Responsive width */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Close button for the modal */
+.closeButton {
+  position: absolute;
+  top: clamp(5px, 1vw, 10px); /* Responsive top position */
+  right: clamp(5px, 1vw, 10px); /* Responsive right position */
+  background: none;
+  border: none;
+  font-size: clamp(1.25rem, 4vw, 1.5rem); /* Responsive font size (24px = 1.5rem) */
+  cursor: pointer;
+  line-height: 1; /* Ensure proper alignment */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 1024px) {
+  .cardGrid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+
+  .container {
+      padding: clamp(8px, 1.5vw, 15px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cardGrid {
+      grid-template-columns: 1fr 1fr; /* One column for mobile */
+      gap: clamp(8px, 1.5vw, 15px); /* Slightly smaller gap */
+  }
+
+  .detailModal {
+      max-width: clamp(250px, 85vw, 400px); /* Adjusted for mobile */
+      padding: clamp(8px, 2vw, 15px);
+  }
+
+  .closeButton {
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+      padding: clamp(5px, 1vw, 10px);
+  }
+
+  .cardGrid {
+      gap: clamp(5px, 1vw, 10px); /* Tighter gap */
+      padding: clamp(3px, 1vw, 8px);
+  }
+
+  .detailOverlay {
+      padding: clamp(5px, 1vw, 10px); /* Add padding to overlay for edge spacing */
+  }
+
+  .detailModal {
+      width: clamp(85%, 95vw, 90%); /* Nearly full width */
+      max-width: clamp(200px, 90vw, 350px);
+      padding: clamp(5px, 1.5vw, 10px);
+  }
+
+  .closeButton {
+      top: clamp(3px, 0.8vw, 8px);
+      right: clamp(3px, 0.8vw, 8px);
+      font-size: clamp(0.875rem, 3vw, 1.125rem);
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+      padding: clamp(3px, 0.8vw, 8px);
+  }
+
+  .cardGrid {
+      gap: clamp(4px, 0.8vw, 8px);
+  }
+
+  .detailModal {
+      padding: clamp(4px, 1vw, 8px);
+  }
+
+  .closeButton {
+      font-size: clamp(0.75rem, 2.5vw, 1rem);
+  }
+}

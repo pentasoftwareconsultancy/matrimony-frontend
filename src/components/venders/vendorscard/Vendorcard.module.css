@@ -1,0 +1,117 @@
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%; /* Changed from fixed 350px */
+  max-width: 350px; /* Keeps a reasonable max size */
+  height: 63vh; /* Kept as is, but could be adjusted */
+  margin: clamp(8px, 2vw, 16px); /* Responsive margin */
+  box-sizing: border-box; /* Ensures padding/border don't add to width */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.timename {
+  padding: 0 clamp(5px, 1.5vw, 15px); /* Responsive padding */
+}
+
+.imagemain {
+  width: 100%;
+  height: clamp(150px, 25vw, 200px); /* Responsive height */
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.content {
+  font-size: clamp(14px, 2.5vw, 17px); /* Responsive font size */
+  padding: clamp(8px, 2vw, 16px); /* Responsive padding */
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive font size */
+  font-weight: bold;
+  margin: 0 0 clamp(4px, 1vw, 8px);
+  color: #333;
+}
+
+.date,
+.time,
+.description {
+  font-size: clamp(0.875rem, 2vw, 1rem); /* Responsive font size */
+  margin: clamp(2px, 1vw, 4px) 0;
+  color: #555;
+}
+
+.link {
+  display: inline-block;
+  margin-top: clamp(6px, 1.5vw, 12px);
+  padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff5069;
+  margin-bottom: clamp(20px, 5vw, 50px);
+  border-radius: 15px 0 15px 15px;
+  margin-left: auto; /* Changed from fixed 200px to center */
+  margin-right: auto; /* Added to center the link */
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s;
+  width: fit-content; /* Ensures it doesn't stretch unnecessarily */
+}
+
+/* Uncomment and adjust if needed */
+/* .link:hover {
+  background-color: #0056b3;
+} */
+
+/* Media Queries for additional mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .card {
+      height: auto; /* Allows card to grow with content on mobile */
+      margin: 10px auto; /* Centers card with reduced margin */
+  }
+
+  .imagemain {
+      height: 150px; /* Slightly smaller for mobile */
+  }
+
+  .content {
+      padding: 12px;
+  }
+
+  .link {
+      margin-left: auto;
+      margin-right: auto;
+      display: block; /* Ensures it centers properly */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+      max-width: 100%; /* Takes full width on very small screens */
+      margin: 8px 5px;
+  }
+
+  .imagemain {
+      height: 120px; /* Even smaller for tiny screens */
+  }
+
+  .title {
+      font-size: 1.2rem;
+  }
+
+  .content {
+      padding: 10px;
+  }
+}

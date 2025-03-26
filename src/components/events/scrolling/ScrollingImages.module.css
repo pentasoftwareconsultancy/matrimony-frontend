@@ -1,0 +1,59 @@
+/* Scroller Container */
+.scroller {
+  width: 100%;
+  height: 600px; /* Default height for desktop */
+  overflow: hidden;
+  position: relative;
+  border-radius: 30px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+/* Scrolling Inner Container */
+.scrollerInner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%; /* Ensure it takes full height */
+}
+
+/* Individual Images */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+  flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .scroller {
+      height: 400px; /* Tablet size */
+      border-radius: 20px; /* Slightly smaller radius for mobile */
+      margin-top: 20px; /* Reduced margin for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .scroller {
+      height: 300px; /* Phone size */
+      border-radius: 15px;
+      margin-top: 15px;
+  }
+  
+  .image {
+      border-radius: 15px; /* Match container radius on mobile */
+  }
+}
+
+/* Optional: Hover effect for images (disabled on mobile) */
+@media (min-width: 769px) {
+  .image:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+  }
+}
