@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import EventCard from "../../components/events/eventCard/EventCard";
 import styles from "./Eventspages.module.css";
-import Eventshero from "../../Components/events/eventshero/Eventshero";
+import Eventshero from "../../components/events/eventsheros/Eventshero";
 import Eventfilter from "../../Components/events/eventfilter/Eventfilter";
 import ScrollingImages from "../../Components/events/scrolling/ScrollingImages";
 
