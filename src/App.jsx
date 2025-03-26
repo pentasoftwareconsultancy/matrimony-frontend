@@ -32,7 +32,7 @@ import PaymentMethods from "./components/pricings/paymentmethods/Paymentmethod";
 // import Scrolltotops from "./components/scrolltotops/Scrolltotop";
 
 import Scrolltotop from "./components/scrolltotops/Scrolltotop";
-import MemberDetail from "./components/member/memberdetails/MemberDetail";
+
 
 
 function AppContent() {
@@ -71,7 +71,7 @@ function AppContent() {
         <Route path="/vendors" element={<Vendorpages />} />
         <Route path="/vendordetail/:id" element={<VendorDetail />} />
         <Route path="/member" element={<MemberPage />} />
-        <Route path="/members/:id" element={<MemberDetail/>} />
+        {/* <Route path="/members/:id" element={<MemberDetail/>} /> */}
         <Route path="/logout" element={<Logout />} />
         <Route path="/marathi" element={<Translate />} />
         <Route path="/pricing" element={<PricingPlans />} />
