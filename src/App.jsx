@@ -10,7 +10,7 @@ import Footer from "./components/footers/footer/Footer";
 import Login from "./components/logins/login/Login";
 import Blogpages from "./page/blogpages/Blogpages";
 import Blogmaincard from "./components/blog/blogmaincards/Blogmaincard";
-import Scrolltotop from "./Components/scrolltotop/Scrolltotop"; // Corrected path
+import Scrolltotop from "./Components/scrolltotops/Scrolltotop"; // Corrected path
 import Newspages from "./page/newspages/Newspages";
 import Step from "./components/logins/register/step/Step";
 import Navbar from "./Components/navbars/Navbar";
