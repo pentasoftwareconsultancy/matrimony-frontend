@@ -3,7 +3,7 @@ import EventCard from "../../components/events/eventCard/EventCard";
 import styles from "./Eventspages.module.css";
 import Eventshero from "../../components/events/eventsheros/Eventshero";
 import Eventfilter from "../../components/events/eventfilters/Eventfilter";
-import ScrollingImages from "../../Components/events/scrolling/ScrollingImages";
+import ScrollingImages from "../../components/events/scrollings/ScrollingImages";
 
 const Eventspages = () => {
   const [events, setEvents] = useState([]);
