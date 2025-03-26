@@ -29,8 +29,9 @@ import Logout from "./components/logins/logouts/Logout";
 // import Translate from "./Components/transletion/Transletion";
 import PricingPlans from "./components/pricings/pricingmain/Pricingmain";
 import PaymentMethods from "./components/pricings/paymentmethods/Paymentmethod";
-import Scrolltotops from "./Components/scrolltotops/Scrolltotops";
+// import Scrolltotops from "./components/scrolltotops/Scrolltotop";
 import MemberDetail from "./Components/member/memberdetail/Memberdetail";
+import Scrolltotop from "./components/scrolltotops/Scrolltotop";
 
 
 function AppContent() {
@@ -45,7 +46,7 @@ function AppContent() {
   return (
     <>
       <Navbar isHomePage={isHomePage} />
-     <Scrolltotops/>
+     <Scrolltotop/>
       <Routes>
         <Route path="/" element={<Homepages />} />
         <Route path="/about" element={<Aboutpages />} />
