@@ -7,7 +7,7 @@ import ProfileComponent from "./components/bride/profilecomponent/Profilecompone
 // import Groombiodata from "./Components/groom/groombiodata/Groombiodata";
 import Contactpages from "./page/contactpages/Contactpages";
 import Footer from "./components/footers/footer/Footer"; // Ensure this matches the actual file path
-import Login from "./Components/logins/loginmain/Login";
+import Login from "./components/logins/login/Login";
 import Blogpages from "./page/blogpages/Blogpages";
 import Blogmaincard from "./Components/blog/blogmaincard/Blogmaincard";
 import Scrolltotop from "./Components/scrolltotop/Scrolltotop";
