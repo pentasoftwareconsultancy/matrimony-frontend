@@ -6,7 +6,7 @@ import Groompages from "./page/groompages/Groompages";
 import ProfileComponent from "./components/bride/profilecomponent/Profilecomponent";
 // import Groombiodata from "./Components/groom/groombiodata/Groombiodata";
 import Contactpages from "./page/contactpages/Contactpages";
-import Footer from "./Components/footers/footermain/Footer";
+import Footer from "./Components/footers/footermain/Footer"; // Ensure this matches the actual file path
 import Login from "./Components/logins/loginmain/Login";
 import Blogpages from "./page/blogpages/Blogpages";
 import Blogmaincard from "./Components/blog/blogmaincard/Blogmaincard";
@@ -38,6 +38,7 @@ function AppContent() {
   const isLoginPage = location.pathname === "/login"; // Check if it's the login page
   const isRegisterPage = location.pathname === "/register";
   const isProfilePage = location.pathname.startsWith("/profile"); // Check if it's any profile page
+
   return (
     <>
       <Navbar isHomePage={isHomePage} />
@@ -51,7 +52,7 @@ function AppContent() {
         {/* <Route path="/profilegroom/:id" element={<Groombiodata />} /> */}
         <Route path="/contact" element={<Contactpages />} />
         {/* <Route path="/groom/:index" element={<Groombiodata />} /> */}
-        <Route path="/groommain" element={<Groommain/>}/>
+        <Route path="/groommain" element={<Groommain />} />
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blogpages />} />
         <Route path="/blog/:id" element={<Blogmaincard />} />
@@ -66,15 +67,13 @@ function AppContent() {
         <Route path="/vendordetail/:id" element={<VendorDetail />} />
         <Route path="/member" element={<MemberPage />} />
         <Route path="/members/:id" element={<MemberDetail />} />
-        <Route path="/logout" element={<Logout/>}/>
-        <Route path="/marathi" element={<Translate/>}/>
-        <Route path="/pricing" element={<PricingPlans/>}/>
-        <Route path="/paymentmethod/:id" element={<PaymentMethods/>}/> 
-        
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/marathi" element={<Translate />} />
+        <Route path="/pricing" element={<PricingPlans />} />
+        <Route path="/paymentmethod/:id" element={<PaymentMethods />} />
       </Routes>
-      {/* Only render Footer if it's not the login page */}
+      {/* Only render Footer if it's not the login, register, or profile page */}
       {!isLoginPage && !isRegisterPage && !isProfilePage && <Footer />}
-
     </>
   );
 }
