@@ -13,7 +13,7 @@ import Blogmaincard from "./components/blog/blogmaincards/Blogmaincard";
 
 import Newspages from "./page/newspages/Newspages";
 import Step from "./components/logins/register/step/Step";
-import Navbar from "./Components/navbars/Navbar";
+import Navbar from "./components/navbar/Navbar";
 // import Newcardpage from "./Components/newscard/nescardpages/Nescardpage";
 import Eventspages from "./page/eventspage/Eventspages";
 import EventCard from "./Components/events/eventCards/EventCard";
@@ -26,7 +26,7 @@ import MemberDetail from "./Components/member/memberdetails/Memberdetail";
 import Bridepages from "./page/bridepages/Bridepages";
 import Groommain from "./Components/groom/groommain/Groommain";
 import Logout from "./Components/logins/logout/Logout";
-import Translate from "./Components/transletion/Transletion";
+// import Translate from "./Components/transletion/Transletion";
 import PricingPlans from "./Components/pricings/pricingmain/Pricingmains";
 import PaymentMethods from "./Components/pricings/paymentmethod/Paymentmethod";
 import Scrolltotops from "./Components/scrolltotops/Scrolltotops";

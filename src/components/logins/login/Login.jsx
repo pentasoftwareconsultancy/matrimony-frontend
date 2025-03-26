@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import styles from "./Login.module.css";
 import img from "../image/logo2.webp";
 import { Link } from "react-router-dom";
-import logos from "../../navbars/logo.png";
+import logos from "../../navbar/logo.png";
 
 function Login() {
   const navigate = useNavigate();
