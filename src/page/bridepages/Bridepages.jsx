@@ -1,5 +1,5 @@
 import React from 'react'
-import Bridemain from '../../Components/bride/bridemain/Bridemains'
+import Bridemain from '../../components/bride/bridemains/Bridemain'
 
 function Bridepages() {
   return (
