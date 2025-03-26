@@ -17,12 +17,12 @@ import Navbar from "./components/navbar/Navbar";
 // import Newcardpage from "./Components/newscard/nescardpages/Nescardpage";
 import Eventspages from "./page/eventspage/Eventspages";
 import EventCard from "./components/events/eventCard/EventCard";
-import Eventdetail from "./Components/events/eventsdetails/Eventsdetail";
+import Eventdetail from "./components/events/eventsdetail/Eventsdetail";
 // import GroomProfile from "./Components/groom/groomprofile/Groomprofile";
 import Vendorpages from "./page/vendorpages/Vendorpages";
-import VendorDetail from "./Components/venders/Vendordetails/Vendordetail";
+import VendorDetail from "./components/venders/Vendordetail/Vendordetail";
 import MemberPage from "./page/memberpages/Memberpages";
-import MemberDetail from "./Components/member/memberdetails/Memberdetail";
+// import MemberDetail from "./components/member/memberdetail/Memberdetail";
 import Bridepages from "./page/bridepages/Bridepages";
 import Groommain from "./Components/groom/groommain/Groommain";
 import Logout from "./Components/logins/logout/Logout";
@@ -30,6 +30,7 @@ import Logout from "./Components/logins/logout/Logout";
 import PricingPlans from "./Components/pricings/pricingmain/Pricingmains";
 import PaymentMethods from "./Components/pricings/paymentmethod/Paymentmethod";
 import Scrolltotops from "./Components/scrolltotops/Scrolltotops";
+import MemberDetail from "./Components/member/memberdetail/Memberdetail";
 
 
 function AppContent() {
@@ -68,7 +69,7 @@ function AppContent() {
         <Route path="/vendors" element={<Vendorpages />} />
         <Route path="/vendordetail/:id" element={<VendorDetail />} />
         <Route path="/member" element={<MemberPage />} />
-        <Route path="/members/:id" element={<MemberDetail />} />
+        <Route path="/members/:id" element={<MemberDetail/>} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/marathi" element={<Translate />} />
         <Route path="/pricing" element={<PricingPlans />} />
