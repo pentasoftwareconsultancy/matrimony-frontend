@@ -1,6 +1,6 @@
 import styles from './Memberpage.module.css';
 import MemberList from '../../components/member/memberlists/Memberlist';
-import Memberhero from '../../Components/member/memberhero/Memberhero';
+import Memberhero from '../../components/member/memberheros/Memberhero';
 
 const MemberPage = () => {
   return (
