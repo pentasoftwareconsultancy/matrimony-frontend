@@ -6,11 +6,11 @@ import Groompages from "./page/groompages/Groompages";
 import ProfileComponent from "./components/bride/profilecomponent/Profilecomponent";
 // import Groombiodata from "./Components/groom/groombiodata/Groombiodata";
 import Contactpages from "./page/contactpages/Contactpages";
-import Footer from "./components/footers/footer/Footer"; // Ensure this matches the actual file path
+import Footer from "./components/footers/footer/Footer";
 import Login from "./components/logins/login/Login";
 import Blogpages from "./page/blogpages/Blogpages";
 import Blogmaincard from "./components/blog/blogmaincards/Blogmaincard";
-import Scrolltotop from "./Components/scrolltotops/Scrolltotop";
+import Scrolltotop from "./Components/scrolltotop/Scrolltotop"; // Corrected path
 import Newspages from "./page/newspages/Newspages";
 import Step from "./Components/logins/register/steps/Step";
 import Navbar from "./Components/navbars/Navbar";
@@ -30,7 +30,6 @@ import Translate from "./Components/transletion/Transletion";
 import PricingPlans from "./Components/pricings/pricingmain/Pricingmains";
 import PaymentMethods from "./Components/pricings/paymentmethod/Paymentmethod";
 
-
 function AppContent() {
   const location = useLocation();
 
@@ -43,7 +42,7 @@ function AppContent() {
   return (
     <>
       <Navbar isHomePage={isHomePage} />
-      <Scrolltotop/>
+      <Scrolltotop />
       <Routes>
         <Route path="/" element={<Homepages />} />
         <Route path="/about" element={<Aboutpages />} />
