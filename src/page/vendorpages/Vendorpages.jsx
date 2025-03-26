@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import VendorList from "../../Components/venders/vendorslist/Vendorslist";
+import VendorList from "../../components/venders/vendorslists/Vendorslist";
 import Venderhero from "../../Components/venders/venderhero/Venderhero";  // Correctly importing Venderhero
 
 const VendorPage = () => {
