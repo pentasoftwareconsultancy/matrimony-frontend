@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from "./Bridemain.module.css";
-import Sidebar from '../sidebar/sidebars/Sidebar';
+import Sidebar from '../sidebar/sidebar/Sidebar';
 import ProfileList from '../profilelist/Profilelist';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'; // Import search icon
