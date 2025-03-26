@@ -25,7 +25,7 @@ import MemberPage from "./page/memberpages/Memberpages";
 // import MemberDetail from "./components/member/memberdetail/Memberdetail";
 import Bridepages from "./page/bridepages/Bridepages";
 import Groommain from "./components/groom/groommains/Groommain";
-import Logout from "./Components/logins/logout/Logout";
+import Logout from "./components/logins/logouts/Logout";
 // import Translate from "./Components/transletion/Transletion";
 import PricingPlans from "./Components/pricings/pricingmain/Pricingmains";
 import PaymentMethods from "./Components/pricings/paymentmethod/Paymentmethod";
