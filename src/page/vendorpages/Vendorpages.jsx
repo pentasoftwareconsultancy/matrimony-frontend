@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import VendorList from "../../components/venders/vendorslists/Vendorslist";
-import Venderhero from "../../Components/venders/venderhero/Venderhero";  // Correctly importing Venderhero
+import Venderhero from "../../components/venders/venderheros/Venderhero";  // Correctly importing Venderhero
 
 const VendorPage = () => {
   const [vendors, setVendors] = useState([]);
