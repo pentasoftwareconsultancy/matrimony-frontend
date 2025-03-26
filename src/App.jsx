@@ -6,7 +6,7 @@ import Groompages from "./page/groompages/Groompages";
 import ProfileComponent from "./components/bride/profilecomponent/Profilecomponent";
 // import Groombiodata from "./Components/groom/groombiodata/Groombiodata";
 import Contactpages from "./page/contactpages/Contactpages";
-import Footer from "./Components/footers/footermain/Footer"; // Ensure this matches the actual file path
+import Footer from "./components/footers/footer/Footer"; // Ensure this matches the actual file path
 import Login from "./Components/logins/loginmain/Login";
 import Blogpages from "./page/blogpages/Blogpages";
 import Blogmaincard from "./Components/blog/blogmaincard/Blogmaincard";
