@@ -1,5 +1,5 @@
 import React from "react";
-import Bloglist from "../../Components/blog/bloglist/Bloglist"; // Adjust path as necessary
+import Bloglist from "../../components/blog/bloglists/Bloglist"; // Adjust path as necessary
 import Scrolltotop from "../../components/scrolltotops/Scrolltotop";
 
 const Blogpages = () => {
