@@ -47,7 +47,7 @@ function AppContent() {
   return (
     <>
       <Navbar isHomePage={isHomePage} />
-     <Scrolltotop/>
+     {/* <Scrolltotop/> */}
       <Routes>
         <Route path="/" element={<Homepages />} />
         <Route path="/about" element={<Aboutpages />} />
