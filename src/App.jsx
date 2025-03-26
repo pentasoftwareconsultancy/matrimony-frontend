@@ -32,7 +32,7 @@ import PaymentMethods from "./components/pricings/paymentmethods/Paymentmethod";
 // import Scrolltotops from "./components/scrolltotops/Scrolltotop";
 
 import Scrolltotop from "./components/scrolltotops/Scrolltotop";
-import MemberDetail from "./Components/member/memberdetails/Memberdetail";
+import MemberDetail from "./components/member/memberdetails/MemberDetail";
 
 
 function AppContent() {
