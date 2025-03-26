@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styles from "./Bridemain.module.css";
-import Sidebar from '../sidebar/sidebar/Sidebar';
+
 import ProfileList from '../profilelist/Profilelist';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'; // Import search icon
 import { useParams } from 'react-router-dom';
+import Sidebar from '../sidebar/sidebar/sidebar';
 
 function Bridemain() {
   const [query, setQuery] = useState(""); // for text search
@@ -61,9 +62,11 @@ function Bridemain() {
   return (
     <div className={styles.Bridemain}>
       <div className={styles.sidebar}>
-        <Sidebar 
+        <Sidebar
+        handleFilterChange={handleFilterChange} />
+        {/* <Sidebar 
           handleFilterChange={handleFilterChange} 
-        />
+        /> */}
       </div>
       <div className={styles.mainContent}>
       <div className={styles.searchWrapper}>
