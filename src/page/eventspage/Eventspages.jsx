@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import EventCard from "../../Components/events/eventCards/EventCard";
+import EventCard from "../../components/events/eventCard/EventCard";
 import styles from "./Eventspages.module.css";
 import Eventshero from "../../Components/events/eventshero/Eventshero";
 import Eventfilter from "../../Components/events/eventfilter/Eventfilter";

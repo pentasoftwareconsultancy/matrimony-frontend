@@ -16,7 +16,7 @@ import Step from "./components/logins/register/step/Step";
 import Navbar from "./components/navbar/Navbar";
 // import Newcardpage from "./Components/newscard/nescardpages/Nescardpage";
 import Eventspages from "./page/eventspage/Eventspages";
-import EventCard from "./Components/events/eventCards/EventCard";
+import EventCard from "./components/events/eventCard/EventCard";
 import Eventdetail from "./Components/events/eventsdetails/Eventsdetail";
 // import GroomProfile from "./Components/groom/groomprofile/Groomprofile";
 import Vendorpages from "./page/vendorpages/Vendorpages";
