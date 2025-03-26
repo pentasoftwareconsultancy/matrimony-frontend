@@ -28,7 +28,7 @@ import Groommain from "./components/groom/groommains/Groommain";
 import Logout from "./components/logins/logouts/Logout";
 // import Translate from "./Components/transletion/Transletion";
 import PricingPlans from "./components/pricings/pricingmain/Pricingmain";
-import PaymentMethods from "./Components/pricings/paymentmethod/Paymentmethod";
+import PaymentMethods from "./components/pricings/paymentmethods/Paymentmethod";
 import Scrolltotops from "./Components/scrolltotops/Scrolltotops";
 import MemberDetail from "./Components/member/memberdetail/Memberdetail";
 
