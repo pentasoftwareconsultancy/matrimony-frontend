@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import styles from "./BlogMainCard.module.css";
+import styles from "./Blogmaincard.module.css";
 
 const BlogMainCard = () => {
   const { id } = useParams();
