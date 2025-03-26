@@ -24,7 +24,7 @@ import VendorDetail from "./components/venders/Vendordetail/Vendordetail";
 import MemberPage from "./page/memberpages/Memberpages";
 // import MemberDetail from "./components/member/memberdetail/Memberdetail";
 import Bridepages from "./page/bridepages/Bridepages";
-import Groommain from "./Components/groom/groommain/Groommain";
+import Groommain from "./components/groom/groommains/Groommain";
 import Logout from "./Components/logins/logout/Logout";
 // import Translate from "./Components/transletion/Transletion";
 import PricingPlans from "./Components/pricings/pricingmain/Pricingmains";
