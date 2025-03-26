@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import EventCard from "../../components/events/eventCard/EventCard";
 import styles from "./Eventspages.module.css";
 import Eventshero from "../../components/events/eventsheros/Eventshero";
-import Eventfilter from "../../Components/events/eventfilter/Eventfilter";
+import Eventfilter from "../../components/events/eventfilters/Eventfilter";
 import ScrollingImages from "../../Components/events/scrolling/ScrollingImages";
 
 const Eventspages = () => {
