@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./VendorsDetail.module.css";
+import styles from "./Vendorsdetail.module.css";
 
 const VendorDetail = () => {
   const { id } = useParams();
