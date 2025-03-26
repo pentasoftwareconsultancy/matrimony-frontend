@@ -1,5 +1,5 @@
 import React from 'react'
-import Abouthero from '../../Components/about/abouthero/Abouthero'
+import Abouthero from '../../components/about/aboutheros/Abouthero'
 import Section from '../../components/about/section/Section'
 import Media from '../../Components/about/media/Media'
 import Aboutus from '../../Components/about/aboutus/Aboutus'
