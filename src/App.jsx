@@ -11,7 +11,7 @@ import Login from "./components/logins/login/Login";
 import Blogpages from "./page/blogpages/Blogpages";
 import Blogmaincard from "./components/blog/blogmaincards/Blogmaincard";
 
-import Newspages from "./page/newspages/Newspages";
+// import Newspages from "./page/newspages/Newspages";
 import Step from "./components/logins/register/step/Step";
 import Navbar from "./components/navbar/Navbar";
 // import Newcardpage from "./Components/newscard/nescardpages/Nescardpage";
@@ -61,11 +61,11 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blogpages />} />
         <Route path="/blog/:id" element={<Blogmaincard />} />
-        <Route path="/register" element={<Step />} />
+        <Route path="/register" element={<Step/>} />
         <Route path="/events" element={<Eventspages />} />
         <Route path="/events/:id" element={<Eventdetail />} />
         <Route path="/events" element={<EventCard />} />
-        <Route path="/card-list" element={<Newspages />} />
+        {/* <Route path="/card-list" element={<Newspages />} /> */}
         {/* <Route path="/card-detail/:id" element={<Newcardpage />} /> */}
         {/* <Route path="/groomprofile" element={<GroomProfile />} /> */}
         <Route path="/vendors" element={<Vendorpages />} />
@@ -73,7 +73,7 @@ function AppContent() {
         <Route path="/member" element={<MemberPage />} />
         {/* <Route path="/members/:id" element={<MemberDetail/>} /> */}
         <Route path="/logout" element={<Logout />} />
-        <Route path="/marathi" element={<Translate />} />
+        {/* <Route path="/marathi" element={<Translate />} /> */}
         <Route path="/pricing" element={<PricingPlans />} />
         <Route path="/paymentmethod/:id" element={<PaymentMethods />} />
       </Routes>

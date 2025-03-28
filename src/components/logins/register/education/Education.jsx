@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { initialFormData,  heights, educationLevels, educationFields, occupations, bloodGroups, complexions, bodyTypes, maritalStatuses,
-   noOfChildrenOptions, annualIncomes } from '../datafile/datafile'; // Import the data
+import {
+  initialFormData,
+  heights,
+  educationLevels,
+  educationFields,
+  occupations,
+  bloodGroups,
+  complexions,
+  bodyTypes,
+  maritalStatuses,
+  noOfChildrenOptions,
+  annualIncomes,
+} from "../datafile/datafile"; // Import the data
 import styles from "./Education.module.css";
 
 const Education = ({ formData, setFormData, setIsFormValid }) => {
@@ -8,7 +19,7 @@ const Education = ({ formData, setFormData, setIsFormValid }) => {
 
   useEffect(() => {
     setFormData(localFormData);
-    
+
     if (typeof setIsFormValid === "function") {
       const isValid =
         localFormData.maritalStatus &&
@@ -22,10 +33,19 @@ const Education = ({ formData, setFormData, setIsFormValid }) => {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setLocalFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
+
+    // Special handling for smoke and drink to convert to boolean
+    if (id === "smoke" || id === "drink") {
+      setLocalFormData((prevData) => ({
+        ...prevData,
+        [id]: value === "Yes" ? true : value === "No" ? false : prevData[id], // Keep previous value if not "Yes" or "No"
+      }));
+    } else {
+      setLocalFormData((prevData) => ({
+        ...prevData,
+        [id]: value,
+      }));
+    }
   };
 
   return (
@@ -38,33 +58,65 @@ const Education = ({ formData, setFormData, setIsFormValid }) => {
           <div className={styles.personal}>
             <div className={styles.formGroup}>
               <label htmlFor="maritalStatus">Marital Status*</label>
-              <select id="maritalStatus" className={styles.input} value={localFormData.maritalStatus} onChange={handleChange}>
+              <select
+                id="maritalStatus"
+                className={styles.input}
+                value={localFormData.maritalStatus}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {maritalStatuses.map((status) => (
-                  <option key={status} value={status}>{status}</option>
+                  <option key={status} value={status}>
+                    {status}
+                  </option>
                 ))}
               </select>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="noOfChildren">No. of Children</label>
-              <select id="noOfChildren" className={styles.input} value={localFormData.noOfChildren} onChange={handleChange}>
+              <select
+                id="noOfChildren"
+                className={styles.input}
+                value={localFormData.noOfChildren}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {noOfChildrenOptions.map((option) => (
-                  <option key={option} value={option}>{option}</option>
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
                 ))}
               </select>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="height">Height*</label>
-              <select id="height" className={styles.input} value={localFormData.height || ""} onChange={handleChange}>
+              <select
+                id="height"
+                className={styles.input}
+                value={localFormData.height || ""}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {heights.map((height) => (
-                  <option key={height} value={height}>{height}</option>
+                  <option key={height} value={height}>
+                    {height}
+                  </option>
                 ))}
               </select>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="bodyType">Body Type*</label>
-              <select id="bodyType" className={styles.input} value={localFormData.bodyType} onChange={handleChange}>
+              <select
+                id="bodyType"
+                className={styles.input}
+                value={localFormData.bodyType}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {bodyTypes.map((type) => (
-                  <option key={type} value={type}>{type}</option>
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
                 ))}
               </select>
             </div>
@@ -74,12 +126,18 @@ const Education = ({ formData, setFormData, setIsFormValid }) => {
               <select
                 id="smoke"
                 className={styles.input}
-                value={localFormData.smoke === true ? "Yes" : localFormData.smoke === false ? "No" : ""}
+                value={
+                  localFormData.smoke === true
+                    ? "Yes"
+                    : localFormData.smoke === false
+                    ? "No"
+                    : ""
+                }
                 onChange={handleChange}
               >
-                <option>- Please Select -</option>
-                <option>Yes</option>
-                <option>No</option>
+                <option value="">- Please Select -</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
             </div>
             {/* Drink Field (Yes/No Dropdown) */}
@@ -88,35 +146,71 @@ const Education = ({ formData, setFormData, setIsFormValid }) => {
               <select
                 id="drink"
                 className={styles.input}
-                value={localFormData.drink === true ? "Yes" : localFormData.drink === false ? "No" : ""}
+                value={
+                  localFormData.drink === true
+                    ? "Yes"
+                    : localFormData.drink === false
+                    ? "No"
+                    : ""
+                }
                 onChange={handleChange}
               >
-                <option>- Please Select -</option>
-                <option>Yes</option>
-                <option>No</option>
+                <option value="">- Please Select -</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="specialCase">Special Case</label>
-              <input type="text" id="specialCase" className={styles.input} placeholder="e.g., None, Disability" value={localFormData.specialCase || ""} onChange={handleChange} />
+              <input
+                type="text"
+                id="specialCase"
+                className={styles.input}
+                placeholder="e.g., None, Disability"
+                value={localFormData.specialCase || ""}
+                onChange={handleChange}
+              />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="weight">Weight</label>
-              <input type="text" id="weight" className={styles.input} placeholder="Enter Weight (kg)" value={localFormData.weight || ""} onChange={handleChange} />
+              <input
+                type="text"
+                id="weight"
+                className={styles.input}
+                placeholder="Enter Weight (kg)"
+                value={localFormData.weight || ""}
+                onChange={handleChange}
+              />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="complexion">Complexion*</label>
-              <select id="complexion" className={styles.input} value={localFormData.complexion} onChange={handleChange}>
+              <select
+                id="complexion"
+                className={styles.input}
+                value={localFormData.complexion}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {complexions.map((complexion) => (
-                  <option key={complexion} value={complexion}>{complexion}</option>
+                  <option key={complexion} value={complexion}>
+                    {complexion}
+                  </option>
                 ))}
               </select>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="bloodGroup">Blood Group*</label>
-              <select id="bloodGroup" className={styles.input} value={localFormData.bloodGroup} onChange={handleChange}>
+              <select
+                id="bloodGroup"
+                className={styles.input}
+                value={localFormData.bloodGroup}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {bloodGroups.map((group) => (
-                  <option key={group} value={group}>{group}</option>
+                  <option key={group} value={group}>
+                    {group}
+                  </option>
                 ))}
               </select>
             </div>
@@ -129,25 +223,49 @@ const Education = ({ formData, setFormData, setIsFormValid }) => {
           <div className={styles.mainsection}>
             <div className={styles.formGroup}>
               <label htmlFor="educationLevel">Education Level*</label>
-              <select id="educationLevel" className={styles.input} value={localFormData.educationLevel} onChange={handleChange}>
+              <select
+                id="educationLevel"
+                className={styles.input}
+                value={localFormData.educationLevel}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {educationLevels.map((level) => (
-                  <option key={level} value={level}>{level}</option>
+                  <option key={level} value={level}>
+                    {level}
+                  </option>
                 ))}
               </select>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="educationField">Education Field*</label>
-              <select id="educationField" className={styles.input} value={localFormData.educationField} onChange={handleChange}>
+              <select
+                id="educationField"
+                className={styles.input}
+                value={localFormData.educationField}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {educationFields.map((field) => (
-                  <option key={field} value={field}>{field}</option>
+                  <option key={field} value={field}>
+                    {field}
+                  </option>
                 ))}
               </select>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="occupation">Occupation*</label>
-              <select id="occupation" className={styles.input} value={localFormData.occupation} onChange={handleChange}>
+              <select
+                id="occupation"
+                className={styles.input}
+                value={localFormData.occupation}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {occupations.map((occupation) => (
-                  <option key={occupation} value={occupation}>{occupation}</option>
+                  <option key={occupation} value={occupation}>
+                    {occupation}
+                  </option>
                 ))}
               </select>
             </div>
@@ -173,17 +291,39 @@ const Education = ({ formData, setFormData, setIsFormValid }) => {
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="companyName">Company Name*</label>
-              <input type="text" id="companyName" className={styles.input} placeholder="Company Name" value={localFormData.companyName || ""} onChange={handleChange} />
+              <input
+                type="text"
+                id="companyName"
+                className={styles.input}
+                placeholder="Company Name"
+                value={localFormData.companyName || ""}
+                onChange={handleChange}
+              />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="residencyStatus">Residency Status</label>
-              <input type="text" id="residencyStatus" className={styles.input} placeholder="e.g., Citizen, Permanent Resident" value={localFormData.residencyStatus || ""} onChange={handleChange} />
+              <input
+                type="text"
+                id="residencyStatus"
+                className={styles.input}
+                placeholder="e.g., Citizen, Permanent Resident"
+                value={localFormData.residencyStatus || ""}
+                onChange={handleChange}
+              />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="annualIncome">Annual Income*</label>
-              <select id="annualIncome" className={styles.input} value={localFormData.annualIncome} onChange={handleChange}>
+              <select
+                id="annualIncome"
+                className={styles.input}
+                value={localFormData.annualIncome}
+                onChange={handleChange}
+              >
+                <option value="">- Please Select -</option>
                 {annualIncomes.map((income) => (
-                  <option key={income} value={income}>{income}</option>
+                  <option key={income} value={income}>
+                    {income}
+                  </option>
                 ))}
               </select>
             </div>

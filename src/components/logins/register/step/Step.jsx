@@ -10,7 +10,8 @@ import { registerBrideGroom } from "./api";
 const Step = () => {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const initialFormData = {
     fullName: "",
     email: "",
@@ -61,11 +62,11 @@ const Step = () => {
     partnerLocation: "",
     partnerPackage: "",
     partnerAbout: "",
-    profilePhoto: "",
+    profilePhoto: null,
     panCardNumber: "",
     companyId: "",
     aadharNumber: "",
-    aadharPhoto: "",
+    aadharPhoto: null,
     passportNumber: "",
     socialFacebook: "",
     socialInstagram: "",
@@ -82,15 +83,22 @@ const Step = () => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
     try {
       const response = await registerBrideGroom(formData);
       alert("🎉 Registration successful!");
       console.log("✅ Form Data Submitted:", response);
+      localStorage.removeItem("formData"); // Clear form data after successful submission
       navigate("/login");
     } catch (error) {
-      console.error("❌ Submission failed:", error);
-      alert("❌ Submission failed: " + error.message);
+      console.error("❌ Submission failed:", error.message);
+      alert(`❌ Submission failed: ${error.message}`);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -118,15 +126,26 @@ const Step = () => {
         {steps.find((step) => step.id === currentStep)?.component}
       </div>
       <div className={styles.stepActions}>
-        <button className={styles.previous} onClick={() => setCurrentStep(currentStep - 1)} disabled={currentStep === 1}>
+        <button 
+          className={styles.previous} 
+          onClick={() => setCurrentStep(currentStep - 1)} 
+          disabled={currentStep === 1}
+        >
           Previous
         </button>
         {currentStep === steps.length ? (
-          <button className={styles.submit} onClick={handleSubmit}>
-            Submit
+          <button 
+            className={styles.submit} 
+            onClick={handleSubmit}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         ) : (
-          <button className={styles.next} onClick={() => setCurrentStep(currentStep + 1)}>
+          <button 
+            className={styles.next} 
+            onClick={() => setCurrentStep(currentStep + 1)}
+          >
             Next
           </button>
         )}

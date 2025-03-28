@@ -290,6 +290,8 @@ addText("About Family", profile.aboutFamily, 110);
               <p><strong>Email:</strong> {profile.email}</p>
               <p><strong>Mobile Number:</strong> {profile.mobileNumber}</p>
               <p><strong>Date of Birth:</strong> {profile.dateOfBirth}</p>
+              <p><strong>Country:</strong> {profile.country}</p>
+              <p><strong>State:</strong> {profile.state}</p>
               <p><strong>City:</strong> {profile.city}</p>
               <p><strong>Gender:</strong> {profile.gender}</p>
               <p><strong>Height:</strong> {profile.height}</p>

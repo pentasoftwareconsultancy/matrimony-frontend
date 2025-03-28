@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Section.module.css";
 import { LuHeartHandshake } from "react-icons/lu";
-import image1 from "../../image/image2.jpg";
+
+import image1 from "../image/image2.jpg";
 import { Link } from "react-router-dom";
 
 const Section = () => {
