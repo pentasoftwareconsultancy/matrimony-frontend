@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MemberCard from '../membercard/Membercard';
 import MemberDetail from '../memberdetails/Memberdetail';
-import styles from './MemberList.module.css';
+import styles from './Memberlist.module.css';
 
 const MemberList = () => {
   const [members, setMembers] = useState([]); // State for all members
