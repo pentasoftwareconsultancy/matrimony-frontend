@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./VendorCard.module.css";
+import styles from "./Vendorcard.module.css";
 
 const VendorCard = ({ vendor }) => {
   const { _id, name, title, description, profilePicUrl, address, phone } = vendor;
