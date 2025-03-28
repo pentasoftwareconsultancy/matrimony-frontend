@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BlogCard from "../blogCard/BlogCard";
+import BlogCard from "../blogCard/Blogcard";
 import styles from "./BlogList.module.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
