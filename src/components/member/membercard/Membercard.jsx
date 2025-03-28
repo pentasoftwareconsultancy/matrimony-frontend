@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./MemberCard.module.css";
+import styles from "./Membercard.module.css";
 
 const MemberCard = ({ member }) => {
   return (
