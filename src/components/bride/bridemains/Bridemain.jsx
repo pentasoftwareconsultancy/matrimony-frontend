@@ -5,7 +5,7 @@ import ProfileList from '../profilelist/Profilelist';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'; // Import search icon
 import { useParams } from 'react-router-dom';
-import Sidebar from '../sidebar/sidebars/sidebar';
+import Sidebar from "../sidebar/sidebarmain/Sidebar";
 
 function Bridemain() {
   const [query, setQuery] = useState(""); // for text search
