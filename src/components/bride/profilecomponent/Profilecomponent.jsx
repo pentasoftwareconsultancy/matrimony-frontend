@@ -4,7 +4,7 @@ import { FaDownload } from "react-icons/fa";
 import background from "../images/image1.jpg"
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import styles from "./Profilecomponent.module.css";
+import styles from "./ProfileComponent.module.css";
 
 const ProfileComponent = () => {
   const { id } = useParams();
