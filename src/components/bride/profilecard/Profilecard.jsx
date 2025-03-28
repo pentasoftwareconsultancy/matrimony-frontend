@@ -46,8 +46,8 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-import styles from "./ProfileCard.module.css"; // ProfileCard styling
-import stackingStyles from "./ProfileCard.module.css"; // Import stacking card styles
+import styles from "./Profilecard.module.css"; // ProfileCard styling
+import stackingStyles from "./Profilecard.module.css"; // Import stacking card styles
 import Scrolltotop from "../../scrolltotops/Scrolltotop";
 
 // Function to capitalize the first letter of a string
