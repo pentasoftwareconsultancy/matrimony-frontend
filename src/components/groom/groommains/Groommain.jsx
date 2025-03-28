@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Groommain.module.css";
 import ProfileList from "../../bride/profilelist/Profilelist";
-import Sidebar from "../../bride/sidebar/sidebars/sidebar";
+import Sidebar from "../../bride/sidebar/sidebarmain/Sidebar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
