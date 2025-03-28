@@ -1,5 +1,5 @@
 import VendorCard from "../vendorscard/Vendorcard";
-import styles from "./VendorsList.module.css";
+import styles from "./Vendorslist.module.css";
 
 const VendorList = ({ vendors }) => {
   return (
