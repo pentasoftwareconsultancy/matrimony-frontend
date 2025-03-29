@@ -1,4 +1,4 @@
-/* General Header Styling */
+/* General Header Styling (unchanged) */
 .header {
   position: fixed;
   top: 0;
@@ -6,85 +6,49 @@
   z-index: 1000;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   box-shadow: none;
-  color: rgb(37, 36, 36); /* Default text color */
-  font-family: "Poppins", sans-serif; /* Use the proper font-family */
+  color: rgb(37, 36, 36);
+  font-family: "Poppins", sans-serif;
 }
 .logoContainer {
   display: flex;
   width: 20%;
-  /* background-color: #f2f0f0; */
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  /* width: 100px; */
-  overflow: hidden; /* Hides any overflowing content */
+  overflow: hidden;
 }
 
 .logoImage {
-  width:20%; /* Adjust as needed */
-  /* zoom: 200%; */
-/* background-color: rgb(241, 228, 228); */
-border-radius: 100px;
+  width: 20%;
+  border-radius: 100px;
   height: 8vh;
-  object-fit: contain; /* Ensures the image scales properly */
+  object-fit: contain;
   overflow: hidden;
 }
 .header.scrolled .logo a,
 .header.scrolled .navLinks a,
-.header.scrolled .login{
-  color: #fff; /* Change text color to white when scrolled */
- 
+.header.scrolled .loginDesktop {
+  color: #fff;
 }
 .header.scrolled {
   background: rgba(0, 0, 0, 0.5);
 }
 .header.scrolled .navLinks a:hover {
-  color: #ff0037; /* Gold hover color for scrolled state */
+  color: #ff0037;
 }
 
-/* Text color for Homepage (White) */
 .whiteText {
   color: white;
 }
 
-/* Text color for other pages (Black) */
 .blackText {
   color: black;
 }
 
-/* Navbar Links Hover State */
 .header .navLinks a:hover {
-  color: #383737; /* Add hover effect */
+  color: #383737;
 }
 
-/* Navbar Links in Scrolled State */
-/* .header.scrolled .navLinks a {
-  color: #ffd700; 
-} */
-
-.header.scrolled .logo a,
-.header.scrolled .navLinks a  {
-  color: #fff; /* Change text color to white when scrolled */
-
-}
-
-/* .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-} */
-
-/* Logo Styling */
-/* .logo a {
-  font-size: 28px;
-  font-weight: bold;
-  color: #f2f0f0; 
-  text-decoration: none;
-  font-family: 'Georgia', serif;
-} */
-
-/* Navigation Links */
 .navLinks {
   display: flex;
   gap: 40px;
@@ -95,88 +59,69 @@ border-radius: 100px;
   font-weight: 600;
   text-decoration: none;
   font-size: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   transition: color 0.3s ease;
 }
 
 .navLinks a:hover {
-  color: #ff6347; /* Tomato hover color */
+  color: #ff6347;
 }
 
 .navLinks.open {
-  display: flex; /* Style for mobile menu when open */
+  display: flex;
 }
 
-/* Mobile Menu Toggle */
 .menuToggle {
   display: none;
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
+  transition: all 0.3s ease; /* Added transition for toggle */
 }
 
 .bar {
-  width: 5px;
+  width: 25px; /* Increased width for better visibility */
   height: 3px;
-  background-color: #800000; /* Deep maroon */
+  background-color: #fffdfd;
   border-radius: 2px;
-}
-/* Dropdown container for Services */
-.dropdown {
-  position: relative;
-  display: inline-block; /* Ensure the Services link is inline and doesn't break */
+  transition: background-color 0.3s ease; /* Transition for bar color */
 }
 
-/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
 .dropdownMenu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgba(121, 120, 120, 0.6); 
+  background-color: rgba(121, 120, 120, 0.6);
   border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
-  flex-direction: column; /* Stack the dropdown items vertically */
-  min-width: 200px; /* Optional: Set a minimum width for the dropdown */
+  flex-direction: column;
+  min-width: 200px;
   z-index: 10;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
-/* Show the dropdown menu when it's visible */
 .dropdown:hover .dropdownMenu {
-  display: flex; /* Make sure it's visible when hovering over .dropdown */
+  display: flex;
 }
 
-/* Style for each link in the dropdown */
 .dropdownMenu a {
   padding: 10px 20px;
   text-decoration: none;
   color: white;
-  display: block; /* Ensures links take up full width */
-  width: 100%; /* Full width for each link */
+  display: block;
+  width: 100%;
 }
 
-/* Hover effect for links */
-/* .dropdownMenu a:hover {
-  background-color: #555; 
-} */
-
-/* Style for links */
-.whiteText {
-  color: white;
-}
-
-.blackText {
-  color: black;
-}
-
-/* Add styling for your navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   padding: 10px 20px;
- 
 }
 
 .navLinks {
@@ -191,34 +136,96 @@ border-radius: 100px;
 .menuToggle {
   display: none;
 }
-.login{
+
+.loginDesktop {
   font-size: 20px;
-font-weight: 600;
+  font-weight: 600;
   margin-top: 15px;
   color: white;
 }
+
+/* Updated Mobile View */
 @media (max-width: 768px) {
+  .header.scrolled {
+    
+    background: rgba(0, 0, 0, 0.9); /* Background color on scroll in mobile */
+  }
+.header{
+  background-color: gray;
+}
   .navLinks {
     display: none;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    transition: all 0.3s ease; /* Smooth transition for navLinks */
   }
 
   .navLinks.open {
     display: flex;
-   
+    background: rgba(128, 128, 128, 0.9); /* Gray color when toggle is open */
   }
 
   .menuToggle {
-    display: block;
-    cursor: pointer;
+    display: flex; /* Changed to flex for better alignment */
   }
 
+  .menuToggle.home .bar {
+    background-color: white; /* White toggle on homepage */
+  }
+
+  .menuToggle:not(.home) .bar {
+    background-color: black; /* Black toggle on other pages */
+  }
+
+  .navLinks.open + .menuToggle .bar {
+    background-color: gray; /* Gray toggle when menu is open */
+  }
+
+  .logoContainer {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .logoImage {
+    width: 80%;
+    border-radius: 100px;
+    height: 7vh;
+    object-fit: contain;
+    overflow: hidden;
+  }
+.menuToggle{
+  margin-top: 8px;
+}
   .bar {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: rgb(67, 65, 65);
-    margin: 5px 0;
+    margin: px 0;
+  }
+
+  .loginDesktop {
+    display: none; /* Hide desktop login on mobile */
+  }
+
+  .loginMobile {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .loginMobile button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
   }
 }

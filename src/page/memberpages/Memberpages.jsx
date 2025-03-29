@@ -5,7 +5,7 @@ import Memberhero from '../../components/member/memberheros/Memberhero';
 const MemberPage = () => {
   return (
     <div className={styles.memberPage}>
-      <Memberhero/>
+      <Memberhero />
       <h1 className={styles.title}>Committee Members</h1>
       <MemberList />
     </div>

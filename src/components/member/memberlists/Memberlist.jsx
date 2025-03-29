@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import MemberCard from '../membercard/Membercard';
-import MemberDetail from '../memberdetails/Memberdetail';
+import MemberDetail from '../memberdetails/Memberdetail'; // Corrected path relative to MemberList
 import styles from './Memberlist.module.css';
 
 const MemberList = () => {
-  const [members, setMembers] = useState([]); // State for all members
-  const [loading, setLoading] = useState(true); // State for loading status
-  const [error, setError] = useState(""); // State for errors
-  const [selectedMember, setSelectedMember] = useState(null); // State for the selected member
+  const [members, setMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [selectedMember, setSelectedMember] = useState(null);
 
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/sanchalak"); // Backend API
+        const response = await fetch("http://localhost:8000/api/v1/sanchalak");
         const data = await response.json();
         if (data.success) {
           setMembers(data.data);
@@ -37,22 +37,21 @@ const MemberList = () => {
       <div className={styles.cardGrid}>
         {members.map((member) => (
           <MemberCard
-            key={member._id} // Use `_id` (or whatever unique identifier your backend provides)
+            key={member._id}
             member={member}
-            onClick={() => setSelectedMember(member)} // Set the selected member
+            onClick={() => setSelectedMember(member)}
           />
         ))}
       </div>
 
-      {/* Render MemberDetail only if a member is selected */}
       {selectedMember && (
         <div className={styles.detailOverlay}>
           <div className={styles.detailModal}>
             <button
               className={styles.closeButton}
-              onClick={() => setSelectedMember(null)} // Clear selected member on close
+              onClick={() => setSelectedMember(null)}
             >
-              &times;
+              ×
             </button>
             <MemberDetail member={selectedMember} />
           </div>

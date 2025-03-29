@@ -1,131 +1,167 @@
+/* Container Styles */
 .container {
-    display: flex;
-    margin-top: 50px;
-    flex-direction: row;
-    gap: 20px;
-  
-    width: 70%;
-  margin-left: 240px;
-    /* background-color: #fff; */
-    /* border: 1px solid #ddd; */
-    /* border-radius: 10px; */
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-  }
-  /* .image{
-    width: max-content;
-    margin-right: 400px;
-    height: 50vh;
-  } */
-  .image {
-    max-width: 300px;
-    /* overflow: auto;
-    background: fixed; */
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-    height: 55vh;
-    border-radius: 10px;
-  }
-  
-  .content {
-    flex: 1;
-    padding-right: 20px;
-    /* padding-top: 40px; */
-    text-align: justify;
-  }
-  
-  .content h2 {
-    font-size: 24px;
-    margin-top: 40px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .akhile {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  .buttonview {
-    background-color: #ff5069;
-    color: #fff; /* Ensures text color remains white */
-    margin-left: 260px;
-    margin-top: 30px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px 0 15px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none; /* Prevents underline */
-    display: inline-block;
-    transition: background-color 0.3s ease-in-out;
+  display: flex;
+  margin-top: 50px;
+  flex-direction: row;
+  gap: 20px;
+  width: 70%;
+  margin-left: 240px; /* Fixed margin for desktop */
+}
+
+/* Image Styles */
+.image {
+  max-width: 300px;
+  height: 55vh;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Content Styles */
+.content {
+  flex: 1;
+  padding-right: 20px;
+  text-align: justify;
+}
+
+.content h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.akhile {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Button Styles */
+.buttonview {
+  background-color: #ff5069;
+  color: #fff;
+  margin-left: 260px; /* Fixed margin for desktop */
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px 0 15px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .buttonview:hover {
-    background-color: #e0445d;
+  background-color: #e0445d;
 }
 
 .buttonview:active {
-    background-color: #c03a50;
+  background-color: #c03a50;
 }
 
-/* Prevent link text color from changing */
 .buttonview a {
-    color: inherit; 
-    text-decoration: none; 
+  color: inherit;
+  text-decoration: none;
 }
-  
-  /* .button:hover {
-    background-color: #c62828;
-  } */
 
-
-
-
-
-  
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .container {
-      flex-direction: column; /* Stack items vertically */
-      padding: 20px;
-      width: 80%;
-    margin-left: -50px;
-    margin-left: 10px;
-      
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    width: 90%; /* Wider for smaller screens */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto;
+    padding: 20px;
+  }
 
-      align-items: flex-start;
-    }
-  
-    .image {
-      height: 40vh; /* Adjust image height */
-      margin-bottom: 20px; /* Add spacing between image and content */
-    }
-  
-    .button {
-      margin: 0 auto; /* Center align the button */
-    }
+  .image {
+    max-width: 100%; /* Full width on mobile */
+    height: 40vh; /* Adjusted height */
+    margin-bottom: 20px; /* Space below image */
   }
-  
-  @media (max-width: 480px) {
-    .container {
-      gap: 10px; /* Reduce spacing for smaller screens */
-    }
-  
-    h2 {
-      font-size: 20px; /* Adjust heading size */
-    }
-  
-    p {
-      font-size: 14px; /* Smaller font for text */
-    }
-  
-    .button {
-      padding: 8px 16px; /* Smaller button */
-      font-size: 14px;
-      width: 100%; /* Full-width button */
-      text-align: center;
-    }
+
+  .content {
+    padding-right: 0; /* Remove right padding */
   }
+
+  .content h2 {
+    font-size: 22px; /* Slightly smaller heading */
+    margin-top: 20px; /* Reduced top margin */
+  }
+
+  .akhile {
+    font-size: 15px; /* Slightly smaller text */
+  }
+
+  .buttonview {
+    margin-left: 80px; /* Remove fixed margin */
+    margin-top: 20px;
+    width: 50%; /* Full-width button */
+    text-align: center; /* Center text */
+    padding: 12px 20px; /* Consistent padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%; /* Even wider for very small screens */
+    gap: 15px; /* Reduced gap */
+    padding: 15px; /* Reduced padding */
+  }
+
+  .image {
+    height: 35vh; /* Further reduced height */
+  }
+
+  .content h2 {
+    font-size: 20px; /* Smaller heading */
+  }
+
+  .akhile {
+    font-size: 14px; /* Smaller text */
+    margin-top: 15px;
+  }
+
+  .buttonview {
+    font-size: 14px; /* Smaller button text */
+    padding: 10px 15px; /* Smaller padding */
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    width: 100%; /* Full width for tiny screens */
+    padding: 10px;
+  }
+
+  .image {
+    height: 30vh; /* Minimal height */
+  }
+
+  .content h2 {
+    font-size: 18px;
+  }
+
+  .akhile {
+    font-size: 13px;
+  }
+
+  /* .buttonview {
+    font-size: 13px;
+    width: 10px;
+    padding: 8px 12px;
+  } */
+  .buttonview {
+    width: 10%;
+    font-size: 13px;
+    width: 10px;
+    padding: 8px 12px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}

@@ -2,20 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "./logo.png";
-import TranslateWebsite from "../transletion/Transletion";
 
 const Navbar = ({ isHomePage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);  // Track if user is logged in
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Toggle menu for mobile
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => !prev); // Toggle only on button click
   };
 
-  // Track scroll position
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -27,29 +24,23 @@ const Navbar = ({ isHomePage }) => {
     };
   }, []);
 
-  // Check if user is logged in on initial load
   useEffect(() => {
     const loggedInStatus = localStorage.getItem("isLoggedIn");
-    setIsLoggedIn(loggedInStatus === "true");  // Set isLoggedIn state based on localStorage value
+    setIsLoggedIn(loggedInStatus === "true");
   }, []);
 
-  // Handle logout
   const handleLogout = () => {
     localStorage.setItem("isLoggedIn", "false");
     setIsLoggedIn(false);
   };
 
   return (
-    <header
-      className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
-    >
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <div className={styles.navbar}>
-        {/* Logo */}
         <a className={styles.logoContainer}>
           <img src={logo} className={styles.logoImage} alt="Logo" />
         </a>
 
-        {/* Navigation Links */}
         <nav className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
           <Link to="/" className={isHomePage ? styles.whiteText : styles.blackText}>
             Home
@@ -63,12 +54,7 @@ const Navbar = ({ isHomePage }) => {
           <Link to="/groommain" className={isHomePage ? styles.whiteText : styles.blackText}>
             Groom
           </Link>
-          {/* <TranslateWebsite/> */}
-          {/* <Link to="/marathi" className={isHomePage ? styles.whiteText : styles.blackText}>
-           Marathi
-          </Link> */}
 
-          {/* Services Dropdown */}
           <div
             className={styles.dropdown}
             onMouseEnter={() => setDropdownVisible(true)}
@@ -99,12 +85,23 @@ const Navbar = ({ isHomePage }) => {
             Contact
           </Link>
           <Link to="/pricing" className={isHomePage ? styles.whiteText : styles.blackText}>
-Price
-</Link>
+            Price
+          </Link>
+
+          <div className={styles.loginMobile}>
+            {isLoggedIn ? (
+              <button onClick={handleLogout} className={isHomePage ? styles.whiteText : styles.blackText}>
+                Log Out
+              </button>
+            ) : (
+              <Link to="/login" className={isHomePage ? styles.whiteText : styles.blackText}>
+                Log In
+              </Link>
+            )}
+          </div>
         </nav>
 
-        {/* Log In / Log Out Button */}
-        <div className={styles.login}>
+        <div className={styles.loginDesktop}>
           {isLoggedIn ? (
             <button onClick={handleLogout} className={isHomePage ? styles.whiteText : styles.blackText}>
               Log Out
@@ -116,8 +113,10 @@ Price
           )}
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className={styles.menuToggle} onClick={toggleMenu}>
+        <div
+          className={`${styles.menuToggle} ${isHomePage ? styles.home : ""}`}
+          onClick={toggleMenu}
+        >
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>

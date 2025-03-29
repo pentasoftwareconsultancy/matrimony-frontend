@@ -1,183 +1,5 @@
-.profileStepsContainer {
-    position: relative;
-    margin-top: 50px;
-    margin-left: 150px;
-    margin-right: 100px;
- /* Center the container with top/bottom margin */
-    padding: 0 20px;
-    max-width: 1200px; /* Limit the width of the container */
-  }
-  
-  .title {
-    color: rgb(58, 58, 60);
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif; /* Modern and clean font */
-  }
-  
-  .subtitle {
-    position: relative;
-    text-align: center;
-    font-size: 16px;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .stepsSection {
-    margin-bottom: 50px;
-  }
-  
-  .circleIcon {
-    background-color: #f01e4c; /* Same color as the text */
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px;
-  }
-  
-  .icon {
-    font-size: 2.5em; /* Increased font size for icons */
-    color: #ffffff; /* White color for icons to stand out on the circle background */
-  }
-  
-  .arrow {
-    width: 50px;
-    height: 2px;
-    background-color:  #f01e4c;
-    position: relative;
-    margin: 0 auto;
-  }
-  
-  .arrow:before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 10px solid  #f01e4c;
-  }
-  
-  .stepTitle {
-    color: #f01e4c;
-    font-size: 19px;
-    font-weight: bold;
-    margin-top: 10px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .stepDescription {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.4;
-    width: 250px;
-    font-size: 16px;
-  }
-  
-  .registerButton {
-    background-color:#ff5069;
-    padding: 10px 20px;
-    color: white;
-    width: 150px;
-    margin-bottom: 50px;
-    border: 1px solid red;
-    border-radius: 15px 0 15px 15px;
-    display: block;
-    margin: 50px auto;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .stepsRow {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .stepColumn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 200px;
-  }
-  
-  .arrowColumn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .stepsRow {
-      flex-direction: column; /* Stack the steps vertically */
-      align-items: center; /* Center the content */
-    }
-  
-    .stepColumn {
-      max-width: 100%; /* Allow the step column to use full width */
-      margin-bottom: 20px; /* Add spacing between steps */
-    }
-  
-    .arrow {
-      display: none; /* Hide the arrow between steps on mobile */
-    }
-  
-    .stepDescription {
-      width: 90%; /* Make descriptions take up more space on smaller screens */
-      font-size: 14px; /* Reduce font size for better fit */
-    }
-  
-    .circleIcon {
-      width: 80px; /* Reduce icon size */
-      height: 80px;
-    }
-  
-    .icon {
-      font-size: 2em; /* Adjust icon size */
-    }
-  
-    .registerButton {
-      width: 100%; /* Make the button full-width on mobile */
-      max-width: 300px; /* Limit the width */
-      padding: 12px; /* Adjust padding for a better touch target */
-    }
-  }
-  
-  /* For very small screens */
-  @media (max-width: 480px) {
-    .title {
-      font-size: 20px; /* Reduce title font size for very small screens */
-    }
-  
-    .subtitle {
-      font-size: 14px; /* Smaller subtitle */
-    }
-  
-    .circleIcon {
-      width: 70px; /* Further reduce icon size */
-      height: 70px;
-    }
-  
-    .stepDescription {
-      font-size: 13px; /* Smaller description text */
-    }
-  }
-  
-
-
-
-
-
-
-
-  *,
+/* Reset and Base Styles */
+*,
 *::before,
 *::after {
   margin: 0;
@@ -197,10 +19,120 @@ body {
   padding-bottom: 50px;
 }
 
+/* Profile Steps Container */
+.profileStepsContainer {
+  position: relative;
+  margin: 50px auto; /* Center with auto margins */
+  padding: 0 20px;
+  max-width: 1200px;
+}
 
-/* INTRO SECTION
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.title {
+  color: rgb(58, 58, 60);
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
 
+.subtitle {
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.stepsSection {
+  margin-bottom: 50px;
+}
+
+.circleIcon {
+  background-color: #f01e4c;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.icon {
+  font-size: 2.5em;
+  color: #ffffff;
+}
+
+.arrow {
+  width: 50px;
+  height: 2px;
+  background-color: #f01e4c;
+  position: relative;
+  margin: 0 auto;
+}
+
+.arrow:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #f01e4c;
+}
+
+.stepTitle {
+  color: #f01e4c;
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.stepDescription {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  width: 250px;
+  font-size: 16px;
+}
+
+.registerButton {
+  background-color: #ff5069;
+  padding: 10px 20px;
+  color: white;
+  width: 150px;
+  margin: 50px auto;
+  border: 1px solid red;
+  border-radius: 15px 0 15px 15px;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.stepsRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stepColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+}
+
+.arrowColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Intro Section */
 .intro {
   background: #f45b69;
   padding: 100px 0;
@@ -217,10 +149,7 @@ h1 {
   font-size: 2.5rem;
 }
 
-
-/* TIMELINE
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
+/* Timeline */
 .timeline ul {
   background: #456990;
   padding: 50px 0;
@@ -292,10 +221,7 @@ time {
   margin-bottom: 8px;
 }
 
-
-/* EFFECTS
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
+/* Effects */
 .timeline ul li::after {
   transition: background 0.5s ease-in-out;
 }
@@ -324,100 +250,130 @@ time {
   opacity: 1;
 }
 
-
-/* GENERAL MEDIA QUERIES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-@media screen and (max-width: 900px) {
-  .timeline ul li div {
-    width: 250px;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Profile Steps Container */
+  .profileStepsContainer {
+    margin: 30px 10px; /* Reduce margins for mobile */
+    padding: 0 10px;
   }
-  .timeline ul li:nth-child(even) div {
-    left: -289px;
-    /*250+45-6*/
-  }
-}
 
-@media screen and (max-width: 600px) {
+  .title {
+    font-size: 22px; /* Slightly smaller title */
+  }
+
+  .subtitle {
+    font-size: 14px; /* Smaller subtitle */
+  }
+
+  .stepsRow {
+    flex-direction: column; /* Stack steps vertically */
+    align-items: center;
+  }
+
+  .stepColumn {
+    max-width: 100%; /* Full width for steps */
+    margin-bottom: 30px; /* Space between steps */
+  }
+
+  .arrow {
+    display: none; /* Hide arrows on mobile */
+  }
+
+  .stepDescription {
+    width: 90%; /* Wider description */
+    font-size: 14px; /* Smaller text */
+  }
+
+  .circleIcon {
+    width: 80px; /* Smaller circle */
+    height: 80px;
+  }
+
+  .icon {
+    font-size: 2em; /* Smaller icon */
+  }
+
+  .registerButton {
+    width: 100%; /* Full-width button */
+    max-width: 250px; /* Limit max width */
+    padding: 12px;
+  }
+
+  /* Timeline */
+  .intro {
+    padding: 50px 0; /* Reduce padding */
+  }
+
+  h1 {
+    font-size: 2rem; /* Smaller heading */
+  }
+
+  .timeline ul {
+    padding: 30px 0; /* Reduce padding */
+  }
+
   .timeline ul li {
-    margin-left: 20px;
+    margin-left: 20px; /* Shift timeline to left */
+    width: 4px; /* Thinner line */
   }
+
   .timeline ul li div {
-    width: calc(100vw - 91px);
+    width: calc(100vw - 60px); /* Full width minus margins */
+    left: 45px !important; /* Force all divs to right side */
   }
+
   .timeline ul li:nth-child(even) div {
-    left: 45px;
+    left: 45px !important; /* Override even positioning */
   }
-  .timeline ul li:nth-child(even) div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent #f45b69 transparent transparent;
-  }
-}
 
-
-/* EXTRA/CLIP PATH STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.timeline-clippy ul li::after {
-  width: 40px;
-  height: 40px;
-  border-radius: 0;
-}
-
-.timeline-rhombus ul li::after {
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-}
-
-.timeline-rhombus ul li div::before {
-  bottom: 12px;
-}
-
-.timeline-star ul li::after {
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-}
-
-.timeline-heptagon ul li::after {
-  clip-path: polygon(
-    50% 0%,
-    90% 20%,
-    100% 60%,
-    75% 100%,
-    25% 100%,
-    0% 60%,
-    10% 20%
-  );
-}
-
-.timeline-infinite ul li::after {
-  animation: scaleAnimation 2s infinite;
-}
-
-@keyframes scaleAnimation {
-  0% {
-    transform: translateX(-50%) scale(1);
-  }
-  50% {
-    transform: translateX(-50%) scale(1.25);
-  }
-  100% {
-    transform: translateX(-50%) scale(1);
+  .timeline ul li div::before {
+    left: -15px !important; /* Adjust arrow to left */
+    right: auto !important;
+    border-width: 8px 16px 8px 0 !important;
+    border-color: transparent #f45b69 transparent transparent !important;
   }
 }
 
+@media (max-width: 480px) {
+  /* Profile Steps Container */
+  .title {
+    font-size: 20px;
+  }
 
-/* FOOTER STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .circleIcon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .stepDescription {
+    font-size: 13px;
+  }
+
+  .registerButton {
+    max-width: 200px;
+  }
+
+  /* Timeline */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .timeline ul li div {
+    width: calc(100vw - 50px); /* Adjust for very small screens */
+    padding: 10px;
+  }
+
+  time {
+    font-size: 1rem;
+  }
+}
+
+/* Footer */
 .page-footer {
   position: fixed;
   right: 0;
