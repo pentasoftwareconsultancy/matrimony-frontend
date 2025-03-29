@@ -27,6 +27,7 @@
   margin-left: 430px;
   position: relative; /* Needed to position the icon inside the input */
   width: 100%;
+  width: 100%;
   border-radius: 50px;
   max-width: 400px; /* Adjust based on your design */
 }
