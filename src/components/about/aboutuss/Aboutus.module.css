@@ -192,7 +192,8 @@
 @media (max-width: 768px) {
   .container {
     margin: 550px auto;
-    padding: 15px;
+    width: 100%;
+    padding: 2px;
   }
 
   .textSection h2 {
@@ -239,15 +240,22 @@
 /* Small Mobile View (max-width: 480px) */
 @media (max-width: 480px) {
   .container {
-    padding: 10px;
+    width: 100%;
+    padding: 3px;
+    margin-top:400px;
+    margin-bottom: 10px;
   }
-
+  .main{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .textSection h2 {
-    font-size: 24px;
+    font-size: 30px;
+    padding-top: 10px;
   }
 
   .textSection p {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .valuesSection h3 {

@@ -21,7 +21,8 @@
 @media (max-width: 768px) {
     .container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        /* height: 50vh; */
         align-items: center;  /* Centers the content */
         padding-left: 20px;
     }
@@ -33,7 +34,7 @@
 
     .container1 img {
         width: 100%;  /* Ensures the image is responsive */
-        height: auto;  /* Adjusts the height based on the image's aspect ratio */
+        height: 50vh;/* Adjusts the height based on the image's aspect ratio */
         border-radius: 15px;  /* Adds rounded corners */
     }
 }
@@ -43,10 +44,14 @@
     .container {
         padding-left: 10px;
         padding-right: 10px;
+        display: none;
     }
 
     .container1 {
         width: 100%;  /* Takes up full width on small screens */
+        height: 70vh;
+        gap: 10px;
+        margin-top: 10px;
     }
 
     .container1 img {
