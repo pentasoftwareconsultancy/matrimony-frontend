@@ -51,7 +51,7 @@ const Paymentmethod = ({ onSubmit }) => {
       };
 
       const response = await axios.post(
-        "http://localhost:8000/api/v1/payment/create",
+        "https://matrimonybackend-nd5n.onrender.com/api/v1/payment/create",
         paymentData,
         {
           headers: {

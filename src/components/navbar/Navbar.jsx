@@ -101,7 +101,7 @@ const Navbar = ({ isHomePage }) => {
           </div>
         </nav>
 
-        <div className={styles.loginDesktop}>
+        {/* <div className={styles.loginDesktop}>
           {isLoggedIn ? (
             <button onClick={handleLogout} className={isHomePage ? styles.whiteText : styles.blackText}>
               Log Out
@@ -111,7 +111,7 @@ const Navbar = ({ isHomePage }) => {
               Log In
             </Link>
           )}
-        </div>
+        </div> */}
 
         <div
           className={`${styles.menuToggle} ${isHomePage ? styles.home : ""}`}

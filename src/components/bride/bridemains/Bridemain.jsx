@@ -22,7 +22,7 @@ function Bridemain() {
   // Fetch profiles once the component mounts
   useEffect(() => {
     const fetchProfiles = async () => {
-      const response = await fetch('http://localhost:8000/api/v1/bride-groom?gender=female');
+      const response = await fetch('https://matrimonybackend-nd5n.onrender.com/api/v1/bride-groom?gender=female');
       const data = await response.json();
       if (data.success) {
         setProfiles(data.data);

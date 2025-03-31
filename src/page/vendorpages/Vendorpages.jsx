@@ -10,7 +10,7 @@ const VendorPage = () => {
   useEffect(() => {
     const fetchVendors = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/vendors");
+        const response = await fetch("https://matrimonybackend-nd5n.onrender.com/api/v1/vendors");
         const data = await response.json();
         if (data.success) {
           setVendors(data.data); // Populate vendors list

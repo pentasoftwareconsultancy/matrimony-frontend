@@ -12,7 +12,7 @@ const MemberList = () => {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/sanchalak");
+        const response = await fetch("https://matrimonybackend-nd5n.onrender.com/api/v1/sanchalak");
         const data = await response.json();
         if (data.success) {
           setMembers(data.data);

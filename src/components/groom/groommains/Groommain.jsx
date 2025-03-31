@@ -21,7 +21,7 @@ function Groommain() {
     const fetchProfiles = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/v1/bride-groom?gender=male"
+          "https://matrimonybackend-nd5n.onrender.com/api/v1/bride-groom?gender=male"
         );
         const data = await response.json();
         if (data.success) {
