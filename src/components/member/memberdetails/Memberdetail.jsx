@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa"; // Import social media icons
-import styles from "./Memberdetail.module.css";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import styles from "./MemberDetail.module.css";
 
 const MemberDetail = () => {
   const { id } = useParams();
@@ -29,34 +29,31 @@ const MemberDetail = () => {
     fetchMember();
   }, [id]);
 
-  if (loading) return <p>Loading member details...</p>;
-  if (error) return <p>{error}</p>;
-  if (!member) return <p>Member not found!</p>;
+  if (loading) return <p className={styles.loading}>Loading member details...</p>;
+  if (error) return <p className={styles.error}>{error}</p>;
+  if (!member) return <p className={styles.notFound}>Member not found!</p>;
 
-  // Map social media platforms to their respective icons
   const platformIcons = {
     facebook: <FaFacebook />,
     twitter: <FaTwitter />,
     linkedin: <FaLinkedin />,
-    instagram: <FaInstagram />
+    instagram: <FaInstagram />,
   };
 
   return (
     <div className={styles.detail}>
       <div className={styles.main}>
-        <div className={styles.deta}>
-          <div className={styles.name}>{member.name}</div>
-          <div className={styles.designation}>{member.designation}</div>
-          <div className={styles.bio}>{member.bio}</div>
-        </div>
         <img
           src={member.profilePic || "https://via.placeholder.com/150"}
           alt={member.name}
           className={styles.image}
         />
+        <div className={styles.deta}>
+          <h2 className={styles.name}>{member.name}</h2>
+          <div className={styles.designation}>{member.designation}</div>
+          <div className={styles.bio}>{member.bio}</div>
+        </div>
       </div>
-
-      <h2 className={styles.name}>{member.name}</h2>
 
       <div className={styles.info}>
         <p><strong>Phone:</strong> {member.phone}</p>
@@ -75,16 +72,15 @@ const MemberDetail = () => {
         {member.work && member.work.length > 0 ? (
           member.work.map((workItem) => (
             <div key={workItem._id} className={styles.workItem}>
-              
               <img
                 src={workItem.image || "https://via.placeholder.com/150"}
                 alt={workItem.title}
                 className={styles.workImage}
               />
               <div className={styles.maintext}>
-              <h4>{workItem.title}</h4>
-              <p>{workItem.description}</p>
-              <p><strong>Feedback:</strong> {workItem.feedback}</p>
+                <h4>{workItem.title}</h4>
+                <p>{workItem.description}</p>
+                <p><strong>Feedback:</strong> {workItem.feedback}</p>
               </div>
             </div>
           ))
@@ -104,22 +100,20 @@ const MemberDetail = () => {
         )}
       </div>
 
-      <h3 className={styles.title}>Follow on Social Media</h3>
+      <h3 className={styles.title}>Social Media</h3>
       <div className={styles.socialLinks}>
-        {member.socialLinks && Object.keys(member.socialLinks).map((platform, index) => (
-          <a
-            key={index}
-            href={member.socialLinks[platform]}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconLink}
-          >
-            <span className={styles.icon}>{platformIcons[platform]}</span>
-            <span className={styles.platformName}>
-              {platform.charAt(0).toUpperCase() + platform.slice(1)}
-            </span>
-          </a>
-        ))}
+        {member.socialLinks &&
+          Object.keys(member.socialLinks).map((platform, index) => (
+            <a
+              key={index}
+              href={member.socialLinks[platform]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.iconLink}
+            >
+              <span className={styles.icon}>{platformIcons[platform]}</span>
+            </a>
+          ))}
       </div>
     </div>
   );

@@ -119,7 +119,7 @@ function Login() {
                 {showPassword ? "🙈" : "👁️"}
               </span>
             </div>
-            <button type="submit">Login</button>
+            <button className={styles.loginbutton} type="submit">Login</button>
             <div className={styles.forgotPassword}>
               <a href="/">Forgot Password?</a>
             </div>

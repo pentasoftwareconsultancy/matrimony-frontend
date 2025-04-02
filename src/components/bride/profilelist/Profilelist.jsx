@@ -41,7 +41,7 @@ const ProfileList = ({ profiles }) => {
           Previous
         </button>
         
-        <span>Page {currentPage} of {totalPages}</span>
+        <span> {currentPage} of {totalPages}</span>
         <button className={styles.next} onClick={nextPage} disabled={currentPage === totalPages}>
           Next
         </button>

@@ -10,10 +10,16 @@
     width: 100px;
     margin-right: 10px;
     background-color:#ff5069;
+    border-radius: 10px;
+    border-color: #f7f4f4;
+    color: white;
   }
   .next{
     width: 100px;
     margin-left: 10px;
+    border-radius: 10px;
+    border-color: white;
+    color: white;
     background-color: #ff5069;
   }
   
