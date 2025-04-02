@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
-import styles from "./MemberDetail.module.css";
+import styles from "./Memberdetail.module.css";
 
 const MemberDetail = () => {
   const { id } = useParams();
