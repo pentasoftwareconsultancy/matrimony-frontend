@@ -143,7 +143,41 @@
   margin-top: 15px;
   color: white;
 }
+/* Container for the Vendors item */
+.subDropdown {
+  position: relative;
+}
 
+/* Sub-dropdown menu styling */
+.subDropdownMenu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  border: 1px solid #ccc;
+  left: 100%; /* Positions it to the right of "Vendors" */
+  top: 0; /* Aligns with the top of "Vendors" */
+  background-color: rgba(121, 120, 120, 0.6);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds depth */
+  z-index: 1; /* Ensures it stays on top */
+  min-width: 200px; /* Adjust width as needed */
+}
+
+/* Show sub-dropdown when hovering over the Vendors container */
+.subDropdown:hover .subDropdownMenu {
+  display: block;
+}
+
+/* Style links inside the sub-dropdown */
+.subDropdownMenu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black; /* Matches your blackText class */
+}
+
+/* Hover effect for sub-dropdown items */
+.subDropdownMenu a:hover {
+  background-color: #f1f1f1; /* Light grey on hover */
+}
 /* Updated Mobile View */
 @media (max-width: 768px) {
   .header.scrolled {

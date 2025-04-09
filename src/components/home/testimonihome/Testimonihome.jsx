@@ -55,6 +55,7 @@ const Testimonihome = () => {
       {/* ✅ Subtitle with Icon */}
       <h2 className={styles.title}>
         <FaQuoteLeft className={styles.icon} /> What Our Happy Couples Say
+        <FaQuoteRight className={styles.bottomIcon} />
       </h2>
 
       <div className={styles.testimonialContainer}>
@@ -70,7 +71,7 @@ const Testimonihome = () => {
             {testimonials[index].text}
           </p>
           {/* ✅ Icon Below Text */}
-          <FaQuoteRight className={styles.bottomIcon} />
+          
           <div className={styles.main}>
           <button className={styles.navButton} onClick={handlePrev}>
           <FaChevronLeft />

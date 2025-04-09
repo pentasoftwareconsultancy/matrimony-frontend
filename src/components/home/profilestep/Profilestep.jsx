@@ -3,10 +3,10 @@ import styles from './Timeline.module.css';
 
 function Profilestep() {
   const timelineItems = [
-    { year: '📝', title: 'Create your profile', text: "Looking for your life partner? Create your profile on Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal today and take the first step toward a meaningful connection!" },
-    { year: '🔍', title: 'Find Compatible', text: "Looking for a compatible life partner? Create your profile on Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal today and find the perfect match for a meaningful connection!" },
-    { year: '💬', title: 'Get to know them', text: "Looking for a compatible life partner? Create your profile on Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal today and get to know them for a meaningful connection!" },
-    { year: '❤️', title: 'Find love!', text: "Looking for a compatible life partner? Create your profile on Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal today and find love that lasts a lifetime!" },
+    { year: '📝', title: 'Create your profile', text:"Ready to begin your journey toward love? Create your profile on Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal and take the first step toward a lifelong connection."},
+    { year: '🔍', title: 'Find Compatible', text: "Discover compatible matches tailored for you on Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal and take a step closer to finding your perfect partner."},
+    { year: '💬', title: 'Get to know them', text: "Connect and get to know potential life partners in a meaningful way through Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal." },
+    { year: '❤️', title: 'Find love!', text: "Experience the joy of finding true love and build a beautiful future together with the help of Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal." },
   ];
 
   useEffect(() => {

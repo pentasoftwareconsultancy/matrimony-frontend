@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./Groommain.module.css";
 import ProfileList from "../../bride/profilelist/Profilelist";
 import Sidebar from "../../bride/sidebar/sidebarmain/Sidebar";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function Groommain() {
-  const [query, setQuery] = useState(""); // for text search
+  const [query, setQuery] = useState("");
   const [profiles, setProfiles] = useState([]);
   const [filters, setFilters] = useState({
     selectedCategory: "",
@@ -14,9 +14,10 @@ function Groommain() {
     selectedMotherTongue: "",
     selectedEducationField: "",
     selectedAnnualIncome: "",
+    selectedMaritalStatus: "",
+    selectedComplexion: "",
   });
 
-  // Fetch groom profiles once the component mounts
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
@@ -46,10 +47,13 @@ function Groommain() {
   };
 
   const filteredProfiles = profiles.filter((profile) => {
+    // Text search excludes maritalStatus and complexion
     const matchesQuery =
-      profile.fullName?.toLowerCase().includes(query.toLowerCase()) ||
-      profile.city?.toLowerCase().includes(query.toLowerCase()) ||
-      profile.motherTongue?.toLowerCase().includes(query.toLowerCase());
+      (profile.fullName?.toLowerCase().includes(query.toLowerCase()) || false) ||
+      (profile.city?.toLowerCase().includes(query.toLowerCase()) || false) ||
+      (profile.motherTongue?.toLowerCase().includes(query.toLowerCase()) || false) ||
+      (profile.educationField?.toLowerCase().includes(query.toLowerCase()) || false) ||
+      (profile.annualIncome?.toLowerCase().includes(query.toLowerCase()) || false);
 
     const matchesCategory = filters.selectedCategory
       ? profile[filters.selectedCategory]
@@ -76,13 +80,25 @@ function Groommain() {
         filters.selectedAnnualIncome.toLowerCase()
       : true;
 
+    const matchesMaritalStatus = filters.selectedMaritalStatus
+      ? profile.maritalStatus?.toLowerCase() ===
+        filters.selectedMaritalStatus.toLowerCase()
+      : true;
+
+    const matchesComplexion = filters.selectedComplexion
+      ? profile.complexion?.toLowerCase() ===
+        filters.selectedComplexion.toLowerCase()
+      : true;
+
     return (
       matchesQuery &&
       matchesCategory &&
       matchesCity &&
       matchesMotherTongue &&
       matchesEducationField &&
-      matchesAnnualIncome
+      matchesAnnualIncome &&
+      matchesMaritalStatus &&
+      matchesComplexion
     );
   });
 
@@ -92,21 +108,50 @@ function Groommain() {
         <Sidebar handleFilterChange={handleFilterChange} />
       </div>
       <div className={styles.mainContent}>
-         <div className={styles.searchWrapper}>
-                 <input
-                   type="text"
-                   value={query}
-                   onChange={handleInputChange}
-                   placeholder="Search profiles..."
-                   className={styles.searchInput}
-                 />
-                 <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
-               </div>
-        {filters.selectedMotherTongue && (
-          <div className={styles.filterTag}>
-            Filtered by Mother Tongue: {filters.selectedMotherTongue}
-          </div>
-        )}
+        <div className={styles.searchWrapper}>
+          <input
+            type="text"
+            value={query}
+            onChange={handleInputChange}
+            placeholder="Search by name, city, education..."
+            className={styles.searchInput}
+          />
+          <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+        </div>
+
+        <div className={styles.filterTags}>
+          {filters.selectedCity && (
+            <span className={styles.filterTag}>
+              City: {filters.selectedCity}
+            </span>
+          )}
+          {filters.selectedMotherTongue && (
+            <span className={styles.filterTag}>
+              Mother Tongue: {filters.selectedMotherTongue}
+            </span>
+          )}
+          {filters.selectedEducationField && (
+            <span className={styles.filterTag}>
+              Education: {filters.selectedEducationField}
+            </span>
+          )}
+          {filters.selectedAnnualIncome && (
+            <span className={styles.filterTag}>
+              Income: {filters.selectedAnnualIncome}
+            </span>
+          )}
+          {filters.selectedMaritalStatus && (
+            <span className={styles.filterTag}>
+              Marital Status: {filters.selectedMaritalStatus}
+            </span>
+          )}
+          {filters.selectedComplexion && (
+            <span className={styles.filterTag}>
+              Complexion: {filters.selectedComplexion}
+            </span>
+          )}
+        </div>
+
         <ProfileList profiles={filteredProfiles} />
       </div>
     </div>

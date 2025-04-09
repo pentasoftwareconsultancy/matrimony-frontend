@@ -1,0 +1,55 @@
+.detailContainer {
+    padding: 20px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .mainDetails {
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .gallery {
+    margin-top: 20px;
+  }
+  
+  .profileImages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .profileImage {
+    width: 200px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .galleryItem {
+    margin: 20px 0;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .galleryImage {
+    width: 300px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .notFound {
+    text-align: center;
+    padding: 20px;
+    color: #721c24;
+  }

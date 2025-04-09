@@ -1,0 +1,56 @@
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 12px; /* Reduced padding for mobile */
+  }
+  
+  .heading {
+    font-size: 1.5rem; /* Smaller default for mobile */
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 20px; /* Reduced margin for mobile */
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column for mobile */
+    gap: 16px; /* Smaller gap for mobile */
+  }
+  
+  .loading {
+    text-align: center;
+    margin-top: 20px;
+    color: #6b7280;
+  }
+  
+  /* Small screens (min-width: 640px) */
+  @media (min-width: 640px) {
+    .container {
+      padding: 36px 16px;
+    }
+    .heading {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+      gap: 24px;
+    }
+  }
+  
+  /* Medium screens (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .container {
+      padding: 48px 16px; /* Matches original py-12 px-4 */
+    }
+    .heading {
+      font-size: 2.25rem;
+      margin-bottom: 40px;
+    }
+    .grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+      gap: 32px;
+    }
+  }

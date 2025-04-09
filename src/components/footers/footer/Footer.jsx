@@ -46,9 +46,9 @@ const Footer = () => {
 
       <div className={styles.bottomSection}>
         <div className={styles.contactInfo}>
-          <p><FaLocationDot /> 2022 Grance Template - All Rights Reserved</p>
-          <p><FaPhoneAlt /> 5768797999</p>
-          <p><MdEmail /> nexuxctc2020@gmail.com</p>
+          <p><FaLocationDot />  Bussval Nagar Dyrafur Road AKOT. Dist Akola</p>
+          <p><FaPhoneAlt /> 9421830662</p>
+          <p><MdEmail /> anilraoshridhargawande@gmail.com</p>
         </div>
         <div className={styles.socialIcons}>
           <a href="#" className={styles.socialLink}><FaInstagram /></a>

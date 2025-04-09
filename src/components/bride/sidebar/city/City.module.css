@@ -1,31 +1,58 @@
-/* CountryStateCitySelector.module.css */
+/* City.module.css */
 .container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 310px;
-  padding: 20px;
-  /* margin-right: 800px; */
-  padding-right: px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* margin-bottom: 50px; */
-  background-color: white;
-  margin: 0  0px 25px auto;
+  gap: 15px; /* Increased gap for better spacing */
+  width: 100%; /* Full width within sidebar */
+  max-width: 330px; /* Matches sidebar filter item width */
+  /* padding: 15px;  */
+  /* background-color: #fff;  */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  margin-bottom: 20px; /* Space below component */
 }
 
-.main {
+.label {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600; /* Bold labels */
+  color: #34495e; /* Dark blue-gray for elegance */
+  margin-bottom: -5px; /* Tighten spacing between label and select */
 }
 
-.citymain {
-  padding: 8px;
+.select {
+  padding: 10px 12px; /* Comfortable padding */
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  color: #555; /* Softer text color */
+  background-color: white; 
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 6px; /* Slightly rounded */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Indicate interactivity */
+  appearance: none; /* Remove default dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2334495e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
 }
 
-.citymain:disabled {
-  background-color: #f0f0f0;
+.select:hover {
+  border-color: #e91e63; /* Pink border on hover */
+  box-shadow: 0 2px 6px rgba(233, 30, 99, 0.1); /* Pink shadow */
+}
+
+.select:focus {
+  border-color: #e91e63; /* Pink border on focus */
+  box-shadow: 0 0 8px rgba(233, 30, 99, 0.2); /* Stronger pink shadow */
+}
+
+.select:disabled {
+  background-color: #ffffff; 
+  color: #999; /* Lighter text */
+  cursor: not-allowed; /* Indicate disabled state */
+  border-color: #ddd;
+}
+
+/* Ensure consistent height for the container */
+.container {
+  height: auto; /* Adjusts to content, but can be fixed if needed */
 }

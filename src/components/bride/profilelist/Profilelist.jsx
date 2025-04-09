@@ -3,7 +3,7 @@ import ProfileCard from '../profilecard/Profilecard';
 import styles from './Profilelist.module.css';
 
 const ProfileList = ({ profiles }) => {
-  const profilesPerPage = 10;
+  const profilesPerPage = 20;
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastProfile = currentPage * profilesPerPage;

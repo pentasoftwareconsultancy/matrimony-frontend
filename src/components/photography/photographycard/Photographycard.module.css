@@ -1,0 +1,60 @@
+.card {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: 100%; /* Ensure card takes full width of its container */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .image {
+    width: 100%;
+    height: 160px; /* Default height for mobile */
+    object-fit: cover;
+  }
+  
+  .content {
+    padding: 12px; /* Reduced padding for smaller screens */
+  }
+  
+  .title {
+    font-size: 1rem; /* Smaller default for mobile */
+    font-weight: 600;
+    color: #1f2937;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .name {
+    font-size: 0.75rem; /* Smaller default for mobile */
+    color: #6b7280;
+  }
+  
+  /* Tablet (min-width: 640px) */
+  @media (min-width: 640px) {
+    .image {
+      height: 192px; /* Slightly larger for tablets */
+    }
+    .content {
+      padding: 16px;
+    }
+    .title {
+      font-size: 1.125rem;
+    }
+    .name {
+      font-size: 0.875rem;
+    }
+  }
+  
+  /* Desktop (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .image {
+      height: 192px; /* Consistent with previous design */
+    }
+  }

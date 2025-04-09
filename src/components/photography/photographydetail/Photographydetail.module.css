@@ -1,0 +1,105 @@
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 12px; /* Reduced for mobile */
+  }
+  
+  .card {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%; /* Full width on mobile */
+    max-width: 480px; /* Default max-width for mobile */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .image {
+    width: 100%;
+    height: 200px; /* Smaller default for mobile */
+    object-fit: cover;
+  }
+  
+  .content {
+    padding: 16px; /* Reduced for mobile */
+  }
+  
+  .title {
+    font-size: 1.25rem; /* Smaller default for mobile */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+  }
+  
+  .details {
+    color: #374151;
+  }
+  
+  .details p {
+    margin-bottom: 8px; /* Reduced spacing for mobile */
+    font-size: 0.875rem; /* Smaller default for mobile */
+  }
+  
+  .label {
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .loading {
+    text-align: center;
+    margin-top: 20px;
+    color: #6b7280;
+  }
+  
+  .error {
+    text-align: center;
+    margin-top: 20px;
+    color: #ef4444;
+  }
+  
+  /* Tablet (min-width: 640px) */
+  @media (min-width: 640px) {
+    .container {
+      padding: 36px 16px;
+    }
+    .card {
+      max-width: 640px;
+    }
+    .image {
+      height: 240px;
+    }
+    .content {
+      padding: 20px;
+    }
+    .title {
+      font-size: 1.5rem;
+    }
+    .details p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Desktop (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .container {
+      padding: 48px 16px;
+    }
+    .card {
+      max-width: 768px; /* Matches original max-w-3xl */
+    }
+    .image {
+      height: 256px; /* Matches original h-64 */
+    }
+    .content {
+      padding: 24px;
+    }
+    .title {
+      font-size: 1.875rem;
+    }
+    .details p {
+      margin-bottom: 12px;
+    }
+  }

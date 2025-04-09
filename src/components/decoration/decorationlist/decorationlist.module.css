@@ -1,0 +1,14 @@
+.decorationList {
+    padding: 20px;
+  }
+  
+  .decorationGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+  }

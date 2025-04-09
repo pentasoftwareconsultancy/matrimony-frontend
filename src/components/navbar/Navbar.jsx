@@ -7,10 +7,27 @@ const Navbar = ({ isHomePage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [subDropdownVisible, setSubDropdownVisible] = useState(false); // Added for Vendors sub-dropdown
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev); // Toggle only on button click
+    setMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  // Toggle Services dropdown on click for mobile
+  const toggleDropdown = (e) => {
+    e.preventDefault(); // Prevent Link navigation
+    setDropdownVisible((prev) => !prev);
+  };
+
+  // Toggle Vendors sub-dropdown on click for mobile
+  const toggleSubDropdown = (e) => {
+    e.preventDefault(); // Prevent Link navigation
+    setSubDropdownVisible((prev) => !prev);
   };
 
   useEffect(() => {
@@ -41,7 +58,10 @@ const Navbar = ({ isHomePage }) => {
           <img src={logo} className={styles.logoImage} alt="Logo" />
         </a>
 
-        <nav className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
+        <nav
+          className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
+          onClick={menuOpen ? closeMenu : null}
+        >
           <Link to="/" className={isHomePage ? styles.whiteText : styles.blackText}>
             Home
           </Link>
@@ -57,20 +77,65 @@ const Navbar = ({ isHomePage }) => {
 
           <div
             className={styles.dropdown}
-            onMouseEnter={() => setDropdownVisible(true)}
-            onMouseLeave={() => setDropdownVisible(false)}
+            onMouseEnter={() => window.innerWidth > 768 && setDropdownVisible(true)} // Hover for desktop
+            onMouseLeave={() => window.innerWidth > 768 && setDropdownVisible(false)} // Hover for desktop
+            onClick={window.innerWidth <= 768 ? toggleDropdown : null} // Click for mobile
           >
-            <Link to="#" className={isHomePage ? styles.whiteText : styles.blackText}>
+            <Link
+              to="#"
+              className={`${isHomePage ? styles.whiteText : styles.blackText} ${styles.dropdownToggle}`}
+            >
               Services
             </Link>
-            {dropdownVisible && (
+            {(dropdownVisible || (window.innerWidth <= 768 && dropdownVisible)) && (
               <div className={styles.dropdownMenu}>
                 <Link to="/events" className={isHomePage ? styles.whiteText : styles.blackText}>
                   Events
                 </Link>
-                <Link to="/vendors" className={isHomePage ? styles.whiteText : styles.blackText}>
-                  Vendors
-                </Link>
+                <div
+                  className={styles.subDropdown}
+                  onMouseEnter={() => window.innerWidth > 768 && setSubDropdownVisible(true)} // Hover for desktop
+                  onMouseLeave={() => window.innerWidth > 768 && setSubDropdownVisible(false)} // Hover for desktop
+                  onClick={window.innerWidth <= 768 ? toggleSubDropdown : null} // Click for mobile
+                >
+                  <Link
+                    to="/vendors"
+                    className={`${isHomePage ? styles.whiteText : styles.blackText} ${styles.dropdownToggle}`}
+                  >
+                    Vendors
+                  </Link>
+                  {(subDropdownVisible || (window.innerWidth <= 768 && subDropdownVisible)) && (
+                    <div className={styles.subDropdownMenu}>
+                      <Link to="/photpgrapy" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        Photography
+                      </Link>
+                      <Link to="/decoration" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        Decoration
+                      </Link>
+                      <Link to="/vendors/dj-music" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        DJ & Music
+                      </Link>
+                      <Link to="/vendors/makeup-hair" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        Makeup & Hair Styling
+                      </Link>
+                      <Link to="/vendors/bridal-wear" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        Bridal Wear
+                      </Link>
+                      <Link to="/vendors/groom-wear" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        Groom Wear
+                      </Link>
+                      <Link to="/vendors/mehndi-artists" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        Mehndi Artists
+                      </Link>
+                      <Link to="/vendors/lighting-sound" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        Lighting & Sound
+                      </Link>
+                      <Link to="/vendors/jewelry-accessories" className={isHomePage ? styles.whiteText : styles.blackText}>
+                        Jewelry & Accessories
+                      </Link>
+                    </div>
+                  )}
+                </div>
                 <Link to="/blog" className={isHomePage ? styles.whiteText : styles.blackText}>
                   Blogs
                 </Link>
@@ -100,18 +165,6 @@ const Navbar = ({ isHomePage }) => {
             )}
           </div>
         </nav>
-
-        {/* <div className={styles.loginDesktop}>
-          {isLoggedIn ? (
-            <button onClick={handleLogout} className={isHomePage ? styles.whiteText : styles.blackText}>
-              Log Out
-            </button>
-          ) : (
-            <Link to="/login" className={isHomePage ? styles.whiteText : styles.blackText}>
-              Log In
-            </Link>
-          )}
-        </div> */}
 
         <div
           className={`${styles.menuToggle} ${isHomePage ? styles.home : ""}`}

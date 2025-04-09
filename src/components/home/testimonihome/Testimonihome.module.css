@@ -1,158 +1,176 @@
 .testimonialSection {
     text-align: center;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
+    padding: 40px 20px;
+    background: #f9f9f9;
 }
 
-/* ✅ Main Title */
+/* Main Title */
 .mainTitle {
-    font-size: 32px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
-/* ✅ Subtitle */
+/* Subtitle */
 .title {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 600;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .icon {
     color: #ff5e62;
-    font-size: 30px;
+    font-size: 32px;
 }
 
+/* Fixed Container Size - Updated */
 .testimonialContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(135deg, #ff9966, #ff5e62); */
-    border-radius: 10px;
-    max-width: 80%;
-    margin: auto;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    width: 1200px; /* Increased width */
+    height: 450px; /* Increased height */
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ffffff, #fff5f5);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     text-align: left;
-    gap: 20px;
+    gap: 30px;
     overflow: hidden;
-    padding: 20px;
+    padding: 25px;
     position: relative;
 }
 
 .imageContainer {
-    width: 40%;
-    height: 300px;
+    width: 40%; /* Reduced to give more space to text */
+    height: 100%;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .imageContainer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .textContainer {
-    flex: 1;
-    max-width: 50%;
-    text-align: justify;
+    width: 60%; /* Increased for more text space */
     padding: 20px;
-    color: black;
+    color: #333;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* ✅ Name of the Couple */
+/* Name of the Couple */
 .name {
-    font-size: 22px;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
 }
 
 .text {
     font-size: 18px;
-    color: black;
+    color: #555;
+    line-height: 1.6;
     margin-bottom: 15px;
 }
 
-/* ✅ Icon Below the Text */
+/* Icon Below the Text */
 .bottomIcon {
-    font-size: 24px;
-    color: #fff;
-    display: block;
+    font-size: 26px;
+    color: #ff5e62;
     margin-top: 10px;
-    text-align: center;
+    align-self: flex-end;
+}
+
+/* Navigation Buttons Container */
+.main {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .navButton {
-    background: rgb(244, 101, 101); /* Red button */
+    background: #ff5e62;
     color: white;
     border: none;
-    padding: 12px 15px;
+    padding: 12px;
     font-size: 20px;
     cursor: pointer;
     border-radius: 50%;
-    /* gap: 50px; */
-    transition: background 0.3s ease;
-    margin-top: 20px;
-    /* ✅ Sticky Positioning */
-    position: sticky;
-    top: 100%; /* Keeps the button centered vertically */
-    z-index: 10; /* Ensures button stays above other elements */
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* .navButton:hover {
-    background: rgba(255, 255, 255, 0.4);
-} */
-
-.navButton:first-of-type {
-    left: 00px;
-    margin-right: 20px;
-}
-
-.navButton:last-of-type {
-    right: 200px;
-}
-
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 1200px) {
     .testimonialContainer {
+        width: 90%;
+        height: auto;
         flex-direction: column;
-        text-align: center;
-        padding: 15px;
-        gap: 15px;
+        padding: 20px;
     }
 
     .imageContainer {
-        width: 80%;
-        height: 220px;
+        width: 100%;
+        height: 300px;
     }
 
     .textContainer {
-        max-width: 100%;
+        width: 100%;
         text-align: center;
     }
 
+    .bottomIcon {
+        align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainTitle {
+        font-size: 28px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .imageContainer {
+        height: 250px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
     .navButton {
-        top: auto;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .navButton:first-of-type {
-        left: 30%;
-    }
-
-    .navButton:last-of-type {
-        right: 30%;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 }

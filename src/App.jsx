@@ -24,6 +24,10 @@ import Logout from "./components/logins/logouts/Logout";
 import PricingPlans from "./components/pricings/pricingmain/Pricingmain";
 import PaymentMethods from "./components/pricings/paymentmethods/Paymentmethod";
 import Scrolltotop from "./components/scrolltotops/Scrolltotop";
+import Photographypages from "./page/photographypages/Photographypages";
+import PhotographyDetail from "./components/photography/photographydetail/Photographydetail";
+import Decorationpages from "./page/decorationpages/Decorationpages";
+import DecorationDetail from "./components/decoration/decorationdetail/decorationdetail";
 
 function AppContent() {
   const location = useLocation();
@@ -58,6 +62,10 @@ function AppContent() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/pricing" element={<PricingPlans />} />
         <Route path="/paymentmethod/:id" element={<PaymentMethods />} />
+        <Route path="/photpgrapy" element={<Photographypages/>}/>
+        <Route path="/vendor/:id" element={<PhotographyDetail/>} />
+        <Route path="/decoration" element={<Decorationpages/>}/>
+        <Route path="/decorations/:id" element={<DecorationDetail/>}/>
       </Routes>
       {!isLoginPage && !isRegisterPage && !isProfilePage && <Footer />}
     </>
