@@ -1,0 +1,83 @@
+.detailContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .detailContainer h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .mainDetails {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .mainDetails p {
+    margin: 8px 0;
+    color: #555;
+  }
+  
+  .gallery {
+    margin-top: 20px;
+  }
+  
+  .profileImages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .profileImage {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .galleryItem {
+    margin-bottom: 20px;
+  }
+  
+  .galleryImage {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .galleryItem h4 {
+    margin: 10px 0 5px;
+    color: #333;
+  }
+  
+  .galleryItem p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+  }
+  
+  .error {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ff4444;
+  }
+  
+  .notFound {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ff4444;
+  }

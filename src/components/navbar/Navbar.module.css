@@ -32,6 +32,7 @@
 }
 .header.scrolled {
   background: rgba(0, 0, 0, 0.5);
+  /* background: linear-gradient(135deg, #4A2C5A 0%, #1F2A44 100%); */
 }
 .header.scrolled .navLinks a:hover {
   color: #ff0037;

@@ -1,0 +1,141 @@
+.lightingsoundList {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #E0E7E9 0%, #F1F5F9 100%);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lightingsoundList h2 {
+  text-align: center;
+  color: #0D1B2A;
+  margin-top: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.lightingsoundList h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00DDEB, #1B9AAA);
+  display: block;
+  margin: 0.75rem auto;
+  border-radius: 4px;
+  animation: shimmer 2s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { transform: scaleX(1); }
+  50% { transform: scaleX(1.2); }
+  100% { transform: scaleX(1); }
+}
+
+.lightingsoundGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  background: rgba(0, 245, 212, 0.05);
+  border-radius: 16px;
+}
+
+.gridItem {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading,
+.error,
+.noVendors {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #1B263B;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  background: rgba(0, 245, 212, 0.1);
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 400px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .lightingsoundList {
+    padding: 30px 20px;
+  }
+
+  .lightingsoundGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lightingsoundList {
+    padding: 20px;
+  }
+
+  .lightingsoundList h2 {
+    font-size: 2rem;
+  }
+
+  .lightingsoundGrid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lightingsoundList {
+    padding: 15px;
+  }
+
+  .lightingsoundList h2 {
+    font-size: 1.8rem;
+  }
+
+  .lightingsoundGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .loading,
+  .error,
+  .noVendors {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+}

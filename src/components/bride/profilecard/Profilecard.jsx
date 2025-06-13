@@ -104,7 +104,7 @@ const ProfileCard = ({ profile, cardIndex }) => {
             {/* <p><strong>Mother Tongue:</strong> {profile.motherTongue}</p> */}
             {/* <p><strong>Date of Birth:</strong> {profile.dateOfBirth}</p> */}
             <p><strong>Location:</strong> {profile.city}</p>
-            <p><strong>Father's Name:</strong> {profile.fatherName}</p>
+            <p><strong>Father Name:</strong> {profile.fatherName}</p>
             <p><strong>Education Level:</strong> {profile.educationLevel}</p>
             <p><strong>Mobile Number:</strong> {profile.mobileNumber}</p>
             <p><strong>Annual Income:</strong> {profile.annualIncome}</p>

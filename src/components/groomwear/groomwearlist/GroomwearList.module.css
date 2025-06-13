@@ -1,0 +1,150 @@
+.groomwearList {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background: #fffafc;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.groomwearList h2 {
+  text-align: center;
+  margin-top: 30px;
+  color: #5D1049;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  animation: bounceIn 0.9s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.groomwearList h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #FDA4AF, #FBBF24);
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 4px;
+  animation: shimmer 2s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.groomwearGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 0 10px;
+  animation: slideFadeIn 1s ease;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading,
+.error,
+.noVendors {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loading {
+  color: #8B5CF6;
+}
+
+.error {
+  color: #DC2626;
+  background-color: #FEE2E2;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.noVendors {
+  color: #6B7280;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .groomwearList {
+    padding: 20px 15px;
+  }
+
+  .groomwearList h2 {
+    font-size: 1.7rem;
+  }
+
+  .groomwearGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .groomwearList h2 {
+    font-size: 1.5rem;
+  }
+
+  .loading,
+  .error,
+  .noVendors {
+    font-size: 1rem;
+  }
+}

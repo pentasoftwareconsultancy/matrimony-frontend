@@ -112,25 +112,25 @@ const Navbar = ({ isHomePage }) => {
                       <Link to="/decoration" className={isHomePage ? styles.whiteText : styles.blackText}>
                         Decoration
                       </Link>
-                      <Link to="/vendors/dj-music" className={isHomePage ? styles.whiteText : styles.blackText}>
+                      <Link to="/djmusic" className={isHomePage ? styles.whiteText : styles.blackText}>
                         DJ & Music
                       </Link>
-                      <Link to="/vendors/makeup-hair" className={isHomePage ? styles.whiteText : styles.blackText}>
+                      <Link to="/makeuphair" className={isHomePage ? styles.whiteText : styles.blackText}>
                         Makeup & Hair Styling
                       </Link>
-                      <Link to="/vendors/bridal-wear" className={isHomePage ? styles.whiteText : styles.blackText}>
+                      <Link to="/bridalwear" className={isHomePage ? styles.whiteText : styles.blackText}>
                         Bridal Wear
                       </Link>
-                      <Link to="/vendors/groom-wear" className={isHomePage ? styles.whiteText : styles.blackText}>
+                      <Link to="/groomwear" className={isHomePage ? styles.whiteText : styles.blackText}>
                         Groom Wear
                       </Link>
-                      <Link to="/vendors/mehndi-artists" className={isHomePage ? styles.whiteText : styles.blackText}>
+                      <Link to="/makeupartist" className={isHomePage ? styles.whiteText : styles.blackText}>
                         Mehndi Artists
                       </Link>
-                      <Link to="/vendors/lighting-sound" className={isHomePage ? styles.whiteText : styles.blackText}>
+                      <Link to="/lightingsound" className={isHomePage ? styles.whiteText : styles.blackText}>
                         Lighting & Sound
                       </Link>
-                      <Link to="/vendors/jewelry-accessories" className={isHomePage ? styles.whiteText : styles.blackText}>
+                      <Link to="/jewelry" className={isHomePage ? styles.whiteText : styles.blackText}>
                         Jewelry & Accessories
                       </Link>
                     </div>
@@ -155,9 +155,9 @@ const Navbar = ({ isHomePage }) => {
 
           <div className={styles.loginMobile}>
             {isLoggedIn ? (
-              <button onClick={handleLogout} className={isHomePage ? styles.whiteText : styles.blackText}>
+              <buttons onClick={handleLogout} className={isHomePage ? styles.whiteText : styles.blackText}>
                 Log Out
-              </button>
+              </buttons>
             ) : (
               <Link to="/login" className={isHomePage ? styles.whiteText : styles.blackText}>
                 Log In

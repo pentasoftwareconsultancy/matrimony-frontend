@@ -14,7 +14,7 @@ const Aboutus = () => {
          matchmaking methods to create meaningful and lasting relationships.
         </p>
         <p>
-        WeWe understand that finding the right match is one of the most important decisions in life, which is why we provide a trusted and secure 
+        We understand that finding the right match is one of the most important decisions in life, which is why we provide a trusted and secure 
         space for genuine connections. With verified profiles, advanced matchmaking features, and user-friendly navigation, we make the search for
          your soulmate easier and more efficient. Our platform is designed to cater to individuals seeking both tradition and compatibility, making
           the journey of finding your ideal partner smooth and enjoyable.

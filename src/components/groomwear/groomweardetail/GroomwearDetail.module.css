@@ -1,0 +1,256 @@
+.detailContainer {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #fffafc 0%, #f7f4ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detailContainer h1 {
+  text-align: center;
+  color: #5D1049;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.detailContainer h1::after {
+  content: "";
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #FDA4AF, #FBBF24);
+  display: block;
+  margin: 0.75rem auto 0;
+  border-radius: 5px;
+  animation: shimmer 2s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { transform: scaleX(1); }
+  50% { transform: scaleX(1.3); }
+  100% { transform: scaleX(1); }
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mainDetails {
+  flex: 1 1 50%;
+  background-color: #fdf4ff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mainDetails p {
+  margin: 12px 0;
+  color: #374151;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.mainDetails p strong {
+  color: #5D1049;
+  font-weight: 600;
+}
+
+.profileImages {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff0f6;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.profileImage {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.gallery {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.gallery h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #5D1049;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.galleryItem {
+  background: #fff0f6;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover {
+  transform: translateY(-5px);
+}
+
+.galleryImage {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.galleryItem h4 {
+  margin: 10px 0 5px;
+  color: #5D1049;
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.galleryItem p {
+  margin: 5px 0;
+  color: #4B5563;
+  font-size: 0.95rem;
+}
+
+.loading,
+.error,
+.notFound {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 2rem auto;
+  padding: 15px 30px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in;
+}
+
+.loading {
+  color: #8B5CF6;
+  background-color: #EDE9FE;
+}
+
+.error,
+.notFound {
+  color: #DC2626;
+  background-color: #FEE2E2;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainDetails,
+  .profileImages {
+    flex: 1 1 100%;
+    max-width: 600px;
+  }
+
+  .profileImage {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detailContainer {
+    padding: 20px;
+  }
+
+  .detailContainer h1 {
+    font-size: 2rem;
+  }
+
+  .profileImage {
+    max-width: 200px;
+  }
+
+  .gallery h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detailContainer h1 {
+    font-size: 1.8rem;
+  }
+
+  .mainDetails p,
+  .galleryItem p {
+    font-size: 1rem;
+  }
+
+  .profileImage {
+    max-width: 160px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}

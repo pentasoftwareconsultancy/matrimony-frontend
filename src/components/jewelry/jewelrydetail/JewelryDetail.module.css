@@ -1,0 +1,92 @@
+.detailContainer {
+  max-width: 90%;
+  margin: clamp(20px, 5vw, 80px) auto;
+  padding: clamp(10px, 2vw, 20px);
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(10px, 2vw, 20px);
+  margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+.mainDetails {
+  padding: clamp(10px, 2vw, 20px);
+}
+
+.mainDetails p {
+  font-size: clamp(14px, 2.5vw, 18px);
+  margin: 5px 0;
+}
+
+.profileImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profileImage {
+  width: clamp(100px, 20vw, 150px);
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.gallery {
+  margin-top: clamp(15px, 3vw, 30px);
+}
+
+.gallery h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 30vw, 260px), 1fr));
+  gap: clamp(10px, 2vw, 15px);
+}
+
+.galleryItem {
+  text-align: center;
+}
+
+.galleryImage {
+  width: 100%;
+  height: clamp(150px, 25vw, 200px);
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.galleryItem h4 {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin: 5px 0;
+}
+
+.galleryItem p {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  margin: 5px 0;
+}
+
+.loading,
+.notFound {
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}

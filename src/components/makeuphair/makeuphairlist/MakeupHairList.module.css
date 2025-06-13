@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* CSS Variables for Theme Support */
+:root {
+  --bg-gradient-start: #FFF0F5;
+  --bg-gradient-end: #F9F9F9;
+  --text-primary: #4A4E69;
+  --text-secondary: #666;
+  --accent: #FFD700;
+  --button-bg-start: #FF6F9C;
+  --button-bg-end: #FFD700;
+  --error: #FF4444;
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-gradient-start: #2C2C44;
+    --bg-gradient-end: #1A1A2E;
+    --text-primary: #E0E0E0;
+    --text-secondary: #B0B0B0;
+    --shadow: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.makeuphairList {
+  max-width: 1300px;
+  margin: 0 auto;
+  
+  padding: 30px 20px;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.makeuphairList h2 {
+  text-align: center;
+  padding-top: 50px;
+  color: var(--text-primary);
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.makeuphairList h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.makeuphairGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.makeuphairGrid:hover {
+  transform: scale(1.01);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  color: var(--text-secondary);
+  min-height: 50vh;
+  gap: 10px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--text-secondary);
+  border-top: 3px solid var(--button-bg-start);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  color: var(--error);
+  min-height: 50vh;
+  gap: 15px;
+  text-align: center;
+}
+
+.retryButton {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, var(--button-bg-start), var(--button-bg-end));
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.retryButton:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, var(--button-bg-end), var(--button-bg-start));
+}
+
+.noVendors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  color: var(--text-secondary);
+  min-height: 50vh;
+  gap: 10px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .makeuphairList {
+    padding: 20px 15px;
+  }
+
+  .makeuphairList h2 {
+    font-size: 1.8em;
+  }
+
+  .makeuphairGrid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .loading,
+  .error,
+  .noVendors {
+    font-size: 1.1em;
+  }
+
+  .retryButton {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .makeuphairList {
+    padding: 15px 10px;
+  }
+
+  .makeuphairList h2 {
+    font-size: 1.5em;
+  }
+
+  .makeuphairGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .loading,
+  .error,
+  .noVendors {
+    font-size: 1em;
+  }
+
+  .retryButton {
+    padding: 6px 12px;
+    font-size: 0.85em;
+  }
+}

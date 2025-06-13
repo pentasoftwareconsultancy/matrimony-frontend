@@ -319,10 +319,10 @@ addText("About Family", profile.aboutFamily, 110);
             <div className={styles.familySection}>
               <h2>Family Information</h2>
               <div className={styles.partner}>
-              <p><strong>Father's Name:</strong> {profile.fatherName}</p>
-              <p><strong>Father's Occupation:</strong> {profile.fatherOccupation}</p>
-              <p><strong>Mother's Name:</strong> {profile.motherName}</p>
-              <p><strong>Mother's Occupation:</strong> {profile.motherOccupation}</p>
+              <p><strong>Father Name:</strong> {profile.fatherName}</p>
+              <p><strong>Father Occupation:</strong> {profile.fatherOccupation}</p>
+              <p><strong>Mother Name:</strong> {profile.motherName}</p>
+              <p><strong>Mother Occupation:</strong> {profile.motherOccupation}</p>
               <p><strong>Brothers:</strong> {profile.brothers}</p>
               <p><strong>Sisters:</strong> {profile.sisters}</p>
               <p><strong>Cultural Values:</strong> {profile.culturalValues}</p>

@@ -1,0 +1,139 @@
+/* BridalwearList.module.css */
+.bridalwearList {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 5vw, 2.5rem);
+  background: #FDF7E9;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.bridalwearList::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #E879F9, #C4B5FD);
+}
+
+.bridalwearList h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  color: #111827;
+  margin: 2rem 0 2.5rem;
+  font-weight: 700;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+.bridalwearList h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #FBB6CE, #FDBA74);
+}
+
+.bridalwearGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(260px, 45vw, 320px), 1fr));
+  gap: clamp(1.25rem, 4vw, 2rem);
+  padding: 0 0.75rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.loading {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  color: #6B7280;
+  padding: 2.5rem;
+  background: rgba(251, 182, 206, 0.1);
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 90%;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+.error {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  color: #9B2C2C;
+  background: #FECDD3;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 90%;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.noVendors {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  color: #6B7280;
+  padding: 2.5rem;
+  background: rgba(251, 182, 206, 0.1);
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 90%;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 480px) {
+  .bridalwearList {
+    padding: 1rem;
+  }
+
+  .bridalwearGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .bridalwearList h2 {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    margin: 1.5rem 0 2rem;
+  }
+
+  .loading, .error, .noVendors {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    padding: 1.5rem;
+  }
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+  .bridalwearGrid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .bridalwearList h2 {
+    font-size: 2.8rem;
+  }
+}

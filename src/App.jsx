@@ -28,6 +28,22 @@ import Photographypages from "./page/photographypages/Photographypages";
 import PhotographyDetail from "./components/photography/photographydetail/Photographydetail";
 import Decorationpages from "./page/decorationpages/Decorationpages";
 import DecorationDetail from "./components/decoration/decorationdetail/decorationdetail";
+import DjMusicPages from "./page/djmusicpages/DjMusicPages";
+import DjMusicDetail from "./components/djmusic/djmusicdetail/DjMusicDetail";
+import VendorJewelryPages from "./page/vendorjewelrypages/VendorJewelryPage";
+// import VendorJewelryPages from "./page/vendorjewelrypages/VendorJewelryPages";
+import VendorJewelryDetail from "./components/vendorjewelry/vendorjewelrydetail/VendorJewelryDetail";
+import VendorLightingAndSoundPages from "./page/vendorlightingandsoundpage/VendorLightingAndSoundPages";
+import VendorLightingAndSoundDetail from "./components/vendorlightingandsound/vendorlightingandounddetail/VendorLightingAndSoundDetail";
+import VendorMakeupAndHairPages from "./page/makeuphairpages/MakeupHairPages";
+import VendorMakeupAndHairDetail from "./components/makeuphair/makeuphairdetail/MakeupHairDetail";
+import GroomwearPages from "./page/groomwearpages/GroomwearPage";
+import GroomwearDetail from "./components/groomwear/groomweardetail/GroomwearDetail";
+import BridalwearPages from "./page/bridalwearpages/BridalwearPages";
+import BridalwearDetail from "./components/bridalwear/bridalweardetail/BridalwearDetail";
+import MakeupArtistPages from "./page/makeupartistpages/MakeupArtistPages";
+import MakeupArtistDetail from "./components/makeupartist/makeupartistdetail/MakeupArtistDetail";
+
 
 function AppContent() {
   const location = useLocation();
@@ -66,6 +82,22 @@ function AppContent() {
         <Route path="/vendor/:id" element={<PhotographyDetail/>} />
         <Route path="/decoration" element={<Decorationpages/>}/>
         <Route path="/decorations/:id" element={<DecorationDetail/>}/>
+        <Route path="/djmusic" element={<DjMusicPages/>}/>
+        <Route path="/djmusic/:id" element={<DjMusicDetail/>}/>
+        <Route path="/jewelry" element={<VendorJewelryPages/>} />
+        <Route path="/jewelry/:id" element={<VendorJewelryDetail />} />
+        <Route path="/lightingsound" element={<VendorLightingAndSoundPages/>} />
+        <Route path="/lightingsound/:id" element={<VendorLightingAndSoundDetail/>} />
+        <Route path="/makeuphair" element={<VendorMakeupAndHairPages />} />
+        <Route path="/makeuphair/:id" element={<VendorMakeupAndHairDetail />} />
+        <Route path="/groomwear" element={<GroomwearPages />} />
+        <Route path="/groomwear/:id" element={<GroomwearDetail />} />
+        <Route path="/bridalwear" element={<BridalwearPages />} />
+        <Route path="/bridalwear/:id" element={<BridalwearDetail />} />
+        <Route path="/makeupartist" element={<MakeupArtistPages />} />
+        <Route path="/makeupartist/:id" element={<MakeupArtistDetail />} />
+        
+
       </Routes>
       {!isLoginPage && !isRegisterPage && !isProfilePage && <Footer />}
     </>

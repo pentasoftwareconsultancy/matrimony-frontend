@@ -1,0 +1,22 @@
+.djmusicList {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .djmusicList h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .djmusicGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+  }
