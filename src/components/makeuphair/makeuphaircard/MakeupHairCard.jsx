@@ -10,10 +10,10 @@ const MakeupHairCard = ({ makeuphair }) => {
 
   return (
     <div className={styles.card}>
-         <div className={styles.imageContainer}>
-        {makeuphair.makeupimgUrl && makeuphair.makeupimgUrl[0] && (
+      <div className={styles.imageContainer}>
+        {makeuphair.mehndiimgUrl && makeuphair.mehndiimgUrl[0] && (
           <img
-            src={makeuphair.makeupimgUrl[0]}
+            src={makeuphair.mehndiimgUrl[0]}
             alt={makeuphair.title}
             className={styles.image}
           />
@@ -29,9 +29,9 @@ const MakeupHairCard = ({ makeuphair }) => {
         <p>{makeuphair.name}</p>
       </div>
       {/* <div className={styles.imageContainer}>
-        {makeuphair.makeupimgUrl && makeuphair.makeupimgUrl[0] && (
+        {makeuphair.mehndiimgUrl && makeuphair.mehndiimgUrl[0] && (
           <img
-            src={makeuphair.makeupimgUrl[0]}
+            src={makeuphair.mehndiimgUrl[0]}
             alt={makeuphair.title}
             className={styles.image}
           />

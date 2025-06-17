@@ -1,14 +1,30 @@
-/* General Header Styling (unchanged) */
+/* General Header Styling */
 .header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out; /* Smooth transition for all properties */
   box-shadow: none;
-  color: rgb(37, 36, 36);
+  color: #FFF8E7; /* Soft ivory text */
   font-family: "Poppins", sans-serif;
 }
+
+/* Transparent background on homepage, gradient on other pages */
+.header.home {
+  background: transparent; /* Transparent by default on homepage */
+}
+
+.header:not(.home) {
+  background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Deep rose to royal purple gradient */
+}
+
+/* Scrolled state: gradient on all pages */
+.header.scrolled {
+  background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Gradient when scrolled */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow when scrolled */
+}
+
 .logoContainer {
   display: flex;
   width: 20%;
@@ -23,33 +39,20 @@
   border-radius: 100px;
   height: 8vh;
   object-fit: contain;
-  overflow: hidden;
+  transition: transform 0.3s ease; /* Smooth scale animation */
 }
+
+.logoImage:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
 .header.scrolled .logo a,
 .header.scrolled .navLinks a,
 .header.scrolled .loginDesktop {
-  color: #fff;
-}
-.header.scrolled {
-  background: rgba(0, 0, 0, 0.5);
-  /* background: linear-gradient(135deg, #4A2C5A 0%, #1F2A44 100%); */
-}
-.header.scrolled .navLinks a:hover {
-  color: #ff0037;
+  color: #FFF8E7; /* Soft ivory when scrolled */
 }
 
-.whiteText {
-  color: white;
-}
-
-.blackText {
-  color: black;
-}
-
-.header .navLinks a:hover {
-  color: #383737;
-}
-
+/* Navigation Links */
 .navLinks {
   display: flex;
   gap: 40px;
@@ -61,33 +64,56 @@
   text-decoration: none;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
+  color: #FFF8E7; /* Soft ivory text */
+  position: relative; /* For underline animation */
   transition: color 0.3s ease;
 }
 
 .navLinks a:hover {
-  color: #ff6347;
+  color: #D4A017; /* Warm gold on hover */
+}
+
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #D4A017; /* Gold underline */
+  transition: width 0.3s ease; /* Smooth underline animation */
+}
+
+.navLinks a:hover::after {
+  width: 100%; /* Full underline on hover */
+}
+
+.header.scrolled .navLinks a:hover {
+  color: #D4A017; /* Warm gold on hover when scrolled */
 }
 
 .navLinks.open {
   display: flex;
 }
 
+/* Menu Toggle */
 .menuToggle {
   display: none;
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
-  transition: all 0.3s ease; /* Added transition for toggle */
+  transition: all 0.3s ease;
 }
 
 .bar {
-  width: 25px; /* Increased width for better visibility */
+  width: 25px;
   height: 3px;
-  background-color: #fffdfd;
+  background-color: #FFF8E7; /* Soft ivory bars */
   border-radius: 2px;
-  transition: background-color 0.3s ease; /* Transition for bar color */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Dropdown Styling */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -97,97 +123,120 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgba(121, 120, 120, 0.6);
-  border: 1px solid #ccc;
+   background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Semi-transparent royal purple */
+  border: 1px solid #D4A017; /* Gold border */
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   min-width: 200px;
   z-index: 10;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px); /* Slide effect */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .dropdown:hover .dropdownMenu {
   display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Slide into place */
 }
 
 .dropdownMenu a {
   padding: 10px 20px;
   text-decoration: none;
-  color: white;
+  color: #FFF8E7; /* Soft ivory */
   display: block;
   width: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+.dropdownMenu a:hover {
+  /* Gold background on hover */
+  color: #4B0082; /* Royal purple text */
+}
+
+/* Sub-Dropdown (Vendors) */
+.subDropdown {
+  position: relative;
+}
+
+.subDropdownMenu {
+  display: none;
+  position: absolute;
+  border: 1px solid #D4A017; /* Gold border */
+  left: 100%;
+  top: 0;
+   background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Semi-transparent royal purple */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 250px;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.subDropdown:hover .subDropdownMenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.subDropdownMenu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #FFF8E7; /* Soft ivory */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.subDropdownMenu a:hover {
+   /* Gold background */
+  color: #4B0082; /* Royal purple text */
+}
+
+/* Navbar Container */
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
 }
 
-.navLinks {
-  display: flex;
-  gap: 30px;
-}
-
-.navLinks a {
-  text-decoration: none;
-}
-
-.menuToggle {
-  display: none;
-}
-
+/* Login Button */
 .loginDesktop {
   font-size: 20px;
   font-weight: 600;
   margin-top: 15px;
-  color: white;
-}
-/* Container for the Vendors item */
-.subDropdown {
-  position: relative;
-}
-
-/* Sub-dropdown menu styling */
-.subDropdownMenu {
-  display: none; /* Hidden by default */
-  position: absolute;
-  border: 1px solid #ccc;
-  left: 100%; /* Positions it to the right of "Vendors" */
-  top: 0; /* Aligns with the top of "Vendors" */
-  background-color: rgba(121, 120, 120, 0.6);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds depth */
-  z-index: 1; /* Ensures it stays on top */
-  min-width: 200px; /* Adjust width as needed */
+  color: #FFF8E7; /* Soft ivory */
+  border: 2px solid #D4A017; /* Gold border */
+  padding: 8px 20px;
+  border-radius: 25px; /* Rounded button */
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Show sub-dropdown when hovering over the Vendors container */
-.subDropdown:hover .subDropdownMenu {
-  display: block;
+.loginDesktop:hover {
+  background: #D4A017; /* Gold background */
+  color: #4B0082; /* Royal purple text */
 }
 
-/* Style links inside the sub-dropdown */
-.subDropdownMenu a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: black; /* Matches your blackText class */
-}
-
-/* Hover effect for sub-dropdown items */
-.subDropdownMenu a:hover {
-  background-color: #f1f1f1; /* Light grey on hover */
-}
-/* Updated Mobile View */
+/* Mobile View */
 @media (max-width: 768px) {
-  .header.scrolled {
-    
-    background: rgba(0, 0, 0, 0.9); /* Background color on scroll in mobile */
+  .header.home {
+    background: transparent; /* Transparent on homepage by default */
   }
-.header{
-  background-color: gray;
-}
+
+  .header:not(.home) {
+    background: rgba(199, 21, 133, 0.9); /* Semi-transparent deep rose for other pages */
+  }
+
+  .header.scrolled {
+    background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Gradient for all pages when scrolled */
+  }
+
   .navLinks {
     display: none;
     flex-direction: column;
@@ -196,39 +245,34 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(75, 0, 130, 0.9); /* Semi-transparent royal purple */
     padding: 20px;
-    transition: all 0.3s ease; /* Smooth transition for navLinks */
+    transition: all 0.4s ease;
   }
 
   .navLinks.open {
     display: flex;
-    background: rgba(128, 128, 128, 0.9); /* Gray color when toggle is open */
   }
 
   .menuToggle {
-    display: flex; /* Changed to flex for better alignment */
+    display: flex;
+    margin-top: 8px;
   }
 
   .menuToggle.home .bar {
-    background-color: white; /* White toggle on homepage */
+    background-color: #FFF8E7; /* Soft ivory on homepage */
   }
 
   .menuToggle:not(.home) .bar {
-    background-color: black; /* Black toggle on other pages */
+    background-color: #4B0082; /* Royal purple on other pages */
   }
 
   .navLinks.open + .menuToggle .bar {
-    background-color: gray; /* Gray toggle when menu is open */
+    background-color: #D4A017; /* Gold when menu is open */
   }
 
   .logoContainer {
-    display: flex;
     width: 20%;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    overflow: hidden;
   }
 
   .logoImage {
@@ -236,31 +280,52 @@
     border-radius: 100px;
     height: 7vh;
     object-fit: contain;
-    overflow: hidden;
   }
-.menuToggle{
-  margin-top: 8px;
-}
+
   .bar {
     display: block;
     width: 25px;
     height: 3px;
-    margin: px 0;
+    margin: 5px 0;
   }
 
   .loginDesktop {
-    display: none; /* Hide desktop login on mobile */
+    display: none;
   }
 
   .loginMobile {
     font-size: 20px;
     font-weight: 600;
+    text-align: center;
   }
 
   .loginMobile button {
     background: none;
-    border: none;
-    padding: 0;
+    border: 2px solid #D4A017; /* Gold border */
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: #FFF8E7; /* Soft ivory */
     cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .loginMobile button:hover {
+    background: #D4A017; /* Gold background */
+    color: #4B0082; /* Royal purple text */
+  }
+
+  .dropdownMenu {
+    position: static;
+    background: rgba(75, 0, 130, 0.95); /* Slightly darker purple */
+    border: none;
+    width: 100%;
+  }
+
+  .subDropdownMenu {
+    position: static;
+    background: rgba(75, 0, 130, 0.95); /* Matching purple */
+    border: none;
+    width: 100%;
+    margin-left: 20px; /* Indent for hierarchy */
   }
 }

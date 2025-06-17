@@ -10,7 +10,7 @@ const MakeupHairList = () => {
   useEffect(() => {
     const fetchMakeupAndHair = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/v1/makeupartist');
+        const response = await fetch('http://localhost:8000/api/v1/mehndi');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }

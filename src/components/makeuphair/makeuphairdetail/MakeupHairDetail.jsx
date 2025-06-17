@@ -12,7 +12,7 @@ const MakeupHairDetail = () => {
 
   const fetchMakeupAndHair = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/makeupartist/${id}`);
+      const response = await fetch(`http://localhost:8000/api/v1/mehndi/${id}`);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -126,9 +126,9 @@ const MakeupHairDetail = () => {
         </div>
         <div className={styles.profileImages}>
           <h2>Profile Images</h2>
-          {makeuphair.makeupimgUrl?.length > 0 ? (
+          {makeuphair.mehndiimgUrl?.length > 0 ? (
             <div className={styles.profileImageGrid}>
-              {makeuphair.makeupimgUrl.map((imgUrl, index) => (
+              {makeuphair.mehndiimgUrl.map((imgUrl, index) => (
                 <img
                   key={index}
                   src={imgUrl || PLACEHOLDER_IMAGE}
@@ -157,7 +157,7 @@ const MakeupHairDetail = () => {
               <div key={index} className={styles.galleryItem}>
                 <div className={styles.imageWrapper}>
                   <img
-                    src={galleryItem.makeuppic || PLACEHOLDER_IMAGE}
+                    src={galleryItem.mehndipic || PLACEHOLDER_IMAGE}
                     alt={galleryItem.title || `Gallery image ${index + 1}`}
                     className={styles.galleryImage}
                   />
