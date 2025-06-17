@@ -1,34 +1,154 @@
 .makeupartistList {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(180deg, #f5f6ff 0%, #fff5f5 100%);
+  min-height: 100vh;
+}
+
+.makeupartistList h2 {
+  text-align: center;
+  color: #2d1b4e;
+  margin-top: 60px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.makeupartistList h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.makeupartistGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: #6b5b95;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #6b5b95;
+  border-top: 3px solid #ff6b6b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: #ff4444;
+  padding: 2rem;
+  background: rgba(255, 68, 68, 0.1);
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.errorIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.noVendors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: #6b5b95;
+  padding: 2rem;
+  background: rgba(107, 91, 149, 0.1);
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.noVendorsIcon {
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive styles for tablets and medium screens */
+@media (max-width: 768px) {
+  .makeupartistList {
+    padding: 1.5rem;
   }
-  
+
   .makeupartistList h2 {
-    text-align: center;
-    color: #333;
+    font-size: 1.8rem;
   }
-  
+
   .makeupartistGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
   }
-  
-  .loading {
-    text-align: center;
-    font-size: 1.2em;
-    color: #777;
+
+  .loading, .error, .noVendors {
+    font-size: 1rem;
+    padding: 1.5rem;
   }
-  
-  .error {
-    text-align: center;
-    font-size: 1.2em;
-    color: #ff4444;
+
+  .spinner, .errorIcon, .noVendorsIcon {
+    width: 20px;
+    height: 20px;
   }
-  
-  .noVendors {
-    text-align: center;
-    font-size: 1.2em;
-    color: #555;
+}
+
+/* Responsive styles for small mobile screens */
+@media (max-width: 480px) {
+  .makeupartistList {
+    padding: 1rem;
   }
+
+  .makeupartistList h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .makeupartistList h2::after {
+    width: 60px;
+  }
+
+  .makeupartistGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .loading, .error, .noVendors {
+    font-size: 0.95rem;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .spinner, .errorIcon, .noVendorsIcon {
+    width: 18px;
+    height: 18px;
+  }
+}

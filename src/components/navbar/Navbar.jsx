@@ -7,7 +7,7 @@ const Navbar = ({ isHomePage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [subDropdownVisible, setSubDropdownVisible] = useState(false); // Added for Vendors sub-dropdown
+  const [subDropdownVisible, setSubDropdownVisible] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleMenu = () => {
@@ -18,15 +18,13 @@ const Navbar = ({ isHomePage }) => {
     setMenuOpen(false);
   };
 
-  // Toggle Services dropdown on click for mobile
   const toggleDropdown = (e) => {
-    e.preventDefault(); // Prevent Link navigation
+    e.preventDefault();
     setDropdownVisible((prev) => !prev);
   };
 
-  // Toggle Vendors sub-dropdown on click for mobile
   const toggleSubDropdown = (e) => {
-    e.preventDefault(); // Prevent Link navigation
+    e.preventDefault();
     setSubDropdownVisible((prev) => !prev);
   };
 
@@ -52,7 +50,7 @@ const Navbar = ({ isHomePage }) => {
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${isHomePage ? styles.home : ""}`}>
       <div className={styles.navbar}>
         <a className={styles.logoContainer}>
           <img src={logo} className={styles.logoImage} alt="Logo" />
@@ -62,106 +60,60 @@ const Navbar = ({ isHomePage }) => {
           className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
           onClick={menuOpen ? closeMenu : null}
         >
-          <Link to="/" className={isHomePage ? styles.whiteText : styles.blackText}>
-            Home
-          </Link>
-          <Link to="/about" className={isHomePage ? styles.whiteText : styles.blackText}>
-            About
-          </Link>
-          <Link to="/bride" className={isHomePage ? styles.whiteText : styles.blackText}>
-            Bride
-          </Link>
-          <Link to="/groommain" className={isHomePage ? styles.whiteText : styles.blackText}>
-            Groom
-          </Link>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/bride">Bride</Link>
+          <Link to="/groommain">Groom</Link>
 
           <div
             className={styles.dropdown}
-            onMouseEnter={() => window.innerWidth > 768 && setDropdownVisible(true)} // Hover for desktop
-            onMouseLeave={() => window.innerWidth > 768 && setDropdownVisible(false)} // Hover for desktop
-            onClick={window.innerWidth <= 768 ? toggleDropdown : null} // Click for mobile
+            onMouseEnter={() => window.innerWidth > 768 && setDropdownVisible(true)}
+            onMouseLeave={() => window.innerWidth > 768 && setDropdownVisible(false)}
+            onClick={window.innerWidth <= 768 ? toggleDropdown : null}
           >
-            <Link
-              to="#"
-              className={`${isHomePage ? styles.whiteText : styles.blackText} ${styles.dropdownToggle}`}
-            >
+            <Link to="#" className={styles.dropdownToggle}>
               Services
             </Link>
             {(dropdownVisible || (window.innerWidth <= 768 && dropdownVisible)) && (
               <div className={styles.dropdownMenu}>
-                <Link to="/events" className={isHomePage ? styles.whiteText : styles.blackText}>
-                  Events
-                </Link>
+                <Link to="/events">Events</Link>
                 <div
                   className={styles.subDropdown}
-                  onMouseEnter={() => window.innerWidth > 768 && setSubDropdownVisible(true)} // Hover for desktop
-                  onMouseLeave={() => window.innerWidth > 768 && setSubDropdownVisible(false)} // Hover for desktop
-                  onClick={window.innerWidth <= 768 ? toggleSubDropdown : null} // Click for mobile
+                  onMouseEnter={() => window.innerWidth > 768 && setSubDropdownVisible(true)}
+                  onMouseLeave={() => window.innerWidth > 768 && setSubDropdownVisible(false)}
+                  onClick={window.innerWidth <= 768 ? toggleSubDropdown : null}
                 >
-                  <Link
-                    to="/vendors"
-                    className={`${isHomePage ? styles.whiteText : styles.blackText} ${styles.dropdownToggle}`}
-                  >
+                  <Link to="#" className={styles.dropdownToggle}>
                     Vendors
                   </Link>
                   {(subDropdownVisible || (window.innerWidth <= 768 && subDropdownVisible)) && (
                     <div className={styles.subDropdownMenu}>
-                      <Link to="/photpgrapy" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        Photography
-                      </Link>
-                      <Link to="/decoration" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        Decoration
-                      </Link>
-                      <Link to="/djmusic" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        DJ & Music
-                      </Link>
-                      <Link to="/makeuphair" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        Makeup & Hair Styling
-                      </Link>
-                      <Link to="/bridalwear" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        Bridal Wear
-                      </Link>
-                      <Link to="/groomwear" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        Groom Wear
-                      </Link>
-                      <Link to="/makeupartist" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        Mehndi Artists
-                      </Link>
-                      <Link to="/lightingsound" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        Lighting & Sound
-                      </Link>
-                      <Link to="/jewelry" className={isHomePage ? styles.whiteText : styles.blackText}>
-                        Jewelry & Accessories
-                      </Link>
+                      <Link to="/photpgrapy">Photography</Link>
+                      <Link to="/decoration">Decoration</Link>
+                      <Link to="/djmusic">DJ & Music</Link>
+                      <Link to="/makeuphair">Makeup & Hair Styling</Link>
+                      <Link to="/bridalwear">Bridal Wear</Link>
+                      <Link to="/groomwear">Groom Wear</Link>
+                      <Link to="/makeupartist">Mehndi Artists</Link>
+                      <Link to="/lightingsound">Lighting & Sound</Link>
+                      <Link to="/jewelry">Jewelry & Accessories</Link>
                     </div>
                   )}
                 </div>
-                <Link to="/blog" className={isHomePage ? styles.whiteText : styles.blackText}>
-                  Blogs
-                </Link>
+                <Link to="/blog">Blogs</Link>
               </div>
             )}
           </div>
 
-          <Link to="/member" className={isHomePage ? styles.whiteText : styles.blackText}>
-            Committee Members
-          </Link>
-          <Link to="/contact" className={isHomePage ? styles.whiteText : styles.blackText}>
-            Contact
-          </Link>
-          <Link to="/pricing" className={isHomePage ? styles.whiteText : styles.blackText}>
-            Price
-          </Link>
+          <Link to="/member">Committee Members</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/pricing">Price</Link>
 
           <div className={styles.loginMobile}>
             {isLoggedIn ? (
-              <buttons onClick={handleLogout} className={isHomePage ? styles.whiteText : styles.blackText}>
-                Log Out
-              </buttons>
+              <button onClick={handleLogout}>Log Out</button>
             ) : (
-              <Link to="/login" className={isHomePage ? styles.whiteText : styles.blackText}>
-                Log In
-              </Link>
+              <Link to="/login">Log In</Link>
             )}
           </div>
         </nav>
