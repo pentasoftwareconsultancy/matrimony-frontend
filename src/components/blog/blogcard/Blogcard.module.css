@@ -88,3 +88,33 @@
 .readMore:hover {
   text-decoration: underline;
 }
+
+
+
+@media (max-width: 768px) {
+  .card {
+    margin: 16px 10px;
+    max-width: 100%;
+  }
+
+  .imgmain {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .author,
+  .content {
+    font-size: 0.85rem;
+  }
+
+  .readMore {
+    align-self: center;
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    margin-left: 0;
+  }
+}

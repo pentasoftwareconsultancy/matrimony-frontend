@@ -52,7 +52,24 @@
   border-color: #ddd;
 }
 
-/* Ensure consistent height for the container */
+
 .container {
   height: auto; /* Adjusts to content, but can be fixed if needed */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+    width: 100%;
+    margin: 10px auto;
+    box-sizing: border-box;
+  }
+
+  .select {
+    font-size: 13px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
 }
