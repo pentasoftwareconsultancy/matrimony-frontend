@@ -10,7 +10,7 @@ const DecorationDetail = () => {
   useEffect(() => {
     const fetchDecoration = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/v1/decoration/${id}`);
+        const response = await fetch(`http://localhost:8000/api/v1/decoration/${id}`);      
         const data = await response.json();
         setDecoration(data);
         setLoading(false);
