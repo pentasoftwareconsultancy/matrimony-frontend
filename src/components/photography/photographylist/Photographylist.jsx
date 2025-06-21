@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import PhotographyCard from "../../photography/photographycard";
 import axios from 'axios';
 import PhotographyCard from '../photographycard/Photographycard';
-import styles from './PhotographyList.module.css';
+import styles from './Photographylist.module.css';
 
 const PhotographyList = () => {
   const [vendors, setVendors] = useState([]);
