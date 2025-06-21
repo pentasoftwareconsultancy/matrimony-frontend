@@ -27,7 +27,7 @@ import Scrolltotop from "./components/scrolltotops/Scrolltotop";
 import Photographypages from "./page/photographypages/Photographypages";
 import PhotographyDetail from "./components/photography/photographydetail/Photographydetail";
 import Decorationpages from "./page/decorationpages/Decorationpages";
-import DecorationDetail from "./components/decoration/decorationdetail/decorationdetail";
+import DecorationDetail from "./components/decoration/decorationdetail/DecorationDetail";       
 import DjMusicPages from "./page/djmusicpages/DjMusicPages";
 import DjMusicDetail from "./components/djmusic/djmusicdetail/DjMusicDetail";
 import VendorJewelryPages from "./page/vendorjewelrypages/VendorJewelryPage";
