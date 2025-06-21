@@ -18,7 +18,7 @@ const DecorationDetail = () => {
         console.error('Error fetching decoration:', error);
         setLoading(false);
       }
-    };
+    };       
 
     fetchDecoration();
   }, [id]);
