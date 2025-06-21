@@ -13,9 +13,6 @@
   transition: transform 0.3s;
 }
 
-
-
-
 .content {
   display: flex;
   gap: 20px;
@@ -240,4 +237,4 @@ p {
         ));
     }
   }
-}
+}  

@@ -53,30 +53,40 @@ margin-top: 10px;
   cursor: pointer;
 }
 
-
-/* Responsive styles */
 @media (max-width: 768px) {
-    .Bridemain {
-      flex-direction: row; /* Stack elements vertically */
-      align-items: center; /* Center items horizontally */
-      margin-top: 20px; /* Reduce margin for smaller screens */
-    }
-  
-    .main,
-    .containmain {
-      width: 50%; /* Take up most of the screen width */
-      margin-bottom: 20px; /* Add spacing between stacked elements */
-    }
+  .Groommain {
+    flex-direction: column;
+    margin: 20px 15px 30px 15px;
   }
-  
-  @media (max-width: 480px) {
-    .Bridemain {
-      margin-top: 10px; /* Further reduce top margin for very small screens */
-    }
-  
-    .main,
-    .containmain {
-      width: 100%; /* Full width for narrow devices */
-      margin-bottom: 15px; /* Adjust spacing between elements */
-    }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative; /* Remove sticky on mobile for better scroll */
+    overflow: visible;
+    padding: 15px 10px;
+    margin-bottom: 20px;
   }
+
+  .mainContent {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .searchWrapper {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .searchInput {
+    margin-left: 0;
+    font-size: 14px;
+    padding: 10px 35px 10px 12px; /* Slightly smaller padding */
+  }
+
+  .searchIcon {
+    right: 15px;
+    margin-top: 0;
+  }
+}

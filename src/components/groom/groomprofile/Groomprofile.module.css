@@ -86,3 +86,45 @@
   a:focus {
     text-decoration: none; /* Removes underline on hover, visited, and focus states */
   }
+
+  @media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+    margin: 12px 8px;
+  }
+
+  .imageContainer {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .image {
+    width: 100%;
+    height: auto; /* Auto height so it scales properly */
+    max-height: 300px; /* Optional max height */
+    border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .info,
+  .job,
+  .bio {
+    font-size: 13px;
+  }
+
+  .connectButton {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
