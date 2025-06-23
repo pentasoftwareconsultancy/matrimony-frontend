@@ -25,13 +25,24 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow when scrolled */
 }
 
-.logoContainer {
+/* .logoContainer {
   display: flex;
   width: 20%;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   overflow: hidden;
+} */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* align to left */
+  text-decoration: none;
+  overflow: hidden;
+  padding-left: 4%; /* ensure no padding */
+  margin-left: 0;  /* ensure no margin */
+  margin-right: 20px;
+  width: 20%;     /* optional: allow it to shrink-wrap logo */
 }
 
 .logoImage {
@@ -57,12 +68,14 @@
   display: flex;
   gap: 40px;
   align-items: center;
+  padding-right: 4%;
+  
 }
 
 .navLinks a {
   font-weight: 600;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
   color: #FFF8E7; /* Soft ivory text */
   position: relative; /* For underline animation */
@@ -94,6 +107,10 @@
 
 .navLinks.open {
   display: flex;
+}
+
+.navbar{
+  padding-left: 0;
 }
 
 /* Menu Toggle */
@@ -142,7 +159,6 @@
   visibility: visible;
   transform: translateY(0); /* Slide into place */
 }
-
 .dropdownMenu a {
   padding: 10px 20px;
   text-decoration: none;
@@ -204,6 +220,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
+  gap:30px
 }
 
 /* Login Button */
