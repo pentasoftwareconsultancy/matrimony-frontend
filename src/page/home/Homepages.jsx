@@ -14,8 +14,8 @@ import Testimonihome from '../../components/home/testimonihome/Testimonihome'
 function Homepages() {
   return (
     <div>
-      {/* <HeroSlider/> */}
-     <Hero/>
+      <HeroSlider/>
+     {/* <Hero/> */}
    {/* <Filter/> */}
      
       <Homeabout/>
