@@ -1,67 +1,373 @@
+
+.gallerySection {
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  border-radius: 2px;
+}
+
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 2rem;
-  background-color: #f5f5f5;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .card {
+  perspective: 1000px;
+  border-radius: 15px;
+  overflow: hidden;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(30px) rotateX(10deg);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.fadeInUp {
+.card.visible {
   opacity: 1;
-  transform: translateY(0);
-  animation: fadeInUp 0.8s ease forwards;
+  transform: translateY(0) rotateX(0);
 }
 
-.card img {
+.imageWrapper {
+  position: relative;
   width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.card img:hover {
+.imageWrapper:hover {
+  transform: translateY(-5px);
+}
+
+.imageWrapper img {
+ width: 100%;
+  height: 400px;
+ object-fit: cover;
+  object-position: 0% 0%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 126, 95, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(2px);
+}
+
+.overlay span {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 20px;
+  border-radius: 30px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover .overlay span {
+  transform: translateY(0);
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 1.8rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1010;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.modalContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.carouselContainer {
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.modalImage {
+  width: 100%;
+  height: 70vh;
+  object-fit: contain;
+  display: block;
+  animation: zoomIn 0.4s ease-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 20px;
+  z-index: 1005;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 90%;
+  margin-top: 30px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
   transform: scale(1.05);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.activeThumbnail {
+  opacity: 1;
+  border: 3px solid #ff7e5f;
+  transform: scale(1.1);
 }
 
-/* Tablet */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
   .container {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    padding: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .imageWrapper {
+    height: 260px;
   }
 
-  .card img {
-    height: 200px;
+  .modalImage {
+    height: 60vh;
   }
 }
 
-/* Mobile */
+@media (max-width: 768px) {
+  .gallerySection {
+    padding: 4rem 1rem;
+  }
+  
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .imageWrapper {
+    height: 220px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .closeButton {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  .navButton {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    margin: 0 10px;
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    width: 100%;
+  }
+
+  .carouselContainer {
+    width: 95%;
+  }
+
+  .modalImage {
+    height: 50vh;
+  }
+
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .navButton:first-child {
+    left: 10px;
+  }
+
+  .navButton:last-child {
+    right: 10px;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     grid-template-columns: 1fr;
-    padding: 1rem;
+    max-width: 400px;
+  }
+  
+  .imageWrapper {
+    height: 300px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .modalImage {
+    height: 40vh;
   }
 
-  .card img {
-    height: auto;
+  .closeButton {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
+  .thumbnails {
+    gap: 6px;
+  }
+
+  .thumbnail {
+    width: 40px;
+    height: 40px;
   }
 }
