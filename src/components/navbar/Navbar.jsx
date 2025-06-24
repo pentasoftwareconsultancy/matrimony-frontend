@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "./logo.png";
+import { FaBars, FaTimes } from "react-icons/fa"; // Add this at the top
 
 const Navbar = ({ isHomePage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,7 +51,11 @@ const Navbar = ({ isHomePage }) => {
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${isHomePage ? styles.home : ""}`}>
+    <header
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${
+        isHomePage ? styles.home : ""
+      }`}
+    >
       <div className={styles.navbar}>
         <a className={styles.logoContainer}>
           <img src={logo} className={styles.logoImage} alt="Logo" />
@@ -67,26 +72,36 @@ const Navbar = ({ isHomePage }) => {
 
           <div
             className={styles.dropdown}
-            onMouseEnter={() => window.innerWidth > 768 && setDropdownVisible(true)}
-            onMouseLeave={() => window.innerWidth > 768 && setDropdownVisible(false)}
+            onMouseEnter={() =>
+              window.innerWidth > 768 && setDropdownVisible(true)
+            }
+            onMouseLeave={() =>
+              window.innerWidth > 768 && setDropdownVisible(false)
+            }
             onClick={window.innerWidth <= 768 ? toggleDropdown : null}
           >
             <Link to="#" className={styles.dropdownToggle}>
               Services
             </Link>
-            {(dropdownVisible || (window.innerWidth <= 768 && dropdownVisible)) && (
+            {(dropdownVisible ||
+              (window.innerWidth <= 768 && dropdownVisible)) && (
               <div className={styles.dropdownMenu}>
                 <Link to="/events">Events</Link>
                 <div
                   className={styles.subDropdown}
-                  onMouseEnter={() => window.innerWidth > 768 && setSubDropdownVisible(true)}
-                  onMouseLeave={() => window.innerWidth > 768 && setSubDropdownVisible(false)}
+                  onMouseEnter={() =>
+                    window.innerWidth > 768 && setSubDropdownVisible(true)
+                  }
+                  onMouseLeave={() =>
+                    window.innerWidth > 768 && setSubDropdownVisible(false)
+                  }
                   onClick={window.innerWidth <= 768 ? toggleSubDropdown : null}
                 >
                   <Link to="#" className={styles.dropdownToggle}>
                     Vendors
                   </Link>
-                  {(subDropdownVisible || (window.innerWidth <= 768 && subDropdownVisible)) && (
+                  {(subDropdownVisible ||
+                    (window.innerWidth <= 768 && subDropdownVisible)) && (
                     <div className={styles.subDropdownMenu}>
                       <Link to="/photpgrapy">Photography</Link>
                       <Link to="/decoration">Decoration</Link>
@@ -122,9 +137,11 @@ const Navbar = ({ isHomePage }) => {
           className={`${styles.menuToggle} ${isHomePage ? styles.home : ""}`}
           onClick={toggleMenu}
         >
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
+          {menuOpen ? (
+            <FaTimes className={styles.icon} />
+          ) : (
+            <FaBars className={styles.icon} />
+          )}
         </div>
       </div>
     </header>
