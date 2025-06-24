@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -9,29 +9,22 @@
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
-/* Global Styles */
+/* Main App container */
 .App {
   font: normal 16px/1.5 "Helvetica Neue", sans-serif;
   overflow-x: hidden;
-  padding-bottom: 50px;
-  width: 90%;
-  max-width: 1200px;
-  margin: 30px auto;
-  border-radius: 20px;
+  width: 100%;
+  padding: 40px 0;
+  background: #f7f9fc;
 }
 
-/* Timeline Section */
-.timeline {
-  padding: 40px 20px;
-  background: #dbe5f0;
-  border-radius: 20px;
-}
-
+/* Section Title */
 .titleprofile {
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: #333;
   margin-bottom: 10px;
@@ -43,213 +36,119 @@ a {
   color: #666;
   margin-bottom: 40px;
   line-height: 1.6;
+  padding: 0 20px;
 }
 
-/* Timeline Items */
-.timelineItem {
-  list-style-type: none;
-  position: relative;
-  width: 6px;
+/* Wrapper for all cards */
+.stepsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-top: 40px;
-  background: #fff;
 }
 
-.timelineItem::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #fff;
-  z-index: 1;
-  transition: background 0.5s ease-in-out;
+/* Flip Card Styles */
+.card {
+  width: 260px;
+  height: 260px;
+  perspective: 1000px;
+  flex: 0 0 auto;
+  border-radius: 20px;
 }
 
-.timelineItem .main {
+.cardInner {
   position: relative;
-  bottom: 0;
-  width: 400px;
-  padding: 30px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+.card:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+/* Card Faces */
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
   text-align: center;
 }
 
-.timelineItem:nth-child(odd) .main {
-  left: 45px;
+.cardFront {
+  background: #fff;
 }
 
-.timelineItem:nth-child(even) .main {
-  left: -445px;
-}
-
-.timemain {
-  display: block;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.titlemain {
-  font-size: 20px;
-  font-weight: 600;
-  color: #f45b69;
-  margin-bottom: 10px;
-}
-
-.text {
-  font-size: 16px;
-  color: #333;
-  text-align: center;
-}
-
-.main:hover {
-  color: #f45b69;
-  transform: scale(1.02);
-  transition: all 0.3s ease;
-}
-
-/* Effects */
-.timelineItem.inView::after {
+.cardBack {
   background: #f45b69;
+  color: #fff;
+  transform: rotateY(180deg);
 }
 
-.timelineItem .main {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+/* Icon */
+.cardIcon {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-.timelineItem:nth-child(odd) .main {
-  transform: translate3d(200px, 0, 0);
+/* Title */
+.cardTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
 }
 
-.timelineItem:nth-child(even) .main {
-  transform: translate3d(-200px, 0, 0);
-}
-
-.timelineItem.inView .main {
-  transform: none;
-  visibility: visible;
-  opacity: 1;
+/* Back Text */
+.cardText {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.5;
 }
 
 /* Responsive Design */
-
-/* Tablet (768px and below) */
 @media (max-width: 768px) {
-  .App {
-    width: 95%;
-    margin: 20px auto;
-  }
-
-  .timeline {
-    padding: 30px 15px;
+  .card {
+    width: 45%;
+    height: 240px;
   }
 
   .titleprofile {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .subtitle {
     font-size: 14px;
     margin-bottom: 30px;
   }
-
-  .timelineItem {
-    width: 4px;
-    padding-top: 30px;
-  }
-
-  .timelineItem .main {
-    width: calc(50vw - 60px);
-    padding: 20px;
-  }
-
-  .timelineItem:nth-child(odd) .main {
-    left: 20px;
-  }
-
-  .timelineItem:nth-child(even) .main {
-    left: calc(-50vw - 20px);
-  }
-
-  .timelineItem::after {
-    width: 20px;
-    height: 20px;
-  }
-
-  .timemain {
-    font-size: 2.5rem;
-  }
-
-  .titlemain {
-    font-size: 18px;
-  }
-
-  .text {
-    font-size: 14px;
-  }
 }
 
-/* Mobile (480px and below) */
 @media (max-width: 480px) {
-  .App {
-    width: 100%; /* Full width on mobile */
-   
+  .card {
+    width: 90%;
+    height: 220px;
   }
 
-  
   .titleprofile {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .subtitle {
     font-size: 13px;
     margin-bottom: 20px;
   }
-
-  .timelineItem {
-    width: 4px;
-    padding-top: 20px; /* Reduced padding */
-  }
-
-  .timelineItem .main {
-    width: calc(60vw - 50px); /* Adjusted width */
-    padding: 15px;
-    margin-left: 60px;
-    height: 50vh; /* Fixed height as requested */
-  }
-
-  .timelineItem:nth-child(odd) .main {
-    left: -50px; /* Adjusted for mobile */
-  }
-
-  .timelineItem:nth-child(even) .main {
-    left: calc(-60vw - 15px); /* Adjusted dynamically */
-  }
-
-  .timelineItem::after {
-    width: 10px;
-    height: 15px;
-  }
-
-  .timemain {
-    font-size: 2rem;
-  }
-
-  .titlemain {
-    font-size: 16px;
-  }
-
-  .text {
-    font-size: 13px;
-  }
 }
-
-

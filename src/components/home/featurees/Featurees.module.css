@@ -1,4 +1,12 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+} */
+
+
 /* Keyframes for the lift-up animation */
+
 @keyframes liftUp {
   0% {
     opacity: 0;
@@ -13,16 +21,16 @@
 /* Container Styles */
 .container {
   background: 
-    /* linear-gradient(rgba(250, 233, 233, 0.9), rgba(250, 233, 233, 0.9)), */
     url('../featurees/pexels-vireshstudio-1444442.jpg') no-repeat center center;
   background-size: cover;
-  /* background-attachment: fixed; Optional: Adds a parallax effect */
-  padding: 0 150px 50px 150px;
-  margin-top: 10px;
+  padding: 0 0 50px 0; /* Removed 150px left/right padding */
+  margin: 0;           /* Removed top margin */
+  width: 100vw;        /* Full viewport width */
+  min-height: 100vh;   /* Ensure it covers full screen height */
   color: rgb(165, 25, 25);
-  /* backdrop-filter: blur(2px); Works only when there's some transparency */
- 
+  overflow-x: hidden;  /* Prevent any horizontal scroll */
 }
+
 
 
 
@@ -32,7 +40,9 @@
   text-align: center;
   font-size: x-large;
   color: #fff;
-  margin-top: -20px;
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 /* Features List */

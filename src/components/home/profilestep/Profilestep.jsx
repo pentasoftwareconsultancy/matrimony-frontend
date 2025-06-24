@@ -8,7 +8,6 @@ function Profilestep() {
     { year: '💬', title: 'Get to know them', text: "Connect and get to know potential life partners in a meaningful way through Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal." },
     { year: '❤️', title: 'Find love!', text: "Experience the joy of finding true love and build a beautiful future together with the help of Akhil Bhartiya Kunbi Samaj Bahuuddeshiya Mandal." },
   ];
-
   useEffect(() => {
     const items = document.querySelectorAll(`.${styles.timelineItem}`);
 
@@ -41,26 +40,36 @@ function Profilestep() {
     };
   }, []);
 
-  return (
-    <div className={styles.App}>
-      <section className={styles.timeline}>
-        <h2 className={styles.titleprofile}>Create Your Profile Now...</h2>
-        <p className={styles.subtitle}>Create Your Profile Today and Begin Your Journey to Finding True Love and Lasting Happiness!</p>
+ return (
+  <div className={styles.App}>
+    <section className={styles.timeline}>
+      <h2 className={styles.titleprofile}>Create Your Profile Now...</h2>
+      <p className={styles.subtitle}>
+        Create Your Profile Today and Begin Your Journey to Finding True Love and Lasting Happiness!
+      </p>
 
-        <ul>
-          {timelineItems.map((item, index) => (
-            <li key={index} className={styles.timelineItem}>
-              <div className={styles.main}>
-                <time className={styles.timemain}>{item.year}</time>
-                <div className={styles.titlemain}>{item.title}</div>
-                <div className={styles.text}>{item.text}</div>
+      <div className={styles.stepsWrapper}>
+        {timelineItems.map((item, index) => (
+          <div key={index} className={styles.card}>
+            <div className={styles.cardInner}>
+              {/* Front Side */}
+              <div className={styles.cardFront}>
+                <div className={styles.cardIcon}>{item.year}</div>
+                <div className={styles.cardTitle}>{item.title}</div>
               </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </div>
-  );
+
+              {/* Back Side */}
+              <div className={styles.cardBack}>
+                <div className={styles.cardText}>{item.text}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
 }
 
 export default Profilestep;
