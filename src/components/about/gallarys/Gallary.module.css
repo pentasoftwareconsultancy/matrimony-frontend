@@ -1,62 +1,67 @@
-.container{
-    display: flex;
-    padding-left: 280px;
-    margin-bottom: 50px;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+  background-color: #f5f5f5;
 }
-.container1 img{
-    width: 90%;
-    height: 30vh;
-    border-radius: 50px;
+
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
   object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
-.container1{
-    width: 20%;
+
+.card img:hover {
+  transform: scale(1.05);
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-
-/* Mobile Responsiveness */
-
-/* For small tablets and mobile screens (max-width: 768px) */
+/* Tablet */
 @media (max-width: 768px) {
-    .container {
-        display: flex;
-        flex-direction: row;
-        /* height: 50vh; */
-        align-items: center;  /* Centers the content */
-        padding-left: 20px;
-    }
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    padding: 1.5rem;
+  }
 
-    .container1 {
-        width: 100%;  /* Makes container1 take full width */
-        margin-bottom: 20px;  /* Adds space below the image */
-    }
-
-    .container1 img {
-        width: 100%;  /* Ensures the image is responsive */
-        height: 50vh;/* Adjusts the height based on the image's aspect ratio */
-        border-radius: 15px;  /* Adds rounded corners */
-    }
+  .card img {
+    height: 200px;
+  }
 }
 
-/* For very small screens (max-width: 480px) */
+/* Mobile */
 @media (max-width: 480px) {
-    .container {
-        padding-left: 10px;
-        padding-right: 10px;
-        display: none;
-    }
+  .container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
 
-    .container1 {
-        width: 100%;  /* Takes up full width on small screens */
-        height: 70vh;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .container1 img {
-        width: 100%;  /* Ensures image fits within the container */
-        height: auto;  /* Keeps the image responsive */
-        border-radius: 15px;  /* Rounded corners */
-    }
+  .card img {
+    height: auto;
+  }
 }

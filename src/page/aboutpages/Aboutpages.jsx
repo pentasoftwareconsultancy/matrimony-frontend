@@ -12,7 +12,7 @@ function Aboutpages() {
     <div>
        {/* <Abouthero/> */}
        <Abouthero/>
-       <Section/>
+       {/* <Section/> */}
        <Media/>
        <Aboutus/>
        <Gallary/>
