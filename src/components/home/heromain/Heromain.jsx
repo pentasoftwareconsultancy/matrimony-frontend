@@ -49,7 +49,7 @@ const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const timeRunning = 1000;
-  const timeAutoNext = 8000;
+  const timeAutoNext = 5000;
   let runNextAuto;
 
   const resetTimeAnimation = () => {
