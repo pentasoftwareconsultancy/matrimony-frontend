@@ -382,7 +382,7 @@
   z-index: 1;
 }
 
-.content {
+/* .content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -398,7 +398,29 @@
   font-weight: bold;
   line-height: 1.2;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+} */
+ .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%; /* Adjust as needed */
+  max-width: 800px;
+  padding: 1rem;
+  z-index: 2;
 }
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.4;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  word-wrap: break-word;
+  white-space: normal;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

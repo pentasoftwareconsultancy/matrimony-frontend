@@ -12,7 +12,7 @@ function Featurees() {
         "Meaningful connections for lifelong happiness.",
         // "Pioneers in research on Maharashtrian wedding industry.",
       ];
-    
+
       useEffect(() => {
         const featureItems = document.querySelectorAll(`.${styles.featureItem}`);
         

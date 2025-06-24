@@ -12,18 +12,26 @@
 
 /* Container Styles */
 .container {
-  background-color: #fae9e9;
-  padding: 0 150px 50px 150px; /* Consolidated padding */
+  background: 
+    /* linear-gradient(rgba(250, 233, 233, 0.9), rgba(250, 233, 233, 0.9)), */
+    url('../featurees/pexels-vireshstudio-1444442.jpg') no-repeat center center;
+  background-size: cover;
+  /* background-attachment: fixed; Optional: Adds a parallax effect */
+  padding: 0 150px 50px 150px;
   margin-top: 10px;
   color: rgb(165, 25, 25);
+  /* backdrop-filter: blur(2px); Works only when there's some transparency */
+  border-radius: 12px; /* Optional: rounded corners for elegance */
 }
+
+
 
 /* Section Title */
 .sectionTitle {
   padding-top: 40px;
   text-align: center;
   font-size: x-large;
-  color: black;
+  color: #fff;
   margin-top: -20px;
 }
 
@@ -97,13 +105,35 @@
 }
 
 /* Alternating Background Colors */
-.featuresDivWrap ul.featuresUl li:nth-child(1) { background: rgb(243, 75, 75); }
-.featuresDivWrap ul.featuresUl li:nth-child(2) { background: rgb(248, 179, 51); }
-.featuresDivWrap ul.featuresUl li:nth-child(3) { background: rgb(246, 246, 66); }
-.featuresDivWrap ul.featuresUl li:nth-child(4) { background: rgb(51, 181, 51); }
-.featuresDivWrap ul.featuresUl li:nth-child(5) { background: rgb(74, 74, 235); }
-.featuresDivWrap ul.featuresUl li:nth-child(6) { background: rgb(139, 65, 191); }
-.featuresDivWrap ul.featuresUl li:nth-child(7) { background: violet; }
+.featuresDivWrap ul.featuresUl li:nth-child(1) { 
+  background: #e53935; /* 🔴 Red - Love & Commitment */
+}
+
+.featuresDivWrap ul.featuresUl li:nth-child(2) { 
+  background: #fbc02d; /* 🟡 Yellow - Prosperity & Happiness */
+}
+
+.featuresDivWrap ul.featuresUl li:nth-child(3) { 
+  background: #8e24aa; /* 🟣 Purple - Mutual Respect & Desire */
+}
+
+.featuresDivWrap ul.featuresUl li:nth-child(4) { 
+  background: #1e88e5; /* 🔵 Blue - Loyalty & Spiritual Unity */
+}
+
+.featuresDivWrap ul.featuresUl li:nth-child(5) { 
+  background: #43a047; /* 🟢 Green - Fertility & Growth */
+}
+
+.featuresDivWrap ul.featuresUl li:nth-child(6) { 
+  background: #fb8c00; /* 🟠 Orange - Friendship & Joy */
+}
+
+.featuresDivWrap ul.featuresUl li:nth-child(7) { 
+  background:rgb(155, 143, 143); /* ⚪ White - Peace & Eternal Love */
+  color: #333; /* Make text readable on light background */
+}
+
 .featuresDivWrap ul.featuresUl li:nth-child(8) { background: rgb(84, 64, 84); }
 
 /* Prevent Horizontal Overflow */
@@ -183,8 +213,11 @@ body {
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
-    margin-top: 20px;
+    padding-top: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 0;
   }
 }
 
@@ -226,7 +259,7 @@ body {
 
   .sectionTitle {
     font-size: 1.2rem;
-    margin: 15px 0;
+    margin: 10px ;
   }
 }
 
@@ -251,5 +284,18 @@ body {
 
   .sectionTitle {
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.3rem;
+    padding-top: 15px;
   }
 }
