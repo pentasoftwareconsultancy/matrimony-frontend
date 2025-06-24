@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./Homeabout.module.css"
-import image from "../../home/hero/images/slide1.jpg"
+import image from "../homeabout/homeabout.jpg"
 // import image from "../../homes/hero/images/slide1.jpg"
 import { Link } from "react-router-dom";
 function Homeabout() {

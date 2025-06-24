@@ -1,16 +1,17 @@
 /* Container Styles */
+
 .container {
   display: flex;
-  margin-top: 50px;
   flex-direction: row;
-  gap: 20px;
-  width: 70%;
-  margin-left: 240px; /* Fixed margin for desktop */
+  gap: 40px; /* increased spacing between image and content */
+  margin: 50px auto; /* center align with top margin */
+  width: 90%; /* more balanced width for desktop */
+  max-width: 1200px; /* prevent stretching on very large screens */
 }
 
 /* Image Styles */
 .image {
-  max-width: 300px;
+  max-width: 500px;
   height: 55vh;
   background-position: center;
   background-size: cover;
@@ -27,7 +28,7 @@
 
 .content h2 {
   font-size: 24px;
-  margin-top: 40px;
+  margin-top: 10px;
   text-align: center;
   margin-bottom: 10px;
 }
