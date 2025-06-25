@@ -48,7 +48,8 @@ function Profilestep() {
         Create Your Profile Today and Begin Your Journey to Finding True Love and Lasting Happiness!
       </p>
 
-      <div className={styles.stepsWrapper}>
+    <div className="cardContainer">
+        <div className={styles.stepsWrapper}>
         {timelineItems.map((item, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.cardInner}>
@@ -66,6 +67,7 @@ function Profilestep() {
           </div>
         ))}
       </div>
+    </div>
     </section>
   </div>
 );
