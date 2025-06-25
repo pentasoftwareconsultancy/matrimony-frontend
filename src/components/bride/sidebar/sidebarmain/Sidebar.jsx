@@ -105,3 +105,6 @@ const Sidebar = ({ handleFilterChange }) => {
 };
 
 export default Sidebar;
+
+
+
