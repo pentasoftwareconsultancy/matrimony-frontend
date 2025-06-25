@@ -12,7 +12,7 @@
 /* Image Styles */
 .image {
   max-width: 500px;
-  height: 55vh;
+  /* height: 55vh; */
   background-position: center;
   background-size: cover;
   overflow: hidden;
