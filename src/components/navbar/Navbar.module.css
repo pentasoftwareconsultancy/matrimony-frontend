@@ -81,9 +81,54 @@
   position: relative; /* For underline animation */
   transition: color 0.3s ease;
 }
+.navLink {
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  color: #FFF8E7;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #D4A017;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #D4A017;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.active {
+  color: #D4A017;
+}
+
+.active::after {
+  width: 100%;
+  background-color: #D4A017;
+}
 
 .navLinks a:hover {
   color: #D4A017; /* Warm gold on hover */
+}
+.navLinks a.active {
+  color: #D4A017; /* Gold */
+}
+
+.navLinks a.active::after {
+  width: 100%;
+  background-color: #D4A017;
 }
 
 .navLinks a::after {
@@ -170,7 +215,7 @@
 
 .dropdownMenu a:hover {
   /* Gold background on hover */
-  color: #4B0082; /* Royal purple text */
+  color:  #D4A017; /* Royal purple text */
 }
 
 /* Sub-Dropdown (Vendors) */
@@ -212,7 +257,7 @@
 
 .subDropdownMenu a:hover {
    /* Gold background */
-  color: #4B0082; /* Royal purple text */
+  color:  #D4A017; /* Royal purple text */
 }
 
 /* Navbar Container */

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // Updated to NavLink
 import styles from "./Navbar.module.css";
 import logo from "./logo.png";
-import { FaBars, FaTimes } from "react-icons/fa"; // Add this at the top
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = ({ isHomePage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,13 +11,8 @@ const Navbar = ({ isHomePage }) => {
   const [subDropdownVisible, setSubDropdownVisible] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const closeMenu = () => setMenuOpen(false);
 
   const toggleDropdown = (e) => {
     e.preventDefault();
@@ -30,14 +25,9 @@ const Navbar = ({ isHomePage }) => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -49,6 +39,9 @@ const Navbar = ({ isHomePage }) => {
     localStorage.setItem("isLoggedIn", "false");
     setIsLoggedIn(false);
   };
+
+  const getLinkClass = ({ isActive }) =>
+    `${styles.navLink} ${isActive ? styles.active : ""}`;
 
   return (
     <header
@@ -65,10 +58,18 @@ const Navbar = ({ isHomePage }) => {
           className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
           onClick={menuOpen ? closeMenu : null}
         >
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/bride">Bride</Link>
-          <Link to="/groommain">Groom</Link>
+          <NavLink to="/" className={getLinkClass}>
+            Home
+          </NavLink>
+          <NavLink to="/about" className={getLinkClass}>
+            About
+          </NavLink>
+          <NavLink to="/bride" className={getLinkClass}>
+            Bride
+          </NavLink>
+          <NavLink to="/groommain" className={getLinkClass}>
+            Groom
+          </NavLink>
 
           <div
             className={styles.dropdown}
@@ -80,13 +81,15 @@ const Navbar = ({ isHomePage }) => {
             }
             onClick={window.innerWidth <= 768 ? toggleDropdown : null}
           >
-            <Link to="#" className={styles.dropdownToggle}>
+            <NavLink to="#" className={styles.dropdownToggle}>
               Services
-            </Link>
+            </NavLink>
             {(dropdownVisible ||
               (window.innerWidth <= 768 && dropdownVisible)) && (
               <div className={styles.dropdownMenu}>
-                <Link to="/events">Events</Link>
+                <NavLink to="/events" className={getLinkClass}>
+                  Events
+                </NavLink>
                 <div
                   className={styles.subDropdown}
                   onMouseEnter={() =>
@@ -95,40 +98,70 @@ const Navbar = ({ isHomePage }) => {
                   onMouseLeave={() =>
                     window.innerWidth > 768 && setSubDropdownVisible(false)
                   }
-                  onClick={window.innerWidth <= 768 ? toggleSubDropdown : null}
+                  onClick={
+                    window.innerWidth <= 768 ? toggleSubDropdown : null
+                  }
                 >
-                  <Link to="#" className={styles.dropdownToggle}>
+                  <NavLink to="#" className={styles.dropdownToggle}>
                     Vendors
-                  </Link>
+                  </NavLink>
                   {(subDropdownVisible ||
                     (window.innerWidth <= 768 && subDropdownVisible)) && (
                     <div className={styles.subDropdownMenu}>
-                      <Link to="/photpgrapy">Photography</Link>
-                      <Link to="/decoration">Decoration</Link>
-                      <Link to="/djmusic">DJ & Music</Link>
-                      <Link to="/makeuphair">Makeup & Hair Styling</Link>
-                      <Link to="/bridalwear">Bridal Wear</Link>
-                      <Link to="/groomwear">Groom Wear</Link>
-                      <Link to="/makeupartist">Mehndi Artists</Link>
-                      <Link to="/lightingsound">Lighting & Sound</Link>
-                      <Link to="/jewelry">Jewelry & Accessories</Link>
+                      <NavLink to="/photpgrapy" className={getLinkClass}>
+                        Photography
+                      </NavLink>
+                      <NavLink to="/decoration" className={getLinkClass}>
+                        Decoration
+                      </NavLink>
+                      <NavLink to="/djmusic" className={getLinkClass}>
+                        DJ & Music
+                      </NavLink>
+                      <NavLink to="/makeuphair" className={getLinkClass}>
+                        Makeup & Hair Styling
+                      </NavLink>
+                      <NavLink to="/bridalwear" className={getLinkClass}>
+                        Bridal Wear
+                      </NavLink>
+                      <NavLink to="/groomwear" className={getLinkClass}>
+                        Groom Wear
+                      </NavLink>
+                      <NavLink to="/makeupartist" className={getLinkClass}>
+                        Mehndi Artists
+                      </NavLink>
+                      <NavLink to="/lightingsound" className={getLinkClass}>
+                        Lighting & Sound
+                      </NavLink>
+                      <NavLink to="/jewelry" className={getLinkClass}>
+                        Jewellery & Accessories
+                      </NavLink>
                     </div>
                   )}
                 </div>
-                <Link to="/blog">Blogs</Link>
+                <NavLink to="/blog" className={getLinkClass}>
+                  Blogs
+                </NavLink>
               </div>
             )}
           </div>
 
-          <Link to="/member">Committee Members</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/pricing">Price</Link>
+          <NavLink to="/member" className={getLinkClass}>
+            Committee Members
+          </NavLink>
+          <NavLink to="/contact" className={getLinkClass}>
+            Contact
+          </NavLink>
+          <NavLink to="/pricing" className={getLinkClass}>
+            Plan
+          </NavLink>
 
           <div className={styles.loginMobile}>
             {isLoggedIn ? (
               <button onClick={handleLogout}>Log Out</button>
             ) : (
-              <Link to="/login">Log In</Link>
+              <NavLink to="/login" className={getLinkClass}>
+                Log In
+              </NavLink>
             )}
           </div>
         </nav>

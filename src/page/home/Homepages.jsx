@@ -17,8 +17,9 @@ function Homepages() {
       <HeroSlider/>
      {/* <Hero/> */}
    {/* <Filter/> */}
-      <Featurees/>
+     
       <Homeabout/>
+       <Featurees/>
       <Profilesteps/>
       {/* <Testimonials/> */}
       <Testimonihome/>

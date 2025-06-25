@@ -1,10 +1,26 @@
-import React, { useState, useEffect } from "react";
+// Testimonihome.jsx
+import React from "react";
+import Slider from "react-slick";
 import styles from "./Testimonihome.module.css";
-import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaQuoteRight } from "react-icons/fa"; // Icons
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import image1 from "../image/image1.jpg";
 import image2 from "../image/image6.jpg";
 import image3 from "../image/image3.jpg";
 import image4 from "../image/image4.jpg";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
+// Custom arrow components
+const PrevArrow = ({ onClick }) => (
+  <div className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
+    <FaArrowLeft />
+  </div>
+);
+
+const NextArrow = ({ onClick }) => (
+  <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
+    <FaArrowRight />
+  </div>
+);
 
 const testimonials = [
   {
@@ -29,59 +45,57 @@ const testimonials = [
   },
 ];
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 700,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  arrows: true,
+  autoplay: true,              // <-- added
+  autoplaySpeed: 3000,         // <-- time between slides in milliseconds
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,
+        autoplay: true,       // autoplay still on mobile
+      },
+    },
+  ],
+};
+
+
 const Testimonihome = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleNext = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
     <div className={styles.testimonialSection}>
-      {/* ✅ Main Title */}
-      <h1 className={styles.mainTitle}>Testimonial </h1>
-
-      {/* ✅ Subtitle with Icon */}
+      <h1 className={styles.mainTitle}>Testimonial</h1>
       <h2 className={styles.title}>
         <FaQuoteLeft className={styles.icon} /> What Our Happy Couples Say
-        <FaQuoteRight className={styles.bottomIcon} />
+        <FaQuoteRight className={styles.icon} />
       </h2>
 
-      <div className={styles.testimonialContainer}>
-       
-
-        <div className={styles.imageContainer}>
-          <img src={testimonials[index].image} alt="testimonial" />
-        </div>
-
-        <div className={styles.textContainer}>
-          <h3 className={styles.name}>{testimonials[index].name}</h3>
-          <p className={styles.text}>
-            {testimonials[index].text}
-          </p>
-          {/* ✅ Icon Below Text */}
-          
-          <div className={styles.main}>
-          <button className={styles.navButton} onClick={handlePrev}>
-          <FaChevronLeft />
-        </button>
-        <button className={styles.navButton} onClick={handleNext}>
-          <FaChevronRight />
-        </button>
-        </div>
-        </div>
-       
+      <div className={styles.sliderWrapper}>
+        <Slider {...settings}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className={styles.cardWrapper}>
+              <div className={styles.card}>
+                <img src={testimonial.image} alt={testimonial.name} className={styles.image} />
+                <h3 className={styles.name}>{testimonial.name}</h3>
+                <p className={styles.text}>{testimonial.text}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );

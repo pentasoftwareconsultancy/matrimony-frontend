@@ -101,7 +101,8 @@ a {
 }
 
 .cardBack {
-  background: #f45b69;
+  background:#FF6B00;
+
   color: #fff;
   transform: rotateY(-180deg);
 }

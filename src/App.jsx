@@ -43,6 +43,8 @@ import BridalwearPages from "./page/bridalwearpages/BridalwearPages";
 import BridalwearDetail from "./components/bridalwear/bridalweardetail/BridalwearDetail";
 import MakeupArtistPages from "./page/makeupartistpages/MakeupArtistPages";
 import MakeupArtistDetail from "./components/makeupartist/makeupartistdetail/MakeupArtistDetail";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 function AppContent() {
