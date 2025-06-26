@@ -61,12 +61,17 @@ const Navbar = ({ isHomePage }) => {
         <nav
   className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
   onClick={(e) => {
-    // Only close the menu if clicking a direct nav link
-    if (e.target.tagName === 'A' && !e.target.classList.contains(styles.dropdownToggle)) {
+    const link = e.target.closest("a");
+    if (
+      link &&
+      !link.classList.contains(styles.dropdownToggle) &&
+      window.innerWidth <= 768 // only close in mobile view
+    ) {
       closeMenu();
     }
   }}
 >
+
 
           <NavLink to="/" className={getLinkClass}>
             Home

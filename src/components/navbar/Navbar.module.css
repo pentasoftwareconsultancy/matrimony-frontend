@@ -229,7 +229,7 @@
   border: 1px solid #D4A017; /* Gold border */
   left: 100%;
   top: 0;
-   background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Semi-transparent royal purple */
+  background: linear-gradient(135deg, #C71585 0%, #4B0082 100%);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
   min-width: 250px;
@@ -240,6 +240,7 @@
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
+/* Show submenu on hover (desktop) */
 .subDropdown:hover .subDropdownMenu {
   display: block;
   opacity: 1;
@@ -256,9 +257,9 @@
 }
 
 .subDropdownMenu a:hover {
-   /* Gold background */
-  color:  #D4A017; /* Royal purple text */
+  color: #D4A017; /* Gold */
 }
+
 
 /* Navbar Container */
 .navbar {
@@ -412,4 +413,32 @@
   font-size: 30px;
   cursor: pointer;
   margin-top: 10px;
+}
+/* ✅ Add scroll behavior on mobile */
+@media (max-width: 768px) {
+  .subDropdownMenu {
+    position: relative; /* Avoids off-screen submenu */
+    left: 0;
+    top: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+    display: block; /* Always visible when toggled */
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .subDropdown:hover .subDropdownMenu {
+    transform: none;
+  }
+
+  .subDropdownMenu::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .subDropdownMenu::-webkit-scrollbar-thumb {
+    background-color: #D4A017;
+    border-radius: 3px;
+  }
 }
