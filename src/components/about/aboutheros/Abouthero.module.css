@@ -1,78 +1,157 @@
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    /* background-color: #EBEDF9; */
-    /* box-sizing: border-box; */
-  }
-  .content{
-    display: flex;
-    margin-top: 70px;
-    background-color: #EBEDF9;
-  }
-  /* .container {
+/* Abouthero.module.css */
+.container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
-} */
-.imageContainer{
-  /* margin-top: 50px; */
-  width: 70%;
+  background: linear-gradient(135deg, #f8f5ff 0%, #f0edf9 100%);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.flowerContainer {
+
+.heroSection {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.textContainer {
+  flex: 1;
+  padding: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #d32f2f;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #5a2d82;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #ff6b9d, #5a2d82);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  max-width: 600px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.description:before {
+  content: "💕";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.ctaButton {
+  padding: 15px 35px;
+  background: linear-gradient(135deg, #ff6b9d, #ff8e53);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+}
+
+.ctaButton:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+}
+
+.secondaryButton {
+  padding: 15px 35px;
+  background: transparent;
+  color: #5a2d82;
+  border: 2px solid #5a2d82;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background: rgba(90, 45, 130, 0.1);
+  transform: translateY(-3px);
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transform: perspective(1000px) rotateY(-5deg);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+ object-fit: cover;
+  object-position: 0% 0%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 70%;
-  height: 100%; */
-  z-index: 1;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(90, 45, 130, 0.1), rgba(255, 107, 157, 0.1));
 }
-.textContainer{
-
-  margin-top: 200px;
-  width: 40%;
-}
-.flower {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation: randomMovement 15s linear infinite;
-  opacity: 0.8;
-}
-.subtitle{
-  font-size: 50px;
-  color: rgb(78, 56, 100);
-  font-weight: bold;
-}
-/* Animation for random movement */
-.container {
-  position: relative;
-  
-  overflow: hidden;
-}
-.image {
-  width: 90%;
-  height: 110vh;
-  border-end-end-radius: 90%;
-  object-fit: cover;
-}
-.title {
-  font-size: 24px;
-  color: rgb(234, 64, 64);
-  font-weight: bold;
-  margin-bottom: 7px;
-}
-.description {
-  text-align: justify;
-  padding-right: 50px;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 
 .flowerContainer {
   position: absolute;
@@ -84,155 +163,122 @@
   pointer-events: none;
 }
 
-/* .flower {
+.flower {
   position: absolute;
   width: 50px;
   height: 50px;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: randomMovement 15s linear infinite;
-  opacity: 0.8;
-} */
+  animation: float 15s linear infinite;
+  opacity: 0.7;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+}
 
-/* Animation for random movement */
-@keyframes randomMovement {
+@keyframes float {
   0% {
     transform: translate(0, 0) rotate(0deg);
+    opacity: 0.8;
   }
   25% {
-    transform: translate(calc(50vw - 25px), calc(-50vh)) rotate(90deg);
+    transform: translate(calc(50vw - 25px), calc(-20vh)) rotate(90deg);
+    opacity: 0.6;
   }
   50% {
-    transform: translate(calc(-50vw + 25px), calc(50vh)) rotate(180deg);
+    transform: translate(calc(-50vw + 25px), calc(20vh)) rotate(180deg);
+    opacity: 0.8;
   }
   75% {
-    transform: translate(calc(75vw), calc(-75vh)) rotate(270deg);
+    transform: translate(calc(30vw), calc(-30vh)) rotate(270deg);
+    opacity: 0.5;
   }
   100% {
-    transform: translate(calc(-75vw), calc(75vh)) rotate(360deg);
+    transform: translate(calc(-30vw), calc(30vh)) rotate(360deg);
+    opacity: 0.8;
   }
 }
 
-
-.flower:nth-child(1) {
-  top: 50%;
-  left: 5%;
-  animation-delay: 0s;
+.decorativeElement {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(90, 45, 130, 0.2));
+  border-radius: 50%;
+  z-index: 1;
 }
 
-.flower:nth-child(2) {
-  top: 20%;
-  left: 15%;
-  animation-delay: 1s;
-}
-
-.flower:nth-child(3) {
-  top: 30%;
-  left: 25%;
-  animation-delay: 0s;
-}
-
-.flower:nth-child(4) {
-  top: 80%;
-  left: 35%;
-  animation-delay: 1s;
-}
-
-.flower:nth-child(5) {
-  top: 70%;
-  left: 45%;
-  animation-delay: 0s;
-}
-
-.flower:nth-child(6) {
-  top: 20%;
-  left: 55%;
-  animation-delay: 1s;
-}
-
-.flower:nth-child(7) {
-  top: 80%;
-  left: 65%;
-  animation-delay: 2s;
-}
-
-.flower:nth-child(8) {
-  top: 30%;
-  left: 75%;
-  animation-delay: 1s;
-}
-
-.flower:nth-child(9) {
-  top: 90%;
-  left: 85%;
-  animation-delay: 2s;
-}
-
-.flower:nth-child(10) {
-  top: 50%;
-  left: 95%;
-  animation-delay: 1s;
-}
- 
-  /* For devices with a max-width of 768px (tablets and smaller) */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 992px) {
   .content {
-      flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 30px;
   }
-
+  
   .textContainer {
-      margin-top: 20px;
-      text-align: center;
-      width: 90%;
+    padding: 20px;
+    text-align: center;
   }
-
-  .title {
-      font-size: 20px;
-  }
-
-  .subtitle {
-      font-size: 18px;
-  }
-
+  
   .description {
-      font-size: 14px;
+    padding-left: 0;
+    max-width: 100%;
+    margin: 0 auto 30px;
   }
-
-  .image {
-      width: 100%;
-      height: auto;
+  
+  .description:before {
+    display: none;
   }
-
-  .flower {
-      width: 40px;
-      height: 40px;
+  
+  .ctaContainer {
+    justify-content: center;
+  }
+  
+  .imageWrapper {
+    height: 50vh;
+    transform: none;
   }
 }
 
-/* For devices with a max-width of 480px (mobile devices) */
-@media (max-width: 480px) {
-  .textContainer {
-      margin-top: 10px;
-  }
-
-  .title {
-      font-size: 18px;
-      margin-left: 50px;
-  }
-
+@media (max-width: 768px) {
   .subtitle {
-      font-size: 16px;
-      margin-left: 40px;
+    font-size: 2.5rem;
   }
-
+  
   .description {
-      font-size: 12px;
-      margin-left: 90px;
-      text-align: center;
+    font-size: 1.1rem;
   }
+  
+  .imageWrapper {
+    height: 40vh;
+  }
+}
 
-  .flower {
-      width: 30px;
-      height: 30px;
+@media (max-width: 480px) {
+  .subtitle {
+    font-size: 2rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .ctaContainer {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .ctaButton, .secondaryButton {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .imageWrapper {
+    height: 35vh;
   }
 }
