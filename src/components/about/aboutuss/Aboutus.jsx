@@ -228,7 +228,7 @@ const Aboutus = () => {
               <h3>Trust & Security</h3>
               <p>Verified profiles and strong privacy settings ensure a safe matchmaking experience.</p>
             </div>
-            
+          
             <div className={styles.valueCard}>
               <div className={styles.valueIcon}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -380,14 +380,30 @@
     background: rgba(75, 0, 130, 0.95); /* Slightly darker purple */
     border: none;
     width: 100%;
+    display: flex !important; /* <-- IMPORTANT */
+    flex-direction: column;
+    opacity: 1 !important;     /* <-- Make it visible */
+    visibility: visible !important;
+    transform: none;
   }
 
   .subDropdownMenu {
     position: static;
-    background: rgba(75, 0, 130, 0.95); /* Matching purple */
+    background: rgba(75, 0, 130, 0.95); /* Consistent purple */
     border: none;
     width: 100%;
-    margin-left: 20px; /* Indent for hierarchy */
+    margin-left: 20px;
+    display: block !important;         /* <-- IMPORTANT */
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none;
+  }
+
+  .dropdownMenu a,
+  .subDropdownMenu a {
+    color: #FFF8E7;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
