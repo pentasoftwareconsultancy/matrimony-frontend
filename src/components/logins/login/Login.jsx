@@ -6,6 +6,8 @@ import styles from "./Login.module.css";
 import img from "../image/logo2.webp";
 import { Link } from "react-router-dom";
 import logos from "../../navbar/logo.png";
+import ForgotPasswordModal from "../forgotpassword/Forgotpassword";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -13,6 +15,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [typingTimer, setTypingTimer] = useState(null);
+  const [showForgotModal, setShowForgotModal] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
@@ -58,40 +61,46 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    
+
     if (!validateEmail(mobileOrEmail) || !validatePassword(password)) {
       return;
     }
-  
+
     const storedUserData = JSON.parse(localStorage.getItem("formData"));
-  
+
     if (!storedUserData) {
       toast.dismiss();
       toast.warn("⚠️ No registered user found. Please register first.");
       return;
     }
-  
+
     const isValidUser =
-      (storedUserData.email === mobileOrEmail || storedUserData.mobileNumber === mobileOrEmail) &&
+      (storedUserData.email === mobileOrEmail ||
+        storedUserData.mobileNumber === mobileOrEmail) &&
       storedUserData.password === password;
-  
+
     if (!isValidUser) {
       toast.dismiss();
       toast.error("❌ Invalid email/mobile number or password.");
       return;
     }
-  
+
     toast.success("🎉 Login successful!");
-  
+
     // Store login state in localStorage
     localStorage.setItem("isLoggedIn", "true");
-  
+
     setTimeout(() => navigate("/"), 2000);
   };
-  
+
   return (
     <div className={styles.mainlogin}>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar closeOnClick />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar
+        closeOnClick
+      />
       <div className={styles.cantainars1}></div>
       <div className={styles.cantainars2}>
         <div className={styles.login}>
@@ -102,7 +111,7 @@ function Login() {
             <h2>Login</h2>
             <input
               type="text"
-              placeholder="Mobile Number/Email"
+              placeholder="Email Id "
               value={mobileOrEmail}
               onChange={(e) => setMobileOrEmail(e.target.value)}
               required
@@ -115,17 +124,30 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <span className={styles.toggle} onClick={togglePasswordVisibility}>
+              <span
+                className={styles.toggle}
+                onClick={togglePasswordVisibility}
+              >
                 {showPassword ? "🙈" : "👁️"}
               </span>
             </div>
-            <button className={styles.loginbutton} type="submit">Login</button>
+            <button className={styles.loginbutton} type="submit">
+              Login
+            </button>
             <div className={styles.forgotPassword}>
-              <a href="/">Forgot Password?</a>
+              <span onClick={() => setShowForgotModal(true)}>
+                Forgot Password?
+              </span>
             </div>
+
+            {showForgotModal && (
+              <ForgotPasswordModal onClose={() => setShowForgotModal(false)} />
+            )}
             <div className={styles.register}>
-              <span>New User?</span><p>
-              <Link to="/register">Register Free</Link></p>
+              <span>New User?</span>
+              <p>
+                <Link to="/register">Register Free</Link>
+              </p>
             </div>
           </form>
         </div>
