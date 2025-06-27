@@ -11,7 +11,7 @@ const MemberCard = ({ member }) => {
 <div className={styles.maintext}>
       <h3 className={styles.name}>{member.name}</h3>
       <p className={styles.title}>{member.designation}</p>
-      <p className={styles.title}>{member.phone}</p>
+      {/* <p className={styles.title}>{member.phone}</p> */}
       </div>
       </div>
     </Link>

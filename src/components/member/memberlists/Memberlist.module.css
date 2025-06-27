@@ -10,11 +10,13 @@
 /* Grid container for the cards */
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
-  gap: clamp(10px, 2vw, 20px); /* Responsive gap */
-  padding: clamp(5px, 1.5vw, 10px); /* Responsive padding */
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem;
+  justify-items: center;
+  background-color: #fff;
 }
+
 
 /* Overlay for the MemberDetail modal */
 .detailOverlay {
