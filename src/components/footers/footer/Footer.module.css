@@ -192,9 +192,9 @@
 
 
 .socialLink:hover {
-  background: transparent;
+ 
   transform: translateY(-3px);
-  color: #ffffff;
+   opacity: 0.85;
 }
 
 /* Responsive Design */
