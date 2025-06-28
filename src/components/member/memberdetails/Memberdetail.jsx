@@ -191,27 +191,7 @@ const MemberDetail = () => {
     </div>
 
     <h3 className={styles.title}>Work</h3>
-    <div className={styles.work}>
-      {member.work?.length > 0 ? (
-        member.work.map((workItem) => (
-          <div key={workItem._id} className={styles.workItem}>
-            <img
-              src={workItem.image || "https://via.placeholder.com/150"}
-              alt={workItem.title}
-              className={styles.workImage}
-            />
-            <div className={styles.maintext}>
-              <h4>{workItem.title}</h4>
-              <p>{workItem.description}</p>
-              <p><strong>Feedback:</strong> {workItem.feedback}</p>
-            </div>
-          </div>
-        ))
-      ) : (
-        <p>No work items available.</p>
-      )}
-    </div>
-
+    
     <h3 className={styles.title}>Achievements</h3>
     <div className={styles.achievements}>
       {member.achievements?.length > 0 ? (
