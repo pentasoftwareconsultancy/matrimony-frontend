@@ -54,10 +54,20 @@ const Navbar = ({ isHomePage }) => {
           <img src={logo} className={styles.logoImage} alt="Logo" />
         </a>
 
-        <nav
+        {/* <nav
           className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
           onClick={menuOpen ? closeMenu : null}
-        >
+        > */}
+        <nav
+  className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
+  onClick={(e) => {
+    // Only close the menu if clicking a direct nav link
+    if (e.target.tagName === 'A' && !e.target.classList.contains(styles.dropdownToggle)) {
+      closeMenu();
+    }
+  }}
+>
+
           <NavLink to="/" className={getLinkClass}>
             Home
           </NavLink>
@@ -79,7 +89,10 @@ const Navbar = ({ isHomePage }) => {
             onMouseLeave={() =>
               window.innerWidth > 768 && setDropdownVisible(false)
             }
-            onClick={window.innerWidth <= 768 ? toggleDropdown : null}
+            onClick={(e) => {
+  if (window.innerWidth <= 768) toggleDropdown(e);
+}}
+
           >
             <NavLink to="#" className={styles.dropdownToggle}>
               Services
@@ -154,7 +167,6 @@ const Navbar = ({ isHomePage }) => {
           <NavLink to="/pricing" className={getLinkClass}>
             Plan
           </NavLink>
-
           <div className={styles.loginMobile}>
             {isLoggedIn ? (
               <button onClick={handleLogout}>Log Out</button>

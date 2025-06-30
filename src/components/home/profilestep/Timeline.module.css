@@ -97,27 +97,38 @@ a {
 }
 
 .cardFront {
-  background: #fff;
+   background: linear-gradient(135deg, #f9e8ec 0%, #ffffff 100%);
 }
 
 .cardBack {
-  background: #FF6B00;
+  background: #e46986;
 
   color: #fff;
   transform: rotateY(-180deg);
 }
 
 /* Icon */
-.cardIcon {
+/* .cardIcon {
   font-size: 3rem;
   margin-bottom: 10px;
+} */
+ .cardIcon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+  color: #d32f2f;
+  transition: all 0.4s ease;
 }
+
 
 /* Title */
 .cardTitle {
   font-size: 18px;
   font-weight: bold;
   color: #000;
+   color: #d32f2f;
+  transition: all 0.4s ease;
 }
 
 /* Back Text */
