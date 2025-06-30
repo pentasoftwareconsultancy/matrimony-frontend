@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom"; // Updated to NavLink
 import styles from "./Navbar.module.css";
-import logo from "./logo.png";
+import logo from "./logo final final.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = ({ isHomePage }) => {
@@ -61,12 +61,17 @@ const Navbar = ({ isHomePage }) => {
         <nav
   className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
   onClick={(e) => {
-    // Only close the menu if clicking a direct nav link
-    if (e.target.tagName === 'A' && !e.target.classList.contains(styles.dropdownToggle)) {
+    const link = e.target.closest("a");
+    if (
+      link &&
+      !link.classList.contains(styles.dropdownToggle) &&
+      window.innerWidth <= 768 // only close in mobile view
+    ) {
       closeMenu();
     }
   }}
 >
+
 
           <NavLink to="/" className={getLinkClass}>
             Home

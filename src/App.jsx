@@ -45,6 +45,7 @@ import MakeupArtistPages from "./page/makeupartistpages/MakeupArtistPages";
 import MakeupArtistDetail from "./components/makeupartist/makeupartistdetail/MakeupArtistDetail";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";     
+import Forgotpassword from "./components/logins/forgotpassword/Forgotpassword";
 
 
 function AppContent() {
@@ -53,6 +54,7 @@ function AppContent() {
   const isHomePage = location.pathname === "/";
   const isLoginPage = location.pathname === "/login";
   const isRegisterPage = location.pathname === "/register";
+  const isForgotPasswordPage = location.pathname === "/forgotpassword"; // ✅ NEW
   const isProfilePage = location.pathname.startsWith("/profile");
 
   return (
@@ -98,10 +100,10 @@ function AppContent() {
         <Route path="/bridalwear/:id" element={<BridalwearDetail />} />
         <Route path="/makeupartist" element={<MakeupArtistPages />} />
         <Route path="/makeupartist/:id" element={<MakeupArtistDetail />} />
-        
+        <Route path="/forgotpassword" element={<Forgotpassword/>}/>
 
       </Routes>
-      {!isLoginPage && !isRegisterPage && !isProfilePage && <Footer />}
+      {!isLoginPage && !isRegisterPage && !isForgotPasswordPage && !isProfilePage && <Footer />}
     </>
   );
 }

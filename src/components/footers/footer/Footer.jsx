@@ -23,9 +23,10 @@ const Footer = () => {
               <FaLocationDot className={styles.icon} />{" "}
               <span>Bussval Nagar Dyrafur Road AKOT. Dist Akola</span>
             </p>
-            <p>
+            <p className={`${styles.leftAlign}`}>
               <FaPhoneAlt className={styles.icon} /> <span>9421830662</span>
             </p>
+
             <p>
               <MdEmail className={styles.icon} />{" "}
               <span>anilraoshridhargawande@gmail.com</span>

@@ -8,7 +8,7 @@
 .mapHeading {
   text-align: center;
   margin-bottom: 40px;
-  color: #b81358;
+  color: #333;
   font-family: "Your Font", sans-serif; /* Replace 'Your Font' with actual font */
   font-size: 2.3rem;
   font-weight: 700;
@@ -26,7 +26,7 @@
 .mapSection {
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   border: 2px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
