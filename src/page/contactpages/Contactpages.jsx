@@ -8,7 +8,7 @@ function Contactpages() {
     <div>
       <Contact/>
      {/* <Map/> */}
-     <Map/>
+     {/* <Map/> */}
     </div>
   )
 }

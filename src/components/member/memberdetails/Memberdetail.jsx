@@ -162,6 +162,7 @@ const MemberDetail = () => {
     linkedin: <FaLinkedin />,
     instagram: <FaInstagram />,
   };
+const isSingle = member.work?.length === 1;
 
   return (
     <div className={styles.detail}>
@@ -178,7 +179,7 @@ const MemberDetail = () => {
     <div className={styles.info}>
       <p><strong>Name:</strong> {member.name}</p>
       <p><strong>Designation:</strong> {member.designation}</p>
-      <p><strong>Bio:</strong> {member.bio}</p>
+      {/* <p><strong>Bio:</strong> {member.bio}</p> */}
       <p><strong>Phone:</strong> {member.phone}</p>
       <p><strong>Email:</strong> {member.email}</p>
       <p><strong>Birth Date:</strong> {new Date(member.birthData).toLocaleDateString()}</p>
@@ -190,10 +191,43 @@ const MemberDetail = () => {
       <p><strong>Description:</strong> {member.description}</p>
     </div>
 
-    <h3 className={styles.title}>Work</h3>
+<h3 className={styles.title}>Description</h3>
+<div className={styles.achievements}>
+  {member.bio ? (
+    <p>{member.bio}</p>
+  ) : (
+    <p>No bio available.</p>
+  )}
+</div>
+
+
+<h3 className={styles.title}>WORK</h3>
+    <div className={`${styles.work} ${isSingle ? styles.singleItem : ""}`}>
+        {member.work?.length > 0 ? (
+          member.work.map((workItem) => (
+            <div key={workItem._id} className={styles.workItem}>
+              <div className={styles.imageWrapper}>
+                <img
+                  src={workItem.image || "https://via.placeholder.com/150"}
+                  alt={workItem.title}
+                  className={styles.profileImage}
+                />
+              </div>
+              <div className={styles.maintext}>
+                <h4>{workItem.title}</h4>
+                <p>{workItem.description}</p>
+                <p><strong>Feedback:</strong> {workItem.feedback}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No work items available.</p>
+        )}
+      </div>
     
     <h3 className={styles.title}>Achievements</h3>
     <div className={styles.achievements}>
+      <h3>Awards :</h3>
       {member.achievements?.length > 0 ? (
         member.achievements.map((achievement, index) => (
           <p key={index}>{achievement}</p>

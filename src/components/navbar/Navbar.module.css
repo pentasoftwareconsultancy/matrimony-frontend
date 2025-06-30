@@ -8,6 +8,7 @@
   box-shadow: none;
   color: #FFF8E7; /* Soft ivory text */
   font-family: "Poppins", sans-serif;
+  height: 70px;
 }
 
 /* Transparent background on homepage, gradient on other pages */
@@ -16,23 +17,18 @@
 }
 
 .header:not(.home) {
-  background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Deep rose to royal purple gradient */
+  /* background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); Deep rose to royal purple gradient */
+  background-color:#BF0426;
 }
 
 /* Scrolled state: gradient on all pages */
 .header.scrolled {
-  background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Gradient when scrolled */
+  background-color: #BF0426;
+  /* background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); Gradient when scrolled */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow when scrolled */
 }
 
-/* .logoContainer {
-  display: flex;
-  width: 20%;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  overflow: hidden;
-} */
+
 .logoContainer {
   display: flex;
   align-items: center;
@@ -45,16 +41,22 @@
   width: 20%;     /* optional: allow it to shrink-wrap logo */
 }
 
-.logoImage {
+/* .logoImage {
   width: 20%;
   border-radius: 100px;
   height: 8vh;
   object-fit: contain;
-  transition: transform 0.3s ease; /* Smooth scale animation */
+  transition: transform 0.3s ease; /* Smooth scale animation 
+} */
+.logoImage {
+  width: 110px;  /* Set a fixed width */
+  border-radius: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .logoImage:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.01); /* Slight zoom on hover */
 }
 
 .header.scrolled .logo a,
@@ -75,7 +77,7 @@
 .navLinks a {
   font-weight: 600;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14x;
   font-family: "Roboto", sans-serif;
   color: #FFF8E7; /* Soft ivory text */
   position: relative; /* For underline animation */
@@ -185,7 +187,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-   background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Semi-transparent royal purple */
+   /* background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); Semi-transparent royal purple */
+   background-color: #BF0426;;
   border: 1px solid #D4A017; /* Gold border */
   border-radius: 5px;
   display: flex;
@@ -229,7 +232,8 @@
   border: 1px solid #D4A017; /* Gold border */
   left: 100%;
   top: 0;
-  background: linear-gradient(135deg, #C71585 0%, #4B0082 100%);
+  /* background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); */
+  background-color: #BF0426;;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
   min-width: 250px;
@@ -282,7 +286,8 @@
 
 .loginDesktop:hover {
   background: #D4A017; /* Gold background */
-  color: #4B0082; /* Royal purple text */
+  /* color: #4B0082; Royal purple text */
+  color: #BF0426;
 }
 
 /* Mobile View */
@@ -292,11 +297,13 @@
   }
 
   .header:not(.home) {
-    background: rgba(199, 21, 133, 0.9); /* Semi-transparent deep rose for other pages */
+    /* background: rgba(199, 21, 133, 0.9); Semi-transparent deep rose for other pages */
+    background-color: #BF0426;
   }
 
   .header.scrolled {
-    background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); /* Gradient for all pages when scrolled */
+    /* background: linear-gradient(135deg, #C71585 0%, #4B0082 100%); Gradient for all pages when scrolled */
+    background-color: #BF0426;
   }
 
   .navLinks {
@@ -307,7 +314,8 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(75, 0, 130, 0.9); /* Semi-transparent royal purple */
+    /* background: rgba(75, 0, 130, 0.9); Semi-transparent royal purple */
+    background-color: #BF0426;
     padding: 20px;
     transition: all 0.4s ease;
   }
@@ -326,7 +334,8 @@
   }
 
   .menuToggle:not(.home) .bar {
-    background-color: #4B0082; /* Royal purple on other pages */
+    /* background-color: #4B0082; Royal purple on other pages */
+    background-color: #BF0426;
   }
 
   .navLinks.open + .menuToggle .bar {
@@ -373,12 +382,14 @@
 
   .loginMobile button:hover {
     background: #D4A017; /* Gold background */
-    color: #4B0082; /* Royal purple text */
+    /* color: #4B0082; Royal purple text */
+    background-color: #BF0426;
   }
 
   .dropdownMenu {
     position: static;
-    background: rgba(75, 0, 130, 0.95); /* Slightly darker purple */
+    /* background: rgba(75, 0, 130, 0.95); Slightly darker purple */
+    background-color: #BF0426;
     border: none;
     width: 100%;
     display: flex !important; /* <-- IMPORTANT */
@@ -390,7 +401,8 @@
 
   .subDropdownMenu {
     position: static;
-    background: rgba(75, 0, 130, 0.95); /* Consistent purple */
+    /* background: rgba(75, 0, 130, 0.95); Consistent purple */
+    background-color: #BF0426;
     border: none;
     width: 100%;
     margin-left: 20px;

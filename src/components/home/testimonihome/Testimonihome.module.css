@@ -12,7 +12,7 @@
 
 .title {
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 400;
   color: #333;
   margin-bottom: 30px;
   display: flex;
@@ -22,8 +22,8 @@
 }
 
 .icon {
-  color: #ff5e62;
-  font-size: 28px;
+  color:#BF0426;
+  font-size: 16px;
 }
 
 /* Slider Wrapper */

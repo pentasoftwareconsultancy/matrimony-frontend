@@ -20,8 +20,8 @@
 
 /* Container Styles */
 .container {
-  background: 
-    url('../featurees/pexels-vireshstudio-1444442.jpg') no-repeat center center;
+  /* background: url('../featurees/pexels-vireshstudio-1444442.jpg') no-repeat center center; */
+  background-color:#f7f9fc;
   background-size: cover;
   padding: 0 0 50px 0; /* Removed 150px left/right padding */
   margin: 0;           /* Removed top margin */
@@ -38,8 +38,8 @@
 .sectionTitle {
   padding-top: 40px;
   text-align: center;
-  font-size: x-large;
-  color: #fff;
+  font-size:26px;
+  color: #333;
   margin-top: 10px;
   margin-left: 100px;
   margin-right: 100px;
