@@ -28,7 +28,7 @@ const VendorJewelryDetail = () => {
   }
 
   if (!jewelry) {
-    return <div className={styles.notFound}>Jewelry Vendor not found</div>;
+    return <div className={styles.notFound}>Jewellery Vendor not found</div>;
   }
 
   return (
@@ -40,8 +40,8 @@ const VendorJewelryDetail = () => {
           <p><strong>Email:</strong> {jewelry.email}</p>
           <p><strong>Phone:</strong> {jewelry.phone}</p>
           <p><strong>Address:</strong> {jewelry.address}</p>
-          <p><strong>Rating:</strong> {jewelry.ratings}/5</p>
-          <p><strong>Status:</strong> {jewelry.isVerified ? 'Verified' : 'Not Verified'}</p>
+          {/* <p><strong>Rating:</strong> {jewelry.ratings}/5</p>
+          <p><strong>Status:</strong> {jewelry.isVerified ? 'Verified' : 'Not Verified'}</p> */}
           <p><strong>Description:</strong> {jewelry.description}</p>
         </div>
         <div className={styles.profileImages}>

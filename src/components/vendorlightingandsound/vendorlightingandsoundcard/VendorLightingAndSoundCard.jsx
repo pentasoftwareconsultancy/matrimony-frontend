@@ -21,8 +21,8 @@ const VendorLightingAndSoundCard = ({ lightingsound }) => {
       <div className={styles.body}>
         <p>{lightingsound.description?.substring(0, 100)}...</p>
         <div className={styles.details}>
-          <span>Rating: {lightingsound.ratings}/5</span>
-          <span>{lightingsound.isVerified ? 'Verified' : 'Not Verified'}</span>
+          {/* <span>Rating: {lightingsound.ratings}/5</span>
+          <span>{lightingsound.isVerified ? 'Verified' : 'Not Verified'}</span> */}
         </div>
       </div>
       <Link to={`/lightingsound/${lightingsound._id}`} className={styles.detailsLink}>

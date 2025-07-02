@@ -23,12 +23,12 @@ const VendorJewelryList = () => {
   }, []);
 
   if (loading) {
-    return <div className={styles.loading}>Loading jewelry vendors...</div>;
+    return <div className={styles.loading}>Loading jewellery vendors...</div>;
   }
 
   return (
     <div className={styles.jewelryList}>
-      <h2>Jewelry Vendor Services</h2>
+      <h2>Jewellery Vendor Services</h2>
       <div className={styles.jewelryGrid}>
         {jewelry.map((vendor, index) => (
           <div key={vendor._id} className={styles.gridItem} style={{ animationDelay: `${index * 0.1}s` }}>

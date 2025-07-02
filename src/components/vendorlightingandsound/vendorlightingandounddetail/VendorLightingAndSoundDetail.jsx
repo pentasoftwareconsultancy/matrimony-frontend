@@ -40,8 +40,8 @@ const VendorLightingAndSoundDetail = () => {
           <p><strong>Email:</strong> {lightingsound.email}</p>
           <p><strong>Phone:</strong> {lightingsound.phone}</p>
           <p><strong>Address:</strong> {lightingsound.address}</p>
-          <p><strong>Rating:</strong> {lightingsound.ratings}/5</p>
-          <p><strong>Status:</strong> {lightingsound.isVerified ? 'Verified' : 'Not Verified'}</p>
+          {/* <p><strong>Rating:</strong> {lightingsound.ratings}/5</p>
+          <p><strong>Status:</strong> {lightingsound.isVerified ? 'Verified' : 'Not Verified'}</p> */}
           <p><strong>Description:</strong> {lightingsound.description}</p>
         </div>
         <div className={styles.profileImages}>

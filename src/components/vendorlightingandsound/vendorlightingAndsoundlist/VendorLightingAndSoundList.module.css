@@ -2,7 +2,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 30px;
-  background: linear-gradient(135deg, #E0E7E9 0%, #F1F5F9 100%);
+  /* background: linear-gradient(135deg, #E0E7E9 0%, #F1F5F9 100%); */
+  background-color: #f7f9fc;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s ease-out;
@@ -21,11 +22,12 @@
 
 .lightingsoundList h2 {
   text-align: center;
-  color: #0D1B2A;
+  color: #333;
   margin-top: 20px;
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin-bottom: 2rem;
+  margin-top: 40px;
   position: relative;
 }
 
@@ -33,7 +35,7 @@
   content: "";
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #00DDEB, #1B9AAA);
+  /* background: linear-gradient(90deg, #00DDEB, #1B9AAA); */
   display: block;
   margin: 0.75rem auto;
   border-radius: 4px;
@@ -51,7 +53,7 @@
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
   padding: 20px;
-  background: rgba(0, 245, 212, 0.05);
+  /* background: rgba(0, 245, 212, 0.05); */
   border-radius: 16px;
 }
 
