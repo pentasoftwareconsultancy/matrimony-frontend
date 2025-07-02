@@ -135,7 +135,7 @@ const Navbar = ({ isHomePage }) => {
                       <NavLink to="/djmusic" className={getLinkClass}>
                         DJ & Music
                       </NavLink>
-                      <NavLink to="/makeuphair" className={getLinkClass}>
+                      <NavLink to="/makeupartist" className={getLinkClass}>
                         Makeup & Hair Styling
                       </NavLink>
                       <NavLink to="/bridalwear" className={getLinkClass}>
@@ -144,7 +144,7 @@ const Navbar = ({ isHomePage }) => {
                       <NavLink to="/groomwear" className={getLinkClass}>
                         Groom Wear
                       </NavLink>
-                      <NavLink to="/makeupartist" className={getLinkClass}>
+                      <NavLink to="/makeuphair" className={getLinkClass}>
                         Mehndi Artists
                       </NavLink>
                       <NavLink to="/lightingsound" className={getLinkClass}>

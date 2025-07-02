@@ -44,12 +44,12 @@ const MakeupHairCard = ({ makeuphair }) => {
       </div> */}
       <div className={styles.body}>
         <p>{makeuphair.description?.substring(0, 100)}...</p>
-        <div className={styles.details}>
+        {/* <div className={styles.details}>
           <span data-tooltip={`Rated ${makeuphair.ratings} out of 5`}>Rating: {makeuphair.ratings}/5</span>
           <span data-tooltip={makeuphair.isVerified ? 'Verified Professional' : 'Not Verified'}>
             {makeuphair.isVerified ? 'Verified' : 'Not Verified'}
           </span>
-        </div>
+        </div> */}
       </div>
       <Link
         to={`/makeuphair/${makeuphair._id}`}

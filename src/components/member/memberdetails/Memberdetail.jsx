@@ -175,7 +175,7 @@ const isSingle = member.work?.length === 1;
 
   <div className={styles.rightWrapper}>
     <div className={styles.rightContent}>
-    <h3 className={styles.title}>Presonal Details</h3>
+    <h3 className={styles.title}>Personal Details</h3>
     <div className={styles.info}>
       <p><strong>Name:</strong> {member.name}</p>
       <p><strong>Designation:</strong> {member.designation}</p>

@@ -32,6 +32,7 @@ const DecorationList = () => {
       <div className={styles.decorationGrid}>
         {decorations.map((decoration) => (
           <DecorationCard key={decoration._id} decoration={decoration} />
+          
         ))}
       </div>
     </div>
