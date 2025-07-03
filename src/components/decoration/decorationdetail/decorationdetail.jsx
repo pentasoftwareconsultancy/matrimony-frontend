@@ -40,8 +40,8 @@ const DecorationDetail = () => {
           <p><strong>Email:</strong> {decoration.email}</p>
           <p><strong>Phone:</strong> {decoration.phone}</p>
           <p><strong>Address:</strong> {decoration.address}</p>
-          <p><strong>Rating:</strong> {decoration.ratings}/5</p>
-          <p><strong>Status:</strong> {decoration.isVerified ? 'Verified' : 'Not Verified'}</p>
+          {/* <p><strong>Rating:</strong> {decoration.ratings}/5</p>
+          <p><strong>Status:</strong> {decoration.isVerified ? 'Verified' : 'Not Verified'}</p> */}
           <p><strong>Description:</strong> {decoration.description}</p>
         </div>
         
